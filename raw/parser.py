@@ -24,6 +24,19 @@ def find_child_node(parent, attrib_key, attrib_val):
 
     return output
 
+def parse_branch(branch_data):
+    output = {}
+    output['name'] = branch_data['name']
+    output['skill_data'] = [parse_table(table) for table in branch_data['skill_tables']]
+    raise RuntimeError('Doot Doot')
+    return output
+
+def parse_table(table_node):
+    output = {}
+    print(table_node)
+    raise RuntimeError('Pew Pew')
+    return output
+
 def parse_file(filename):
     print(filename)
     root = get_xml_root(filename)
@@ -62,13 +75,12 @@ def parse_file(filename):
     skills_node = find_child_node(skills_node, 'id', 'mw-content-text')
     skills_node = find_child_node(skills_node, 'class', 'mw-parser-output')
 
-    branches = []
+    raw_branches = []
     branch_data = None
     for node in skills_node:
-        print(node.tag, node.attrib.get('id'))
         if node.tag == 'h2':
             if branch_data is not None:
-                branches.append(deepcopy(branch_data))
+                raw_branches.append(deepcopy(branch_data))
 
             branch_data = {
                 'name': node[0].text.replace(' branch', ''),
@@ -77,6 +89,7 @@ def parse_file(filename):
         elif node.tag == 'table':
             branch_data['skill_tables'].append(node)
 
+    parsed_branches = [parse_branch(branch) for branch in raw_branches]
 
     # Form the output
     output['source'] = filename
