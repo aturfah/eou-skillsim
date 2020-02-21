@@ -12,6 +12,18 @@ def get_xml_root(filename):
 def get_data_files(directory):
     return [f for f in listdir(directory) if isfile(join(directory, f))]
 
+def find_child_node(parent, attrib_key, attrib_val):
+    output = None
+    for node in parent:
+        if node.attrib.get(attrib_key) == attrib_val:
+            output = node
+            break
+
+    if output is None:
+        raise RuntimeError('No child found')
+
+    return output
+
 def parse_file(filename):
     print(filename)
     root = get_xml_root(filename)
@@ -29,36 +41,12 @@ def parse_file(filename):
         raise RuntimeError('Error Parsing file: <body> not found')
 
     # Parse through body node
-    target_node = body_node
-    for node in body_node:
-        if node.attrib.get('id') == 'mw-wrapper':
-            target_node = node
-            break
-
-    for node in target_node:
-        if node.attrib.get('id') == 'mw-content-container':
-            target_node = node
-            break
-
-    for node in target_node:
-        if node.attrib.get('id') == 'mw-content-block':
-            target_node = node
-            break
-
-    for node in target_node:
-        if node.attrib.get('id') == 'mw-content-wrapper':
-            target_node = node
-            break
-
-    for node in target_node:
-        if node.attrib.get('id') == 'mw-content':
-            target_node = node
-            break
-
-    for node in target_node:
-        if node.attrib.get('id') == 'content':
-            target_node = node
-            break
+    target_node = find_child_node(body_node, 'id', 'mw-wrapper')
+    target_node = find_child_node(target_node, 'id', 'mw-content-container')
+    target_node = find_child_node(target_node, 'id', 'mw-content-block')
+    target_node = find_child_node(target_node, 'id', 'mw-content-wrapper')
+    target_node = find_child_node(target_node, 'id', 'mw-content')
+    target_node = find_child_node(target_node, 'id', 'content')
 
     # Get class name
     class_name = None
@@ -71,15 +59,8 @@ def parse_file(filename):
             skills_node = node
 
     # Get the data
-    for node in skills_node:
-        if node.attrib.get('id') == 'mw-content-text':
-            skills_node = node
-            break
-
-    for node in skills_node:
-        if node.attrib.get('class') == 'mw-parser-output':
-            skills_node = node
-            break
+    skills_node = find_child_node(skills_node, 'id', 'mw-content-text')
+    skills_node = find_child_node(skills_node, 'class', 'mw-parser-output')
 
     branches = []
     branch_data = None
