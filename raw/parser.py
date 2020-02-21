@@ -187,7 +187,32 @@ def output_js(data, filename, var_name):
         nf.write(new_file_data.format(variable=var_name,
                                       data=data))
 
+def get_dependency_structure(skill_data):
+    mastery_data = []
+    for eo_class in skill_data:
+        for branch in eo_class['branches']:
+            for skill in branch['skill_data']:
+                if skill['mastery']:
+                    mastery_data.append(skill['_id'])
+
+    dependancy_output = {}
+    for eo_class in skill_data:
+        for branch in eo_class['branches']:
+            for skill in branch['skill_data']:
+                skill_id = skill['_id']
+                depends_on = skill['prerequisites']
+                if not depends_on:
+                    continue
+                dependancy_output[skill_id] = depends_on
+
+    return mastery_data, dependancy_output
+
+
 source_dir = 'source_files/'
 filenames = get_data_files(source_dir)
 skill_data = [parse_file(join(source_dir, filename)) for filename in filenames]
 output_js(skill_data, 'skill_data.js', 'skillData')
+
+mastery_skills, dependency_data = get_dependency_structure(skill_data)
+output_js(mastery_skills, 'mastery_skills.js', 'masterySkills')
+output_js(dependency_data, 'prereq_data.js', 'prereqData')
