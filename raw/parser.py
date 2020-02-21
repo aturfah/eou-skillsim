@@ -29,7 +29,6 @@ def parse_branch(branch_data):
     output['name'] = branch_data['name']
     output['skill_data'] = [parse_table(table) for table in branch_data['skill_tables']]
 
-    print(output)
     raise RuntimeError('Doot Doot')
     return output
 
@@ -38,6 +37,7 @@ def parse_table(table_node):
     mastery = None
     levels = []
     growth = {}
+    growth_order = []
     for row in table_node[0]:
         # Check for name
         if name is None:
@@ -64,28 +64,31 @@ def parse_table(table_node):
             continue
 
         # Get everything else
-        if name and mastery and levels:
+        if name and (mastery is not None) and levels:
             label = None
             data = []
             for node in row:
-                if node.tag == 'th':
+                if node.tag == 'th' and label is None:
                     label = node.text
                     print(label)
+                    growth_order.append(label)
                     continue
                 elt = {}
                 elt['levelspan'] = node.attrib.get('colspan')
                 elt['value'] = node.text
                 data.append(elt)
-            growth[label] = data
+            growth[label] = deepcopy(data)
 
-    print('\n')
     output = {
         'name': name,
         'mastery': mastery,
         'levels': levels,
-        'growth': growth
+        'growth': growth,
+        'growth_order': growth_order
     }
 
+    print(output)
+    print('\n')
     return output
 
 def parse_file(filename):
