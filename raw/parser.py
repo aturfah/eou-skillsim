@@ -39,19 +39,39 @@ def parse_table(table_node):
     levels = []
     growth = {}
     growth_order = []
+    prerequisites = []
+    description = None
+
     for row in table_node[0]:
         # Check for name
         if name is None:
             _id = row[0][0].attrib.get('id')
             name = _id.replace('_', ' ')
-            # print('Name:', name)
+            _id = _id.lower()
             continue
         
-        # Check for Mastery
+        # Check for Mastery and Prerequisites
         if mastery is None:
+            prereq_check = False
             for node in row[0]:
                 if node.tag == 'i' and 'Mastery' in node.text:
                     mastery = True
+                elif node.tag == 'p' and description is None:
+                    description = node.text.strip()
+                elif node.tag == 'p' and description:
+                    prereq_check = True
+                if prereq_check and node.tag == 'ul':
+                    prereq_check = False
+                    for li_elt in node:
+                        raw_prereq = li_elt.text
+                        if raw_prereq is None:
+                            continue
+                        prereq_name, prereq_level = raw_prereq.split(', ')
+                        prereq_name = prereq_name.lower().replace(' ', '_')
+                        prereq_level = int(prereq_level.replace('lv. ', ''))
+                        prerequisites.append({'_id': prereq_name, 'level': prereq_level})
+
+
             mastery = mastery is not None
             # print('Mastery Skill:', mastery)
             continue
@@ -84,8 +104,10 @@ def parse_table(table_node):
     output = {
         '_id': _id,
         'name': name,
+        'description': description,
         'mastery': mastery,
         'levels': levels,
+        'prerequisites': prerequisites,
         'growth': growth,
         'growth_order': growth_order
     }
