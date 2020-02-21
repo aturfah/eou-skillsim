@@ -29,7 +29,6 @@ def parse_branch(branch_data):
     output['name'] = branch_data['name']
     output['skill_data'] = [parse_table(table) for table in branch_data['skill_tables']]
 
-    raise RuntimeError('Doot Doot')
     return output
 
 def parse_table(table_node):
@@ -42,7 +41,7 @@ def parse_table(table_node):
         # Check for name
         if name is None:
             name = row[0][0].attrib.get('id').replace('_', ' ')
-            print('Name:', name)
+            # print('Name:', name)
             continue
         
         # Check for Mastery
@@ -51,7 +50,7 @@ def parse_table(table_node):
                 if node.tag == 'i' and 'Mastery' in node.text:
                     mastery = True
             mastery = mastery is not None
-            print('Mastery Skill:', mastery)
+            # print('Mastery Skill:', mastery)
             continue
 
         # Check for Levels
@@ -70,7 +69,7 @@ def parse_table(table_node):
             for node in row:
                 if node.tag == 'th' and label is None:
                     label = node.text
-                    print(label)
+                    # print(label)
                     growth_order.append(label)
                     continue
                 elt = {}
@@ -87,8 +86,8 @@ def parse_table(table_node):
         'growth_order': growth_order
     }
 
-    print(output)
-    print('\n')
+    # print(output)
+    # print('\n')
     return output
 
 def parse_file(filename):
@@ -148,11 +147,9 @@ def parse_file(filename):
     # Form the output
     output['source'] = filename
     output['class'] = class_name
-    output['branches'] = branches
+    output['branches'] = parsed_branches
 
-    print(output)
-    print()
-    raise RuntimeError('Doot')
+    return output
 
 source_dir = 'source_files/'
 filenames = get_data_files(source_dir)
