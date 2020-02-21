@@ -3,6 +3,7 @@ from copy import deepcopy
 from os import listdir
 from os.path import isfile, join
 import xml.etree.ElementTree as ET
+import json
 
 def get_xml_root(filename):
     tree = ET.parse(filename)
@@ -151,6 +152,17 @@ def parse_file(filename):
 
     return output
 
+def output_js(data, filename, var_name):
+    new_file_data = """var {variable} = {data};
+    export default {variable};
+    """
+    data = json.dumps(data)
+
+    with open(filename, 'w') as nf:
+        nf.write(new_file_data.format(variable=var_name,
+                                      data=data))
+
 source_dir = 'source_files/'
 filenames = get_data_files(source_dir)
 skill_data = [parse_file(join(source_dir, filename)) for filename in filenames]
+output_js(skill_data, 'skill_data.js', 'skillData')
