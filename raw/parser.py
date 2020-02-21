@@ -33,12 +33,45 @@ def parse_branch(branch_data):
 
 def parse_table(table_node):
     name = None
-    mastery = False
+    mastery = None
     levels = []
     growth = {}
     for row in table_node[0]:
+        # Check for name
         if name is None:
             name = row[0][0].attrib.get('id').replace('_', ' ')
+            continue
+        
+        # Check for Mastery
+        if mastery is None:
+            for node in row[0]:
+                if node.tag == 'i' and 'Mastery' in node.text:
+                    mastery = True
+            mastery = mastery is not None
+            continue
+
+        # Check for Levels
+        if not levels:
+            for node in row:
+                levels.append({
+                    'label': node.text,
+                    'width': node.attrib.get('style').replace('width:', '')
+                })
+
+        # Get everything else
+        if name and mastery and levels:
+            label = None
+            data = []
+            for node in row:
+                if node.tag == 'th':
+                    label = node.text
+                    continue
+                elt = {}
+                elt['levelspan'] = node.attrib.get('colspan')
+                elt['value'] = node.text
+                data.append(elt)
+            growth[label] = data
+
 
     output = {
         'name': name,
@@ -47,8 +80,6 @@ def parse_table(table_node):
         'growth': growth
     }
 
-    print(output)
-    raise RuntimeError('Pew Pew')
     return output
 
 def parse_file(filename):
