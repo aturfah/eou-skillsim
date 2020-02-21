@@ -28,6 +28,8 @@ def parse_branch(branch_data):
     output = {}
     output['name'] = branch_data['name']
     output['skill_data'] = [parse_table(table) for table in branch_data['skill_tables']]
+
+    print(output)
     raise RuntimeError('Doot Doot')
     return output
 
@@ -40,6 +42,7 @@ def parse_table(table_node):
         # Check for name
         if name is None:
             name = row[0][0].attrib.get('id').replace('_', ' ')
+            print('Name:', name)
             continue
         
         # Check for Mastery
@@ -48,6 +51,7 @@ def parse_table(table_node):
                 if node.tag == 'i' and 'Mastery' in node.text:
                     mastery = True
             mastery = mastery is not None
+            print('Mastery Skill:', mastery)
             continue
 
         # Check for Levels
@@ -57,6 +61,7 @@ def parse_table(table_node):
                     'label': node.text,
                     'width': node.attrib.get('style').replace('width:', '')
                 })
+            continue
 
         # Get everything else
         if name and mastery and levels:
@@ -65,6 +70,7 @@ def parse_table(table_node):
             for node in row:
                 if node.tag == 'th':
                     label = node.text
+                    print(label)
                     continue
                 elt = {}
                 elt['levelspan'] = node.attrib.get('colspan')
@@ -72,7 +78,7 @@ def parse_table(table_node):
                 data.append(elt)
             growth[label] = data
 
-
+    print('\n')
     output = {
         'name': name,
         'mastery': mastery,
