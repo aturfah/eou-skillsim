@@ -34,6 +34,7 @@ def parse_branch(branch_data):
 
 def parse_table(table_node):
     name = None
+    _id = None
     mastery = None
     levels = []
     growth = {}
@@ -41,7 +42,8 @@ def parse_table(table_node):
     for row in table_node[0]:
         # Check for name
         if name is None:
-            name = row[0][0].attrib.get('id').replace('_', ' ')
+            _id = row[0][0].attrib.get('id')
+            name = _id.replace('_', ' ')
             # print('Name:', name)
             continue
         
@@ -80,6 +82,7 @@ def parse_table(table_node):
             growth[label] = deepcopy(data)
 
     output = {
+        '_id': _id,
         'name': name,
         'mastery': mastery,
         'levels': levels,
