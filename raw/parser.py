@@ -32,8 +32,22 @@ def parse_branch(branch_data):
     return output
 
 def parse_table(table_node):
-    output = {}
-    print(table_node)
+    name = None
+    mastery = False
+    levels = []
+    growth = {}
+    for row in table_node[0]:
+        if name is None:
+            name = row[0][0].attrib.get('id').replace('_', ' ')
+
+    output = {
+        'name': name,
+        'mastery': mastery,
+        'levels': levels,
+        'growth': growth
+    }
+
+    print(output)
     raise RuntimeError('Pew Pew')
     return output
 
