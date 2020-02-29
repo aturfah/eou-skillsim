@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // Component Import
 import Header from './header'
 
 // Data Import
-import masterySkills from './data/mastery_skills';
-import prereqData from './data/prereq_data';
-import skillData from './data/skill_data';
+// import masterySkills from './data/mastery_skills';
+// import prereqData from './data/prereq_data';
+// import skillData from './data/skill_data';
 
 function defaultState() {
   return {
