@@ -1,26 +1,43 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Component Import
+import Header from './header'
+
+// Data Import
+import masterySkills from './data/mastery_skills';
+import prereqData from './data/prereq_data';
+import skillData from './data/skill_data';
+
+function defaultState() {
+  return {
+    level: 1,
+    retirementIdx: 0,
+    skillsChosen: [],
+    activeClassIdx: 0
+  };
+}
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = defaultState()
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header
+          level={this.state.level}
+          retirementIdx={this.state.retirementIdx}
+          skillsChosen={this.state.skillsChosen}
+          activeClassIdx={this.state.activeClassIdx}
+        ></Header>
+        <div>Skill Data Goes Here</div>
+      </div>
+    );
+  }
 }
 
 export default App;
