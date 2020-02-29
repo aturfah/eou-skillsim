@@ -25,10 +25,21 @@ class App extends Component {
     this.state = defaultState()
   }
 
+  updateState(key, value=undefined) {
+    let oldState = this.state;
+    if (value === undefined) {
+      value = defaultState()[key]
+    }
+    oldState[key] = value;
+
+    this.setState(oldState);
+  }
+
   render() {
     return (
       <div className="App">
         <Header
+          updateMethod={this.updateState.bind(this)}
           level={this.state.level}
           retirementIdx={this.state.retirementIdx}
           skillsChosen={this.state.skillsChosen}
