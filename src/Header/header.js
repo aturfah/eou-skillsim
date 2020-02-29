@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import './header.css';
 
-import skillData from './data/skill_data';
+
+import skillData from '../data/skill_data';
 
 function calculate_sp(level, retirementIdx) {
     // TODO: Account for Retirement
@@ -36,7 +38,7 @@ class Header extends Component {
         const skillPointsTotal = calculate_sp(this.props.level, this.props.retirementIdx);
         const skillPointsRemaining = -1;
 
-        return <div>Header Goes Here (doot)
+        return <div className="HeaderBar">Header Goes Here (doot)
             <ul>
                 <li>activeClass: {class_chosen}:{this.activeClassIdx}</li>
                 <li onClick={this._changeLevel.bind(this)}>Level: <span ref='level'>{this.props.level}</span></li>

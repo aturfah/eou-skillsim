@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 
 // Component Import
-import Header from './header'
+import Header from './Header/header'
+import SkillTree from './SkillTree/skillTree'
 
 // Data Import
 // import masterySkills from './data/mastery_skills';
@@ -44,7 +45,7 @@ class App extends Component {
           skillsChosen={this.state.skillsChosen}
           activeClassIdx={this.state.activeClassIdx}
         ></Header>
-        <div>Skill Data Goes Here</div>
+        <SkillTree></SkillTree>
       </div>
     );
   }
