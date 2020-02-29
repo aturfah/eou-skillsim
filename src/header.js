@@ -20,23 +20,29 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.level = props.level;
-        this.retirementIdx = props.retirementIdx;
-        this.activeClassIdx = props.activeClassIdx;
-        this.skillPointsTotal = calculate_sp(this.level, this.retirementIdx);
-        this.skillPointsRemaining = -1;
+    }
+
+    _changeLevel() {
+        const levelSpan = this.refs.level
+        const newLevel = parseInt(levelSpan.textContent) + 1;
+        console.log(newLevel)
+        this.props.updateMethod('level', newLevel)
     }
 
     render() {
         const class_opts = getClasses();
-        const class_chosen = class_opts[this.activeClassIdx];
+        const class_chosen = class_opts[this.props.activeClassIdx];
+
+        const skillPointsTotal = calculate_sp(this.props.level, this.props.retirementIdx);
+        const skillPointsRemaining = -1;
 
         return <div>Header Goes Here (doot)
             <ul>
                 <li>activeClass: {class_chosen}:{this.activeClassIdx}</li>
-                <li>Level: {this.level}</li>
-                <li>RetirementIdx: {this.retirementIdx} </li>
-                <li>skillPointsTotal: {this.skillPointsTotal}</li>
-                <li>skillPointsRemaining: {this.skillPointsRemaining}</li>
+                <li onClick={this._changeLevel.bind(this)}>Level: <span ref='level'>{this.props.level}</span></li>
+                <li>RetirementIdx: {this.props.retirementIdx} </li>
+                <li>skillPointsTotal: {skillPointsTotal}</li>
+                <li>skillPointsRemaining: {skillPointsRemaining}</li>
             </ul>
         </div>
     }
