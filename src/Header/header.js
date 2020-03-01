@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import './header.css';
 
-
 import skillData from '../data/skill_data';
+
+// Helper Functions
+import {firstDegSkills} from '../helpers'
 
 function calculate_sp(level, retirementIdx) {
     // TODO: Account for Retirement
@@ -22,6 +24,7 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.level = props.level;
+        this.firstDegSkills = firstDegSkills();
     }
 
     _changeLevel() {
