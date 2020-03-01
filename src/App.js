@@ -5,11 +5,6 @@ import './App.css';
 import Header from './Header/header'
 import SkillTree from './SkillTree/skillTree'
 
-// Data Import
-// import masterySkills from './data/mastery_skills';
-// import prereqData from './data/prereq_data';
-// import skillData from './data/skill_data';
-
 function defaultState() {
   return {
     level: 1,
@@ -45,7 +40,11 @@ class App extends Component {
           skillsChosen={this.state.skillsChosen}
           activeClassIdx={this.state.activeClassIdx}
         ></Header>
-        <SkillTree></SkillTree>
+        <SkillTree
+          updateMethod={this.updateState.bind(this)}
+          skillsChosen={this.state.skillsChosen}
+          activeClassIdx={this.state.activeClassIdx}
+        ></SkillTree>
       </div>
     );
   }
