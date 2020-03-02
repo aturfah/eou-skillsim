@@ -5,6 +5,9 @@ import './App.css';
 import Header from './Header/header'
 import SkillTree from './SkillTree/skillTree'
 
+// Function Import
+import {fixSkillDependencyAdd, fixSkillDependencyDelete} from './helpers'
+
 function defaultState() {
   return {
     level: 1,
@@ -32,9 +35,11 @@ class App extends Component {
       } else if (oldState.skillsChosen.includes(value)) {
         console.log('Removing', value)
         oldState.skillsChosen.splice( oldState.skillsChosen.indexOf(value), 1 );
+        oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
       } else {
         console.log('Adding', value)
         oldState.skillsChosen.push(value);
+        oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen);
       }
     } else {
       console.log('Setting', key, 'to', value)
