@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/eou-skillsim/static/css/main.d1b05096.chunk.css",
-    "main.js": "/eou-skillsim/static/js/main.d55f9ef9.chunk.js",
-    "main.js.map": "/eou-skillsim/static/js/main.d55f9ef9.chunk.js.map",
+    "main.css": "/eou-skillsim/static/css/main.82448adb.chunk.css",
+    "main.js": "/eou-skillsim/static/js/main.f22cc334.chunk.js",
+    "main.js.map": "/eou-skillsim/static/js/main.f22cc334.chunk.js.map",
     "runtime-main.js": "/eou-skillsim/static/js/runtime-main.5f392ff1.js",
     "runtime-main.js.map": "/eou-skillsim/static/js/runtime-main.5f392ff1.js.map",
-    "static/js/2.6d442967.chunk.js": "/eou-skillsim/static/js/2.6d442967.chunk.js",
-    "static/js/2.6d442967.chunk.js.map": "/eou-skillsim/static/js/2.6d442967.chunk.js.map",
+    "static/js/2.2a46416c.chunk.js": "/eou-skillsim/static/js/2.2a46416c.chunk.js",
+    "static/js/2.2a46416c.chunk.js.map": "/eou-skillsim/static/js/2.2a46416c.chunk.js.map",
     "index.html": "/eou-skillsim/index.html",
-    "precache-manifest.f7a34c700da9b7e3d442b43ae2dd9f4f.js": "/eou-skillsim/precache-manifest.f7a34c700da9b7e3d442b43ae2dd9f4f.js",
+    "precache-manifest.e58ef93e887caa9f55f19be414f42751.js": "/eou-skillsim/precache-manifest.e58ef93e887caa9f55f19be414f42751.js",
     "service-worker.js": "/eou-skillsim/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/eou-skillsim/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.6d442967.chunk.js.LICENSE": "/eou-skillsim/static/js/2.6d442967.chunk.js.LICENSE",
-    "static/media/logo.svg": "/eou-skillsim/static/media/logo.5d5d9eef.svg"
+    "static/css/main.82448adb.chunk.css.map": "/eou-skillsim/static/css/main.82448adb.chunk.css.map",
+    "static/js/2.2a46416c.chunk.js.LICENSE": "/eou-skillsim/static/js/2.2a46416c.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.5f392ff1.js",
-    "static/js/2.6d442967.chunk.js",
-    "static/css/main.d1b05096.chunk.css",
-    "static/js/main.d55f9ef9.chunk.js"
+    "static/js/2.2a46416c.chunk.js",
+    "static/css/main.82448adb.chunk.css",
+    "static/js/main.f22cc334.chunk.js"
   ]
 }
