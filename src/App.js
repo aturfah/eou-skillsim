@@ -25,7 +25,20 @@ class App extends Component {
     if (value === undefined) {
       value = defaultState()[key]
     }
-    oldState[key] = value;
+    if (key === 'skillsChosen') {
+      if (value === undefined) {
+        console.log('Resetting Skills')
+        oldState.skillsChosen = [];
+      } else if (oldState.skillsChosen.includes(value)) {
+        console.log('Removing', value)
+        oldState.skillsChosen.splice( oldState.skillsChosen.indexOf(value), 1 );
+      } else {
+        console.log('Adding', value)
+        oldState.skillsChosen.push(value);
+      }
+    } else {
+      oldState[key] = value;
+    }
 
     this.setState(oldState);
   }
