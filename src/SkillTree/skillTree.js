@@ -18,7 +18,8 @@ class SkillTree extends Component {
     }
 
     _addSkill(skillId) {
-        console.log(skillId);
+        console.log(skillId, 'clicked on');
+        this.props.updateMethod('skillsChosen', skillId)
     }
 
     buildSkillTree(skillTreeData) {
@@ -32,10 +33,7 @@ class SkillTree extends Component {
                 output.push(<h2>{skillBranch.name} Branch</h2>)
             }
 
-            console.log(skillBranch.name);
-            console.log(skillBranch.skill_data)
             skillBranch.skill_data.forEach(function (skillDatum) {
-                console.log(skillDatum)
                 let node = [];
                 if (skillDatum.prerequisites.length === 0 || true === true) {
                     node.push(<span id={skillDatum._id}
@@ -44,7 +42,6 @@ class SkillTree extends Component {
                     node.push(<span id={skillDatum._id}>{skillDatum.name}</span>);
                 }
 
-                console.log(node);
                 if (objProps.skillsChosen.includes(skillDatum._id)) {
                     node.push(' (Active)')
                 }
