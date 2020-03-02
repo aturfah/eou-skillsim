@@ -37,6 +37,7 @@ class App extends Component {
         oldState.skillsChosen.push(value);
       }
     } else {
+      console.log('Setting', key, 'to', value)
       oldState[key] = value;
     }
 
