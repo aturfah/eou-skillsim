@@ -1,6 +1,14 @@
 import masterySkills from './data/mastery_skills';
 import prereqData from './data/prereq_data';
 
+export function listSubtract(listA, listB) {
+    return listA.filter(x => !listB.includes(x))
+}
+
+export function listIntersect(listA, listB) {
+    return listA.filter(x => listB.includes(x))
+}
+
 export function firstDegSkills() {
     const output = [];
     Object.keys(prereqData).forEach(function (key) {
@@ -33,7 +41,7 @@ function verifySkillDependenciesAdd(chosenSkills) {
     });
     newChosenSkills = [...newChosenSkills]
 
-    if (newChosenSkills.filter(x => !chosenSkills.includes(x)).length !== 0) {
+    if (listSubtract(newChosenSkills, chosenSkills).length !== 0) {
         return newChosenSkills;
     } else {
         return -1
