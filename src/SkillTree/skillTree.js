@@ -35,6 +35,7 @@ class SkillTree extends Component {
 
             skillBranch.skill_data.forEach(function (skillDatum) {
                 let node = [];
+                // todo: Fix this comparison
                 if (skillDatum.prerequisites.length === 0 || true === true) {
                     node.push(<span id={skillDatum._id}
                         onClick={() => addSkillFunc(skillDatum._id)}>{skillDatum.name}</span>);
