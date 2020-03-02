@@ -4,7 +4,7 @@ import './header.css';
 import skillData from '../data/skill_data';
 
 // Helper Functions
-import {firstDegSkills} from '../helpers'
+import {firstDegSkills, listIntersect} from '../helpers'
 
 function calculate_sp(level, retirementIdx) {
     // TODO: Account for Retirement
@@ -20,17 +20,29 @@ function getClasses() {
     return(classes);
 }
 
+
 class Header extends Component {
     constructor(props) {
         super(props);
         this.level = props.level;
         this.firstDegSkills = firstDegSkills();
+        this.calculateSpRemaining = this.calculateSpRemaining.bind(this)
+        this._setLevel = this._setLevel.bind(this)
+    }
+
+    calculateSpRemaining(sp) {
+        let activeFDegSkills = listIntersect(this.props.skillsChosen, this.firstDegSkills);
+        return sp - this.props.skillsChosen.length + activeFDegSkills.length
     }
 
     _changeLevel() {
         const levelSpan = this.refs.level
         const newLevel = parseInt(levelSpan.textContent) + 1;
         console.log('-> _changeLevel', newLevel);
+        this._setLevel(newLevel)
+    }
+
+    _setLevel(newLevel) {
         this.props.updateMethod('level', newLevel)
     }
 
@@ -39,7 +51,10 @@ class Header extends Component {
         const class_chosen = class_opts[this.props.activeClassIdx];
 
         const skillPointsTotal = calculate_sp(this.props.level, this.props.retirementIdx);
-        const skillPointsRemaining = -1;
+        const skillPointsRemaining = this.calculateSpRemaining(skillPointsTotal)
+        if (skillPointsRemaining < 0) {
+            this._setLevel(this.props.level - skillPointsRemaining);
+        }
 
         return <div className="HeaderBar">Header Goes Here (doot)
             <ul>
