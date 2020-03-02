@@ -30,7 +30,7 @@ class Header extends Component {
     _changeLevel() {
         const levelSpan = this.refs.level
         const newLevel = parseInt(levelSpan.textContent) + 1;
-        console.log(newLevel)
+        console.log('-> _changeLevel', newLevel);
         this.props.updateMethod('level', newLevel)
     }
 
