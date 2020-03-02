@@ -18,7 +18,7 @@ class SkillTree extends Component {
     }
 
     _addSkill(skillId) {
-        console.log(skillId, 'clicked on');
+        console.log('-> _addSkill', skillId, 'clicked on');
         this.props.updateMethod('skillsChosen', skillId)
     }
 
