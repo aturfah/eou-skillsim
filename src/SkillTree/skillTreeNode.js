@@ -5,23 +5,42 @@ class SkillTreeNode extends Component {
     constructor(props) {
         super(props)
 
+        this.incrementSkillLevel = this.incrementSkillLevel.bind(this);
         this.increaseSkillLevel = this.increaseSkillLevel.bind(this);
         this.decreaseSkillLevel = this.decreaseSkillLevel.bind(this);
+        this.maxSkillLevel = this.maxSkillLevel.bind(this);
+        this.minSkillLevel = this.minSkillLevel.bind(this);
     }
 
     increaseSkillLevel() {
         if (this.props.skillLevel < 10) {
-            console.log('Increasing Skill Level')
-            this.props.updateMethod('skillsChosen',
-                {_id: this.props.skillData._id, level: this.props.skillLevel + 1})
+            this.incrementSkillLevel(1)
         }
+    }
+
+    incrementSkillLevel(levelDelta) {
+            console.log('Modifying Skill Level by', levelDelta)
+            this.props.updateMethod('skillsChosen',
+                {_id: this.props.skillData._id, level: this.props.skillLevel + levelDelta})
+    }
+
+    maxSkillLevel() {
+        const delta = 10 - this.props.skillLevel;
+        if (delta > 0) {
+            console.log('Maxing out skill level')
+            this.incrementSkillLevel(delta)
+        }
+    }
+
+    minSkillLevel() {
+        console.log('Setting skill level to 0')
+        this.incrementSkillLevel(0 - this.props.skillLevel)
     }
 
     decreaseSkillLevel() {
         if (this.props.skillLevel > 0) {
             console.log('Decreasing Skill Level')
-            this.props.updateMethod('skillsChosen',
-            {_id: this.props.skillData._id, level: this.props.skillLevel - 1})
+            this.incrementSkillLevel(-1);
         }
     }
 
@@ -38,9 +57,11 @@ class SkillTreeNode extends Component {
 
         return(<div id={this.props.skillData._id}
                 onClick={() => {}}>
-                    {header} {levelInfo} &nbsp;&nbsp;&nbsp;
-                    <span onClick={() => this.increaseSkillLevel()}>(Lv. &uarr;)</span> 
-                    <span onClick={() => this.decreaseSkillLevel()}>(Lv. &darr;)</span></div>)
+                    {header} {levelInfo} <br/>
+                    <span onClick={() => this.increaseSkillLevel()}>(Lv. &uarr;)</span> &nbsp;
+                    <span onClick={() => this.maxSkillLevel()}>(Lv. &uArr;)</span> &nbsp;
+                    <span onClick={() => this.decreaseSkillLevel()}>(Lv. &darr;)</span> &nbsp;
+                    <span onClick={() => this.minSkillLevel()}>(Lv. &dArr;)</span></div>)
     }
 }
 
