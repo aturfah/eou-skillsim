@@ -103,6 +103,28 @@ function verifySkillDependenciesAdd(chosenSkills) {
     }
 }
 
+function fixMasterySkills(chosenSkills) {
+    // Check if Mastery unlocks other skills
+    firstDegSkills().forEach(function (key) {
+        if (Object.keys(chosenSkills).includes(key)) {
+            return
+        }
+
+        const preReq = prereqData[key];
+        let validSkill = true;
+        preReq.forEach(function (prSkill) {
+            if (!Object.keys(chosenSkills).includes(prSkill._id)) {
+                validSkill = false;
+            } else if (chosenSkills[prSkill._id] < prSkill.level) {
+                validSkill = false;
+            }
+        })
+        if (validSkill) {
+            chosenSkills[key] = 1;
+        }
+    })
+}
+
 export function fixSkillDependencyAdd(chosenSkills) {
     // Check if Prerequisites needed
     let temp = verifySkillDependenciesAdd(chosenSkills);
@@ -110,9 +132,7 @@ export function fixSkillDependencyAdd(chosenSkills) {
         chosenSkills = temp;
         temp = verifySkillDependenciesAdd(temp);
     }
-
-    // Check if Mastery unlocks other skills
-    // TODO: FIX THIS ONCE LEVELS ARE TAKEN INTO ACCOUNT
+    fixMasterySkills(chosenSkills)
 
     return chosenSkills
 }
@@ -151,5 +171,6 @@ export function fixSkillDependencyDelete(chosenSkills) {
         temp = verifySkillDependenciesDel(chosenSkills);
     }
 
+    fixMasterySkills(chosenSkills)
     return chosenSkills
 }
