@@ -1,7 +1,7 @@
 {
   "name": "eou1-skillsim",
   "homepage": "https://aturfah.github.io/eou-skillsim/",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
