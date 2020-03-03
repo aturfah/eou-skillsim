@@ -28,6 +28,8 @@ class Header extends Component {
         this.firstDegSkills = firstDegSkills();
         this.calculateSpRemaining = this.calculateSpRemaining.bind(this)
         this._setLevel = this._setLevel.bind(this)
+        this._clearSkills = this._clearSkills.bind(this)
+        this._resetAll = this._resetAll.bind(this)
     }
 
     calculateSpRemaining(sp) {
@@ -53,6 +55,15 @@ class Header extends Component {
         this.props.updateMethod('level', newLevel)
     }
 
+    _clearSkills() {
+        this.props.updateMethod('skillsChosen', undefined)
+    }
+
+    _resetAll() {
+        this.props.updateMethod()
+    }
+
+
     render() {
         const class_opts = getClasses();
         const class_chosen = class_opts[this.props.activeClassIdx];
@@ -70,6 +81,8 @@ class Header extends Component {
                 <li>RetirementIdx: {this.props.retirementIdx} </li>
                 <li>skillPointsTotal: {skillPointsTotal}</li>
                 <li>skillPointsRemaining: {skillPointsRemaining}</li>
+                <li onClick={() => this._clearSkills()}>CLEAR SKILLS!</li>
+                <li onClick={() => this._resetAll()}>RESET</li>
             </ul>
         </div>
     }
