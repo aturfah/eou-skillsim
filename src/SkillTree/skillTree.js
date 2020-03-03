@@ -32,11 +32,13 @@ class SkillTree extends Component {
         const output = [];
         branches.forEach(function (skillBranch) {
             if (skillBranch.skill_data.length !== 0) {
-                output.push(<h2>{skillBranch.name} Branch</h2>)
+                output.push(<h2 key={skillBranch.name + 'branch'}>
+                    {skillBranch.name} Branch</h2>)
             }
 
             skillBranch.skill_data.forEach(function (skillDatum) {
                 output.push(<SkillTreeNode
+                    key={skillDatum._id}
                     skillData={skillDatum}
                     activeFlag={Object.keys(objProps.skillsChosen).includes(skillDatum._id)}
                     onClickFunc={() => addSkillFunc(skillDatum._id)}
