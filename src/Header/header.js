@@ -4,12 +4,7 @@ import './header.css';
 import skillData from '../data/skill_data';
 
 // Helper Functions
-import {firstDegSkills, listIntersect} from '../helpers'
-
-function calculate_sp(level, retirementIdx) {
-    // TODO: Account for Retirement
-    return level + 2
-  }
+import {firstDegSkills, listIntersect, calculateTotalSP} from '../helpers'
 
 function getClasses() {
     const classes = [];
@@ -89,7 +84,7 @@ class Header extends Component {
     render() {
         const class_chosen = this.classOpts[this.props.activeClassIdx];
         const classDropdown = this.buildClassDropdown(this.classOpts);
-        const skillPointsTotal = calculate_sp(this.props.level, this.props.retirementIdx);
+        const skillPointsTotal = calculateTotalSP(this.props.level, this.props.retirementIdx);
         const skillPointsRemaining = this.calculateSpRemaining(skillPointsTotal)
         if (skillPointsRemaining < 0) { // todo: Move this check to App level
             this._setLevel(this.props.level - skillPointsRemaining);
