@@ -20,16 +20,29 @@ function getClasses() {
     return(classes);
 }
 
-
 class Header extends Component {
     constructor(props) {
         super(props);
         this.level = props.level;
         this.firstDegSkills = firstDegSkills();
         this.calculateSpRemaining = this.calculateSpRemaining.bind(this)
-        this._setLevel = this._setLevel.bind(this)
-        this._clearSkills = this._clearSkills.bind(this)
-        this._resetAll = this._resetAll.bind(this)
+        this.classOpts = getClasses();
+        this._setLevel = this._setLevel.bind(this);
+        this._clearSkills = this._clearSkills.bind(this);
+        this._resetAll = this._resetAll.bind(this);
+        this.buildClassDropdown = this.buildClassDropdown.bind(this);
+    }
+
+    buildClassDropdown() {
+        const classOptions = []
+        const activeIdx = this.props.activeClassIdx;
+        this.classOpts.forEach(function(className, idx) {
+            const selected = (idx === activeIdx);
+            classOptions.push(<option id={idx} value={idx} selected={selected}>{className}</option>)
+        })
+        return <div><select ref='classDropdownList' id="classDropdown" onChange={() => {console.log('Hi')}}>
+            {classOptions}
+            </select></div>
     }
 
     calculateSpRemaining(sp) {
@@ -65,9 +78,8 @@ class Header extends Component {
 
 
     render() {
-        const class_opts = getClasses();
-        const class_chosen = class_opts[this.props.activeClassIdx];
-
+        const class_chosen = this.classOpts[this.props.activeClassIdx];
+        const classDropdown = this.buildClassDropdown(this.classOpts);
         const skillPointsTotal = calculate_sp(this.props.level, this.props.retirementIdx);
         const skillPointsRemaining = this.calculateSpRemaining(skillPointsTotal)
         if (skillPointsRemaining < 0) {
@@ -84,6 +96,7 @@ class Header extends Component {
                 <li onClick={() => this._clearSkills()}>CLEAR SKILLS!</li>
                 <li onClick={() => this._resetAll()}>RESET</li>
             </ul>
+            {classDropdown}
         </div>
     }
 }
