@@ -21,17 +21,21 @@ class Header extends Component {
         this.level = props.level;
         this.firstDegSkills = firstDegSkills();
         this.classOpts = getClasses();
+
+        // Element Builder Functions
+        this.buildClassDropdown = this.buildClassDropdown.bind(this);
+        this.buildLevelBox = this.buildLevelBox.bind(this);
+
+        // Updater Functions
         this._setLevel = this._setLevel.bind(this);
+        this._changeLevel = this._changeLevel.bind(this)
         this._clearSkills = this._clearSkills.bind(this);
         this._resetAll = this._resetAll.bind(this);
-        this.buildClassDropdown = this.buildClassDropdown.bind(this);
         this.updateClassIdx = this.updateClassIdx.bind(this);
     }
 
-    updateClassIdx() {
-        const newClassIdx = this.refs.classDropdownList.value;
-        console.log('Updating to class', newClassIdx, this.classOpts[newClassIdx]);
-        this.props.updateMethod('activeClassIdx', newClassIdx);
+    buildLevelBox() {
+        return <div onClick={this._changeLevel}>Level: <span ref='level'>{this.props.level}</span></div>
     }
 
     buildClassDropdown() {
@@ -41,12 +45,18 @@ class Header extends Component {
         })
         return <div>
             <select
-                defaultValue={this.props.activeClassIdx}
+                value={this.props.activeClassIdx}
                 ref='classDropdownList'
                 id="classDropdown"
                 onChange={() => {this.updateClassIdx()}}>
             {classOptions}
             </select></div>
+    }
+
+    updateClassIdx() {
+        const newClassIdx = this.refs.classDropdownList.value;
+        console.log('Updating to class', newClassIdx, this.classOpts[newClassIdx]);
+        this.props.updateMethod('activeClassIdx', newClassIdx);
     }
 
     _changeLevel() {
@@ -69,20 +79,19 @@ class Header extends Component {
     }
 
     render() {
-        const class_chosen = this.classOpts[this.props.activeClassIdx];
         const classDropdown = this.buildClassDropdown(this.classOpts);
+        const skillPointsInfo = <div>Skill Points: {this.props.skillPointsRemaining}/{this.props.skillPointsTotal}</div>;
+        const levelBox = this.buildLevelBox()
 
         return <div className="HeaderBar">Header Goes Here (doot)
+            {classDropdown}
+            {levelBox}
+            {skillPointsInfo}
             <ul>
-                <li>activeClass: {class_chosen}:{this.activeClassIdx}</li>
-                <li onClick={this._changeLevel.bind(this)}>Level: <span ref='level'>{this.props.level}</span></li>
                 <li>RetirementIdx: {this.props.retirementIdx} </li>
-                <li>skillPointsTotal: {this.props.skillPointsTotal}</li>
-                <li>skillPointsRemaining: {this.props.skillPointsRemaining}</li>
                 <li onClick={() => this._clearSkills()}>CLEAR SKILLS!</li>
                 <li onClick={() => this._resetAll()}>RESET</li>
             </ul>
-            {classDropdown}
         </div>
     }
 }
