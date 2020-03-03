@@ -12,7 +12,7 @@ function defaultState() {
   return {
     level: 1,
     retirementIdx: 0,
-    skillsChosen: [],
+    skillsChosen: {},
     activeClassIdx: 0
   };
 }
@@ -24,22 +24,36 @@ class App extends Component {
   }
 
   updateState(key, value=undefined) {
+    // Reset Everything
+    if (key === undefined) {
+      console.log('Resetting State...')
+      this.setState(defaultState);
+      return
+    }
+    //Set a specific part of state
     let oldState = this.state;
     if (value === undefined) {
       value = defaultState()[key]
     }
     if (key === 'skillsChosen') {
-      if (value === undefined) {
+      const skillId = value._id;
+      const skillLevel = value.level;
+      if (Object.keys(value).length === 0) {
         console.log('Resetting Skills')
-        oldState.skillsChosen = [];
-      } else if (oldState.skillsChosen.includes(value)) {
-        console.log('Removing', value)
-        oldState.skillsChosen.splice( oldState.skillsChosen.indexOf(value), 1 );
+        oldState.skillsChosen = {};
+      } else if (skillLevel === 0) {
+        console.log('Removing', skillId)
+        delete oldState.skillsChosen[skillId];
         oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
-      } else {
-        console.log('Adding', value)
-        oldState.skillsChosen.push(value);
+      } else if (!Object.keys(oldState.skillsChosen).includes(skillId) ||
+          oldState.skillsChosen[skillId] < skillLevel) {
+        console.log('Increasing level of', skillId, 'to', skillLevel)
+        oldState.skillsChosen[skillId] = skillLevel;
         oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen);
+      } else if (oldState.skillsChosen[skillId] > skillLevel) {
+        console.log('Decreasing level of', skillId, 'to', skillLevel);
+        oldState.skillsChosen[skillId] = skillLevel;
+        oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
       }
     } else {
       console.log('Setting', key, 'to', value)

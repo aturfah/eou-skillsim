@@ -1,5 +1,6 @@
 
 import React, {Component} from 'react';
+import SkillTreeNode from './skillTreeNode'
 import './skillTree.css';
 
 // Data Import
@@ -25,6 +26,7 @@ class SkillTree extends Component {
     buildSkillTree(skillTreeData) {
         const objProps = this.props;
         const addSkillFunc = this._addSkill;
+        const updateMethod = this.props.updateMethod;
 
         const branches = skillTreeData.branches;
         const output = [];
@@ -34,25 +36,16 @@ class SkillTree extends Component {
             }
 
             skillBranch.skill_data.forEach(function (skillDatum) {
-                let node = [];
-                // todo: Fix this comparison
-                if (skillDatum.prerequisites.length === 0 || true === true) {
-                    node.push(<span id={skillDatum._id}
-                        onClick={() => addSkillFunc(skillDatum._id)}>{skillDatum.name}</span>);
-                } else {
-                    node.push(<span id={skillDatum._id}>{skillDatum.name}</span>);
-                }
-
-                if (objProps.skillsChosen.includes(skillDatum._id)) {
-                    node.push(' (Active)')
-                }
-
-                node.push(<br/>)
-                output.push(node)
+                output.push(<SkillTreeNode
+                    skillData={skillDatum}
+                    activeFlag={Object.keys(objProps.skillsChosen).includes(skillDatum._id)}
+                    onClickFunc={() => addSkillFunc(skillDatum._id)}
+                    skillLevel={objProps.skillsChosen[skillDatum._id] || 0}
+                    updateMethod={updateMethod}
+                ></SkillTreeNode>)
             });
         })
         return <div>
-            <p>Here is the Tree!!!</p>
             {output}
         </div>
     }

@@ -1,6 +1,28 @@
 import masterySkills from './data/mastery_skills';
 import prereqData from './data/prereq_data';
 
+function deepCopy (inObject) {
+    // Stolen From
+    // https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
+    let outObject, value, key
+  
+    if(typeof inObject !== "object" || inObject === null) {
+      return inObject // Return the value if inObject is not an object
+    }
+  
+    // Create an array or object to hold the values
+    outObject = Array.isArray(inObject) ? [] : {}
+  
+    for (key in inObject) {
+      value = inObject[key]
+  
+      // Recursively (deep) copy for nested objects, including arrays
+      outObject[key] = (typeof value === "object" && value !== null) ? deepCopy(value) : value
+    }
+    
+    return outObject
+  }
+
 export function listSubtract(listA, listB) {
     return listA.filter(x => !listB.includes(x))
 }
@@ -29,23 +51,78 @@ export function firstDegSkills() {
     return output
 }
 
-function verifySkillDependenciesAdd(chosenSkills) {
-    let newChosenSkills = new Set(chosenSkills);
-    chosenSkills.forEach(function (skillId) {
-        let preReq = prereqData[skillId];
-        if (preReq !== undefined) {
-            preReq.forEach(function (preReqSkill) {
-                newChosenSkills.add(preReqSkill._id)
-            })
+export function objCompare(objA, objB) {
+    if (Object.keys(objA).length !== Object.keys(objB).length) {
+        return false
+    }
+
+    let outputFlag = true
+    // Check B for A's keys
+    Object.keys(objA).forEach(function (key) {
+        if (!Object.keys(objB).includes(key)) {
+            outputFlag = false;
+        } else if (objB[key] !== objA[key]) {
+            outputFlag = false;
         }
     });
-    newChosenSkills = [...newChosenSkills]
 
-    if (listSubtract(newChosenSkills, chosenSkills).length !== 0) {
-        return newChosenSkills;
-    } else {
+    // Check A for B's keys
+    Object.keys(objB).forEach(function (key) {
+        if (!Object.keys(objA).includes(key)) {
+            outputFlag = false;
+        } else if (objB[key] !== objA[key]) {
+            outputFlag = false;
+        }
+    });
+
+    return outputFlag;
+}
+
+function verifySkillDependenciesAdd(chosenSkills) {
+    let newChosenSkills = deepCopy(chosenSkills);
+
+    Object.keys(newChosenSkills).forEach(function (skillId) {
+        let preReq = prereqData[skillId]
+        if (preReq !== undefined) {
+            preReq.forEach(function (preReqSkill) {
+                if (Object.keys(newChosenSkills).includes(preReqSkill._id)) {
+                    if (newChosenSkills[preReqSkill._id] < preReqSkill.level) {
+                        newChosenSkills[preReqSkill._id] = preReqSkill.level;
+                    }
+                } else {
+                    newChosenSkills[preReqSkill._id] = preReqSkill.level;
+                }
+            });
+        }
+    })
+
+    if (objCompare(newChosenSkills, chosenSkills)) {
         return -1
+    } else {
+        return newChosenSkills
     }
+}
+
+function fixMasterySkills(chosenSkills) {
+    // Check if Mastery unlocks other skills
+    firstDegSkills().forEach(function (key) {
+        if (Object.keys(chosenSkills).includes(key)) {
+            return
+        }
+
+        const preReq = prereqData[key];
+        let validSkill = true;
+        preReq.forEach(function (prSkill) {
+            if (!Object.keys(chosenSkills).includes(prSkill._id)) {
+                validSkill = false;
+            } else if (chosenSkills[prSkill._id] < prSkill.level) {
+                validSkill = false;
+            }
+        })
+        if (validSkill) {
+            chosenSkills[key] = 1;
+        }
+    })
 }
 
 export function fixSkillDependencyAdd(chosenSkills) {
@@ -55,49 +132,45 @@ export function fixSkillDependencyAdd(chosenSkills) {
         chosenSkills = temp;
         temp = verifySkillDependenciesAdd(temp);
     }
-
-    // Check if Mastery unlocks other skills
-    // TODO: FIX THIS ONCE LEVELS ARE TAKEN INTO ACCOUNT
+    fixMasterySkills(chosenSkills)
 
     return chosenSkills
 }
 
 function verifySkillDependenciesDel(chosenSkills) {
-    let validSkills = [];
-    chosenSkills.forEach(function (skillId) {
+    let validSkills = {};
+    Object.keys(chosenSkills).forEach(function (skillId) {
         let validSkill = true;
         let preReq = prereqData[skillId];
         if (preReq !== undefined) {
             preReq.forEach(function (prSkill) {
-                if (!chosenSkills.includes(prSkill._id)) {
+                if (!Object.keys(chosenSkills).includes(prSkill._id)) {
+                    validSkill = false;
+                } else if(chosenSkills[prSkill._id] < prSkill.level) {
                     validSkill = false;
                 }
-            });
+            })
         }
-        if (validSkill === true) {
-            validSkills.push(skillId)
-        }
-    })
 
-    if (validSkills.length === chosenSkills.length) {
-        console.log('HERE1')
+        if (validSkill === true) {
+            validSkills[skillId] = chosenSkills[skillId];
+        }
+    });
+
+    if (objCompare(validSkills, chosenSkills)) {
         return -1
     } else {
-        console.log('HERE2')
-        return validSkills
+        return validSkills;
     }
 }
 
 export function fixSkillDependencyDelete(chosenSkills) {
     let temp = verifySkillDependenciesDel(chosenSkills);
     while (temp !== -1) {
-        console.log(chosenSkills)
-        console.log(temp)
         chosenSkills = temp;
         temp = verifySkillDependenciesDel(chosenSkills);
     }
 
-    
-
+    fixMasterySkills(chosenSkills)
     return chosenSkills
 }
