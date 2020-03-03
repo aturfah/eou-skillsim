@@ -6,7 +6,11 @@ import Header from './Header/header'
 import SkillTree from './SkillTree/skillTree'
 
 // Function Import
-import {fixSkillDependencyAdd, fixSkillDependencyDelete} from './helpers'
+import {fixSkillDependencyAdd,
+  fixSkillDependencyDelete,
+  firstDegSkills,
+  calculateTotalSP,
+  listIntersect} from './helpers'
 
 function defaultState() {
   return {
@@ -21,7 +25,22 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = defaultState()
+    this.firstDegSkills = firstDegSkills();
+    this.calculateSpRemaining = this.calculateSpRemaining.bind(this)
   }
+
+  calculateSpRemaining() {
+    const sp = calculateTotalSP(this.state.level)
+    const activeFDegSkills = listIntersect(Object.keys(this.state.skillsChosen), this.firstDegSkills);
+    const skillsChosen = this.state.skillsChosen;
+
+    let totalSpSpent = 0;
+    Object.keys(skillsChosen).forEach(function (key) {
+        totalSpSpent += skillsChosen[key];
+    });
+
+    return sp - totalSpSpent + activeFDegSkills.length
+}
 
   updateState(key, value=undefined) {
     // Reset Everything
@@ -67,6 +86,12 @@ class App extends Component {
       oldState[key] = value;
     }
 
+    const spRemaining = this.calculateSpRemaining()
+    if (spRemaining < 0) {
+      console.log('Increasing level by', -1*spRemaining, 'to meet SP needs');
+      oldState['level'] -= spRemaining;
+    }
+
     this.setState(oldState);
   }
 
@@ -78,6 +103,8 @@ class App extends Component {
           level={this.state.level}
           retirementIdx={this.state.retirementIdx}
           skillsChosen={this.state.skillsChosen}
+          skillPointsTotal={calculateTotalSP(this.state.level)}
+          skillPointsRemaining={this.calculateSpRemaining()}
           activeClassIdx={this.state.activeClassIdx}
         ></Header>
         <SkillTree

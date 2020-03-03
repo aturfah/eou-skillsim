@@ -23,6 +23,11 @@ function deepCopy (inObject) {
     return outObject
   }
 
+export function calculateTotalSP(level, retirementIdx) {
+    // TODO: Account for Retirement
+    return level + 2
+  }
+
 export function listSubtract(listA, listB) {
     return listA.filter(x => !listB.includes(x))
 }
