@@ -42,13 +42,12 @@ class Header extends Component {
 
     buildClassDropdown() {
         const classOptions = []
-        const activeIdx = this.props.activeClassIdx;
         this.classOpts.forEach(function(className, idx) {
-            const selected = (idx === activeIdx);
-            classOptions.push(<option id={idx} value={idx} selected={selected}>{className}</option>)
+            classOptions.push(<option key={idx + className} value={idx} >{className}</option>)
         })
         return <div>
             <select
+                defaultValue={this.props.activeClassIdx}
                 ref='classDropdownList'
                 id="classDropdown"
                 onChange={() => {this.updateClassIdx()}}>
