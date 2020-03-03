@@ -37,11 +37,16 @@ class App extends Component {
       } else if (skillLevel === 0) {
         console.log('Removing', skillId)
         delete oldState.skillsChosen[skillId];
-        // oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
-      } else {
+        oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
+      } else if (!Object.keys(oldState.skillsChosen).includes(skillId) ||
+          oldState.skillsChosen[skillId] < skillLevel) {
         console.log('Increasing level of', skillId, 'to', skillLevel)
         oldState.skillsChosen[skillId] = skillLevel;
         oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen);
+      } else if (oldState.skillsChosen[skillId] > skillLevel) {
+        console.log('Decreasing level of', skillId, 'to', skillLevel);
+        oldState.skillsChosen[skillId] = skillLevel;
+        oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
       }
     } else {
       console.log('Setting', key, 'to', value)
