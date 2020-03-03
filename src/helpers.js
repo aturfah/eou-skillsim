@@ -24,12 +24,10 @@ function deepCopy (inObject) {
   }
 
 export function listSubtract(listA, listB) {
-    return false
     return listA.filter(x => !listB.includes(x))
 }
 
 export function listIntersect(listA, listB) {
-    return false
     return listA.filter(x => listB.includes(x))
 }
 

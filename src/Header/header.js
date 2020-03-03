@@ -31,8 +31,15 @@ class Header extends Component {
     }
 
     calculateSpRemaining(sp) {
-        let activeFDegSkills = listIntersect(this.props.skillsChosen, this.firstDegSkills);
-        return sp - this.props.skillsChosen.length + activeFDegSkills.length
+        const activeFDegSkills = listIntersect(Object.keys(this.props.skillsChosen), this.firstDegSkills);
+        const skillsChosen = this.props.skillsChosen;
+
+        let totalSpSpent = 0;
+        Object.keys(skillsChosen).forEach(function (key) {
+            totalSpSpent += skillsChosen[key];
+        });
+
+        return sp - totalSpSpent + activeFDegSkills.length
     }
 
     _changeLevel() {
