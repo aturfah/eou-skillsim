@@ -23,6 +23,11 @@ function deepCopy (inObject) {
     return outObject
   }
 
+export function isNumber(input) {
+    const re = /^[0-9\b]*$/;
+    return re.test(input) || !input;
+}
+
 export function calculateTotalSP(level, retirementIdx) {
     // TODO: Account for Retirement
     return level + 2
