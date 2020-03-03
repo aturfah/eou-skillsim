@@ -31,6 +31,13 @@ class Header extends Component {
         this._clearSkills = this._clearSkills.bind(this);
         this._resetAll = this._resetAll.bind(this);
         this.buildClassDropdown = this.buildClassDropdown.bind(this);
+        this.updateClassIdx = this.updateClassIdx.bind(this);
+    }
+
+    updateClassIdx() {
+        const newClassIdx = this.refs.classDropdownList.value;
+        console.log('Updating to class', newClassIdx, this.classOpts[newClassIdx]);
+        this.props.updateMethod('activeClassIdx', newClassIdx);
     }
 
     buildClassDropdown() {
@@ -40,7 +47,11 @@ class Header extends Component {
             const selected = (idx === activeIdx);
             classOptions.push(<option id={idx} value={idx} selected={selected}>{className}</option>)
         })
-        return <div><select ref='classDropdownList' id="classDropdown" onChange={() => {console.log('Hi')}}>
+        return <div>
+            <select
+                ref='classDropdownList'
+                id="classDropdown"
+                onChange={() => {this.updateClassIdx()}}>
             {classOptions}
             </select></div>
     }
