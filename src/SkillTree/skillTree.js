@@ -40,7 +40,7 @@ class SkillTree extends Component {
                     skillData={skillDatum}
                     activeFlag={Object.keys(objProps.skillsChosen).includes(skillDatum._id)}
                     onClickFunc={() => addSkillFunc(skillDatum._id)}
-                    skillLevel={0}
+                    skillLevel={objProps.skillsChosen[skillDatum._id] || 0}
                     updateMethod={updateMethod}
                 ></SkillTreeNode>)
             });

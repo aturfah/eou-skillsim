@@ -29,16 +29,18 @@ class App extends Component {
       value = defaultState()[key]
     }
     if (key === 'skillsChosen') {
+      const skillId = value._id;
+      const skillLevel = value.level;
       if (value === undefined) {
         console.log('Resetting Skills')
         oldState.skillsChosen = {};
-      } else if (Object.keys(oldState.skillsChosen).includes(value)) {
-        console.log('Removing', value)
+      } else if (skillLevel === 0) {
+        console.log('Removing', skillId)
         delete oldState.skillChosen[value];
         // oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
       } else {
-        console.log('Adding', value)
-        oldState.skillsChosen[value] = -1;
+        console.log('Increasing level of', skillId, 'to', skillLevel)
+        oldState.skillsChosen[skillId] = skillLevel;
         // oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen);
       }
     } else {
