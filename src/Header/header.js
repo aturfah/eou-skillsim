@@ -20,7 +20,6 @@ class Header extends Component {
         super(props);
         this.level = props.level;
         this.firstDegSkills = firstDegSkills();
-        this.calculateSpRemaining = this.calculateSpRemaining.bind(this)
         this.classOpts = getClasses();
         this._setLevel = this._setLevel.bind(this);
         this._clearSkills = this._clearSkills.bind(this);
@@ -50,18 +49,6 @@ class Header extends Component {
             </select></div>
     }
 
-    calculateSpRemaining(sp) {
-        const activeFDegSkills = listIntersect(Object.keys(this.props.skillsChosen), this.firstDegSkills);
-        const skillsChosen = this.props.skillsChosen;
-
-        let totalSpSpent = 0;
-        Object.keys(skillsChosen).forEach(function (key) {
-            totalSpSpent += skillsChosen[key];
-        });
-
-        return sp - totalSpSpent + activeFDegSkills.length
-    }
-
     _changeLevel() {
         const levelSpan = this.refs.level
         const newLevel = parseInt(levelSpan.textContent) + 1;
@@ -84,19 +71,19 @@ class Header extends Component {
     render() {
         const class_chosen = this.classOpts[this.props.activeClassIdx];
         const classDropdown = this.buildClassDropdown(this.classOpts);
-        const skillPointsTotal = calculateTotalSP(this.props.level, this.props.retirementIdx);
-        const skillPointsRemaining = this.calculateSpRemaining(skillPointsTotal)
-        if (skillPointsRemaining < 0) { // todo: Move this check to App level
-            this._setLevel(this.props.level - skillPointsRemaining);
-        }
+        //const skillPointsTotal = calculateTotalSP(this.props.level, this.props.retirementIdx);
+        //const skillPointsRemaining = this.calculateSpRemaining(skillPointsTotal)
+        // if (skillPointsRemaining < 0) { // todo: Move this check to App level
+        //     this._setLevel(this.props.level - skillPointsRemaining);
+        // }
 
         return <div className="HeaderBar">Header Goes Here (doot)
             <ul>
                 <li>activeClass: {class_chosen}:{this.activeClassIdx}</li>
                 <li onClick={this._changeLevel.bind(this)}>Level: <span ref='level'>{this.props.level}</span></li>
                 <li>RetirementIdx: {this.props.retirementIdx} </li>
-                <li>skillPointsTotal: {skillPointsTotal}</li>
-                <li>skillPointsRemaining: {skillPointsRemaining}</li>
+                <li>skillPointsTotal: {this.props.skillPointsTotal}</li>
+                <li>skillPointsRemaining: {this.props.skillPointsRemaining}</li>
                 <li onClick={() => this._clearSkills()}>CLEAR SKILLS!</li>
                 <li onClick={() => this._resetAll()}>RESET</li>
             </ul>
