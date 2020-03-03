@@ -26,6 +26,7 @@ class SkillTree extends Component {
     buildSkillTree(skillTreeData) {
         const objProps = this.props;
         const addSkillFunc = this._addSkill;
+        const updateMethod = this.props.updateMethod;
 
         const branches = skillTreeData.branches;
         const output = [];
@@ -37,14 +38,14 @@ class SkillTree extends Component {
             skillBranch.skill_data.forEach(function (skillDatum) {
                 output.push(<SkillTreeNode
                     skillData={skillDatum}
-                    activeFlag={objProps.skillsChosen.includes(skillDatum._id)}
+                    activeFlag={Object.keys(objProps.skillsChosen).includes(skillDatum._id)}
                     onClickFunc={() => addSkillFunc(skillDatum._id)}
                     skillLevel={0}
+                    updateMethod={updateMethod}
                 ></SkillTreeNode>)
             });
         })
         return <div>
-            <p>Here is the Tree!!!</p>
             {output}
         </div>
     }
