@@ -35,6 +35,13 @@ class App extends Component {
     if (value === undefined) {
       value = defaultState()[key]
     }
+    // Changing class resets everything
+    if (key === 'activeClassIdx') { 
+      console.log('Class change -> resetting state...')
+      oldState = defaultState();
+    }
+
+    // Change parameters
     if (key === 'skillsChosen') {
       const skillId = value._id;
       const skillLevel = value.level;
