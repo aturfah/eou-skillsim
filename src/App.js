@@ -36,7 +36,7 @@ class App extends Component {
         oldState.skillsChosen = {};
       } else if (skillLevel === 0) {
         console.log('Removing', skillId)
-        delete oldState.skillChosen[value];
+        delete oldState.skillsChosen[skillId];
         // oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
       } else {
         console.log('Increasing level of', skillId, 'to', skillLevel)
