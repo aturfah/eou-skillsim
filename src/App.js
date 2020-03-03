@@ -41,7 +41,7 @@ class App extends Component {
       } else {
         console.log('Increasing level of', skillId, 'to', skillLevel)
         oldState.skillsChosen[skillId] = skillLevel;
-        // oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen);
+        oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen);
       }
     } else {
       console.log('Setting', key, 'to', value)
