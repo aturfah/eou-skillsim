@@ -24,6 +24,13 @@ class App extends Component {
   }
 
   updateState(key, value=undefined) {
+    // Reset Everything
+    if (key === undefined) {
+      console.log('Resetting State...')
+      this.setState(defaultState);
+      return
+    }
+    //Set a specific part of state
     let oldState = this.state;
     if (value === undefined) {
       value = defaultState()[key]
@@ -31,7 +38,7 @@ class App extends Component {
     if (key === 'skillsChosen') {
       const skillId = value._id;
       const skillLevel = value.level;
-      if (value === undefined) {
+      if (Object.keys(value).length === 0) {
         console.log('Resetting Skills')
         oldState.skillsChosen = {};
       } else if (skillLevel === 0) {
