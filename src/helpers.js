@@ -81,7 +81,6 @@ export function objCompare(objA, objB) {
 }
 
 function verifySkillDependenciesAdd(chosenSkills) {
-    console.log('HI!!!')
     let newChosenSkills = deepCopy(chosenSkills);
 
     Object.keys(newChosenSkills).forEach(function (skillId) {
@@ -121,41 +120,38 @@ export function fixSkillDependencyAdd(chosenSkills) {
 }
 
 function verifySkillDependenciesDel(chosenSkills) {
-    let validSkills = [];
-    chosenSkills.forEach(function (skillId) {
+    let validSkills = {};
+    Object.keys(chosenSkills).forEach(function (skillId) {
         let validSkill = true;
         let preReq = prereqData[skillId];
         if (preReq !== undefined) {
             preReq.forEach(function (prSkill) {
-                if (!chosenSkills.includes(prSkill._id)) {
+                if (!Object.keys(chosenSkills).includes(prSkill._id)) {
+                    validSkill = false;
+                } else if(chosenSkills[prSkill._id] < prSkill.level) {
                     validSkill = false;
                 }
-            });
+            })
         }
-        if (validSkill === true) {
-            validSkills.push(skillId)
-        }
-    })
 
-    if (validSkills.length === chosenSkills.length) {
-        console.log('HERE1')
+        if (validSkill === true) {
+            validSkills[skillId] = chosenSkills[skillId];
+        }
+    });
+
+    if (objCompare(validSkills, chosenSkills)) {
         return -1
     } else {
-        console.log('HERE2')
-        return validSkills
+        return validSkills;
     }
 }
 
 export function fixSkillDependencyDelete(chosenSkills) {
     let temp = verifySkillDependenciesDel(chosenSkills);
     while (temp !== -1) {
-        console.log(chosenSkills)
-        console.log(temp)
         chosenSkills = temp;
         temp = verifySkillDependenciesDel(chosenSkills);
     }
-
-    
 
     return chosenSkills
 }
