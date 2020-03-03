@@ -4,7 +4,7 @@ import './header.css';
 import skillData from '../data/skill_data';
 
 // Helper Functions
-import {firstDegSkills, listIntersect, calculateTotalSP} from '../helpers'
+import {firstDegSkills} from '../helpers'
 
 function getClasses() {
     const classes = [];
@@ -71,11 +71,6 @@ class Header extends Component {
     render() {
         const class_chosen = this.classOpts[this.props.activeClassIdx];
         const classDropdown = this.buildClassDropdown(this.classOpts);
-        //const skillPointsTotal = calculateTotalSP(this.props.level, this.props.retirementIdx);
-        //const skillPointsRemaining = this.calculateSpRemaining(skillPointsTotal)
-        // if (skillPointsRemaining < 0) { // todo: Move this check to App level
-        //     this._setLevel(this.props.level - skillPointsRemaining);
-        // }
 
         return <div className="HeaderBar">Header Goes Here (doot)
             <ul>

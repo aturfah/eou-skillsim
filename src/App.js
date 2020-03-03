@@ -86,6 +86,12 @@ class App extends Component {
       oldState[key] = value;
     }
 
+    const spRemaining = this.calculateSpRemaining()
+    if (spRemaining < 0) {
+      console.log('Increasing level by', -1*spRemaining, 'to meet SP needs');
+      oldState['level'] -= spRemaining;
+    }
+
     this.setState(oldState);
   }
 
