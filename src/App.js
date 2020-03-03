@@ -12,7 +12,7 @@ function defaultState() {
   return {
     level: 1,
     retirementIdx: 0,
-    skillsChosen: [],
+    skillsChosen: {},
     activeClassIdx: 0
   };
 }
@@ -31,15 +31,15 @@ class App extends Component {
     if (key === 'skillsChosen') {
       if (value === undefined) {
         console.log('Resetting Skills')
-        oldState.skillsChosen = [];
-      } else if (oldState.skillsChosen.includes(value)) {
+        oldState.skillsChosen = {};
+      } else if (Object.keys(oldState.skillsChosen).includes(value)) {
         console.log('Removing', value)
-        oldState.skillsChosen.splice( oldState.skillsChosen.indexOf(value), 1 );
-        oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
+        delete oldState.skillChosen[value];
+        // oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
       } else {
         console.log('Adding', value)
-        oldState.skillsChosen.push(value);
-        oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen);
+        oldState.skillsChosen[value] = -1;
+        // oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen);
       }
     } else {
       console.log('Setting', key, 'to', value)
