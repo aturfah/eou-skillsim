@@ -87,13 +87,12 @@ class Header extends Component {
         this.props.updateMethod()
     }
 
-
     render() {
         const class_chosen = this.classOpts[this.props.activeClassIdx];
         const classDropdown = this.buildClassDropdown(this.classOpts);
         const skillPointsTotal = calculate_sp(this.props.level, this.props.retirementIdx);
         const skillPointsRemaining = this.calculateSpRemaining(skillPointsTotal)
-        if (skillPointsRemaining < 0) {
+        if (skillPointsRemaining < 0) { // todo: Move this check to App level
             this._setLevel(this.props.level - skillPointsRemaining);
         }
 
