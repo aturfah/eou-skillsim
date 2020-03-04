@@ -98,7 +98,7 @@ class Header extends Component {
             classOptions.push(<option key={idx + className} value={idx} >{className}</option>)
         })
         return <div>
-            <select
+            Class: <select
                 value={this.props.activeClassIdx}
                 ref='classDropdownList'
                 id="classDropdown"
