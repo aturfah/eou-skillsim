@@ -26,6 +26,7 @@ class Header extends Component {
         this.buildLevelBox = this.buildLevelBox.bind(this);
         this.updateLevel = this.updateLevel.bind(this);
         this.buildRetirementBox = this.buildRetirementBox.bind(this);
+        this.updateRetirementIdx = this.updateRetirementIdx.bind(this);
 
         // Updater Functions
         this._setLevel = this._setLevel.bind(this);
@@ -37,7 +38,7 @@ class Header extends Component {
 
 
     updateRetirementIdx() {
-        console.log('HI')
+        this.props.updateMethod('retirementIdx', this.refs.retirementDropdownList.value)
     }
 
     buildRetirementBox() {
