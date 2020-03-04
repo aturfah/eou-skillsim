@@ -50,7 +50,7 @@ class SkillTree extends Component {
     drawSkillTree(skillTreeNodes) {
         const BOX_WIDTH = 170;
         const BOX_HEIGHT = 60;
-        const LINE_LENGTH = 80;
+        const LINE_LENGTH = 60;
         const BOX_PADDING = LINE_LENGTH / 2;
         const LINE_THICKNESS = 4;
         const BOX_BORDER_WIDTH = LINE_THICKNESS;
