@@ -76,9 +76,9 @@ class SkillTree extends Component {
             // Add the element
             const boxStyle = {top: yCoord + 'px',
                               left: xCoord + 'px',
-                              'border-color': '#000000',
-                              'border-width': BOX_BORDER_WIDTH + 'px',
-                              'border-style': 'solid',
+                              borderColor: '#000000',
+                              borderWidth: BOX_BORDER_WIDTH + 'px',
+                              borderStyle: 'solid',
                               width: BOX_WIDTH + 'px',
                               height: BOX_HEIGHT + 'px'
                             }
@@ -95,10 +95,10 @@ class SkillTree extends Component {
                 const barStyle = {top: barYCoord + 'px',
                                   left: barXCoord + 'px',
                                   height: barLength + 'px',
-                                  'border-left-color': '#5B6DCD',
-                                  'border-left-width': LINE_THICKNESS + 'px',
-                                  'border-left-style': 'solid'}
-                output.push(<div className='verticalBar' key='doot'
+                                  borderLeftColor: '#5B6DCD',
+                                  borderLeftWidth: LINE_THICKNESS + 'px',
+                                  borderLeftStyle: 'solid'}
+                output.push(<div className='verticalBar'
                             style={barStyle}></div>)
             } else {
                 // draw horizontal lines before
@@ -108,13 +108,20 @@ class SkillTree extends Component {
                     const leftBarStyle = {top: barLeftYCoord + 'px',
                                       left: barLeftXCoord - (LINE_LENGTH / 2) + 'px',
                                       width: (LINE_LENGTH)/ 2 + 'px',
-                                      'border-top-color': '#FF0000',
-                                      'border-top-width': LINE_THICKNESS + 'px',
-                                      'border-top-style': 'solid'}
+                                      borderTopColor: '#FF0000',
+                                      borderTopWidth: LINE_THICKNESS + 'px',
+                                      borderTopStyle: 'solid'}
                     if (datum.coords.x === 0) {
                         // this line is a bit shorter
                         leftBarStyle.width = BOX_WIDTH / 4
                         leftBarStyle.left = barLeftXCoord - leftBarStyle.width
+                    } else if (datum.skippedCols > 0) {
+                        var newOffset = datum.skippedCols * BOX_WIDTH;
+                        newOffset += 2 * BOX_BORDER_WIDTH;
+                        newOffset += datum.skippedCols * BOX_PADDING + 
+                             (datum.coords.x == 1 ? BOX_WIDTH / 4 : BOX_PADDING)
+                        leftBarStyle.width = parseInt(leftBarStyle.width.replace('px', '')) + newOffset;
+                        leftBarStyle.left = parseInt(leftBarStyle.left.replace('px', '')) - newOffset;
                     }
                     output.push(<div className='horizontalBar' style={leftBarStyle}></div>)
 
@@ -129,10 +136,10 @@ class SkillTree extends Component {
                         const preBarStyle = {top: preBarYCoord + 'px',
                             left: preBarXCoord + 'px',
                             height: preBarHeight + 'px',
-                            'border-left-color': '#5B6DCD',
-                            'border-left-width': LINE_THICKNESS + 'px',
-                            'border-left-style': 'solid'}
-                        output.push(<div className='verticalBar' key='doot'
+                            borderLeftColor: '#5B6DCD',
+                            borderLeftWidth: LINE_THICKNESS + 'px',
+                            borderLeftStyle: 'solid'}
+                        output.push(<div className='verticalBar'
                                 style={preBarStyle}></div>)
                     }
                 }
@@ -144,9 +151,9 @@ class SkillTree extends Component {
                     const rightBarStyle = {top: barRightYCoord + 'px',
                                     left: barRightXCoord + 'px',
                                     width: (LINE_LENGTH / 2) + 'px',
-                                    'border-top-color': '#5B6DCD',
-                                    'border-top-width': LINE_THICKNESS + 'px',
-                                    'border-top-style': 'solid'}
+                                    borderTopColor: '#5B6DCD',
+                                    borderTopWidth: LINE_THICKNESS + 'px',
+                                    borderTopStyle: 'solid'}
                     output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
                     // Draw Vertical Bar After if Necessary
                     if (datum.numAfter > 1) {
@@ -159,10 +166,10 @@ class SkillTree extends Component {
                         const postBarStyle = {top: postBarYCoord + 'px',
                             left: postBarXCoord + 'px',
                             height: postBarHeight + 'px',
-                            'border-left-color': '#5B6DCD',
-                            'border-left-width': LINE_THICKNESS + 'px',
-                            'border-left-style': 'solid'}
-                        output.push(<div className='verticalBar' key='doot'
+                            borderLeftColor: '#5B6DCD',
+                            borderLeftWidth: LINE_THICKNESS + 'px',
+                            borderLeftStyle: 'solid'}
+                        output.push(<div className='verticalBar'
                                 style={postBarStyle}></div>)
                     }
                 }
