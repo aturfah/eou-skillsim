@@ -25,7 +25,7 @@ class Header extends Component {
         // Element Builder Functions
         this.buildClassDropdown = this.buildClassDropdown.bind(this);
         this.buildLevelBox = this.buildLevelBox.bind(this);
-        this.levelBoxUpdate = this.levelBoxUpdate.bind(this);
+        this.updateLevel = this.updateLevel.bind(this);
 
         // Updater Functions
         this._setLevel = this._setLevel.bind(this);
@@ -35,7 +35,7 @@ class Header extends Component {
         this.updateClassIdx = this.updateClassIdx.bind(this);
     }
 
-    levelBoxUpdate() {
+    updateLevel() {
         const levelBox = this.refs.levelDropdownList;
         if (isNumber(levelBox.value)) {
             let newLevel = levelBox.value;
@@ -63,7 +63,7 @@ class Header extends Component {
             value={this.props.level}
             ref='levelDropdownList'
             id='levelDropdown'
-            onChange={() => {this.levelBoxUpdate()}}
+            onChange={() => {this.updateLevel()}}
         >
             {levelBoxOpts}
         </select>
