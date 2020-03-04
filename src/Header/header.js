@@ -38,7 +38,7 @@ class Header extends Component {
 
 
     updateRetirementIdx() {
-        this.props.updateMethod('retirementIdx', this.refs.retirementDropdownList.value)
+        this.props.updateMethod('retirementIdx', parseInt(this.refs.retirementDropdownList.value))
     }
 
     buildRetirementBox() {
