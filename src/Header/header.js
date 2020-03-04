@@ -59,7 +59,7 @@ class Header extends Component {
         }
 
         return <div>
-        <select
+        Level: <select
             value={this.props.level}
             ref='levelDropdownList'
             id='levelDropdown'
