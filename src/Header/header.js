@@ -4,7 +4,7 @@ import './header.css';
 import skillData from '../data/skill_data';
 
 // Helper Functions
-import {firstDegSkills} from '../helpers'
+import {firstDegSkills, isNumber} from '../helpers'
 
 function getClasses() {
     const classes = [];
@@ -25,6 +25,7 @@ class Header extends Component {
         // Element Builder Functions
         this.buildClassDropdown = this.buildClassDropdown.bind(this);
         this.buildLevelBox = this.buildLevelBox.bind(this);
+        this.levelBoxUpdate = this.levelBoxUpdate.bind(this);
 
         // Updater Functions
         this._setLevel = this._setLevel.bind(this);
@@ -34,8 +35,35 @@ class Header extends Component {
         this.updateClassIdx = this.updateClassIdx.bind(this);
     }
 
+    levelBoxUpdate() {
+        const levelBox = this.refs.levelInput;
+        if (isNumber(levelBox.value)) {
+            let newLevel = levelBox.value;
+            if (newLevel) {
+                newLevel = parseInt(newLevel);
+                if (newLevel > 99) {
+                    this._setLevel(99);
+                } else {
+                    this._setLevel(newLevel);
+                }
+            } else {
+                this._setLevel();
+            }
+        }
+    }
+
     buildLevelBox() {
-        return <div onClick={this._changeLevel}>Level: <span ref='level'>{this.props.level}</span></div>
+        // ref="minCostFilter"
+        // placeholder="Minimum Cost"
+        // value={this.minCostFilter}
+        // aria-label="Minimum Cost"
+        // onChange={this.minCostFilterType}
+        const doot = <div><input ref="levelInput"
+                        value={this.props.level}
+                        maxLength={3}
+                        onChange={this.levelBoxUpdate}></input></div>
+
+        return doot //<div onClick={this._changeLevel}>Level: <span ref='level'>{this.props.level}</span></div>
     }
 
     buildClassDropdown() {
