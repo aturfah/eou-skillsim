@@ -6,12 +6,20 @@
     font-size: 13px;
 }
 
+.verticalBar {
+    border-left: 4px solid #5B6DCD;
+    position: absolute;
+}
+
+.horizontalBar {
+    border-top: 4px solid #5B6DCD;
+    position: absolute;
+}
+
 .skillNode {
-    border-color: black;
-    border-width: 5px;
-    width: 200px;
-    height: 60px;
-    border: solid #5B6DCD 4px;
+    _width: 200px;
+    _height: 60px;
+    _border: solid black 4px;
     position: absolute;
 }
 

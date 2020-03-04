@@ -55,6 +55,7 @@ class SkillTree extends Component {
     drawSkillTree(skillTreeNodes) {
         const BOX_WIDTH = 170;
         const BOX_PADDING = 40;
+        const BOX_BORDER_WIDTH = 4;
         const BOX_HEIGHT = 60;
         const LINE_LENGTH = 40;
         const LINE_THICKNESS = 5;
@@ -77,9 +78,39 @@ class SkillTree extends Component {
                 (datum.coords.x > 0 ? datum.coords.x : 0) * LINE_LENGTH + xOffset;
             yCoord = (BOX_HEIGHT + BOX_PADDING) * datum.coords.y
 
+            // Add the element
+            const boxStyle = {top: yCoord + 'px',
+                              left: xCoord + 'px',
+                              'border-color': '#000000',
+                              'border-width': BOX_BORDER_WIDTH + 'px',
+                              'border-style': 'solid',
+                              width: BOX_WIDTH + 'px',
+                              height: BOX_HEIGHT + 'px'
+                            }
             output.push(<div key={datum.skillID}
                         className={className + ' skillNode'}
-                        style={{top: yCoord + 'px', left: xCoord + 'px'}}>{skillTreeNodes[datum.skillID]}</div>)
+                        style={boxStyle}>{skillTreeNodes[datum.skillID]}</div>)
+
+
+            // Add Vertical and Horizontal bars as necessary
+            if (datum.baseSkill) {
+                var barXCoord = xCoord + BOX_WIDTH / 4;
+                var barYCoord = yCoord + BOX_HEIGHT + 2 * BOX_BORDER_WIDTH;
+                var barLength = datum.barSize * (BOX_HEIGHT + BOX_PADDING) - BOX_HEIGHT / 2;
+                const barStyle = {top: barYCoord + 'px',
+                                  left: barXCoord + 'px',
+                                  height: barLength + 'px'}
+                output.push(<div className='verticalBar' key='doot'
+                            style={barStyle}></div>)
+            } else {
+                // draw lines before
+                if (datum.coords.x == 0) {
+                    // this line is a bit shorter
+                }
+
+                // draw lines after
+
+            }
         });
 
         return <div>{output}</div>

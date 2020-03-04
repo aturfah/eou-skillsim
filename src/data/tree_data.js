@@ -3,7 +3,8 @@ var treeData = [
         {
             skillID: 'formula_mastery',
             baseSkill: true,
-            coords: {x: 0, y: 0}
+            coords: {x: 0, y: 0},
+            barSize: 8
         },
         {
             skillID: 'fire_formula',
