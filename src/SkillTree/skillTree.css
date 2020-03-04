@@ -1,4 +1,23 @@
 .SkillTree {
     background-color: lightblue;
     padding-bottom: 15px;
+    position: relative;
+    padding-top: 30px;
+}
+
+.skillNode {
+    border-color: black;
+    border-width: 5px;
+    width: 200px;
+    height: 60px;
+    border: solid #5B6DCD 4px;
+    position: absolute;
+}
+
+.baseSkill {
+    margin-top: 0px;
+}
+
+.regularSkill {
+    padding-left: 0px;
 }

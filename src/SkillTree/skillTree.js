@@ -5,6 +5,7 @@ import './skillTree.css';
 
 // Data Import
 import skillData from '../data/skill_data';
+import treeData from '../data/tree_data'
 
 // Helper Functions
 import {firstDegSkills} from '../helpers';
@@ -52,11 +53,45 @@ class SkillTree extends Component {
         </div>
     }
 
+    drawSkillTree() {
+        const BOX_WIDTH = 200;
+        const BOX_PADDING = 40;
+        const BOX_HEIGHT = 60;
+        const LINE_LENGTH = 40;
+        const LINE_THICKNESS = 5;
+        const output = [];
+
+        const skillTreeStructure = treeData[this.props.activeClassIdx]
+
+        skillTreeStructure.forEach(function (datum) {
+            console.log(datum)
+            var className = 'baseSkill';
+            var xOffset = 0;
+            var xCoord = null;
+            var yCoord = null;
+
+            if (!datum.baseSkill) {
+                className = 'regularSkill';
+                xOffset = 20;
+            }
+            xCoord = (BOX_WIDTH + BOX_PADDING) * datum.coords.x + (datum.coords.x > 0 ? 1 : 0) * LINE_LENGTH + xOffset;
+            yCoord = (BOX_HEIGHT + BOX_PADDING) * datum.coords.y
+
+            output.push(<div key={datum.skillID}
+                        className={className + ' skillNode'}
+                        style={{top: yCoord + 'px', left: xCoord + 'px'}}>{datum.skillID}</div>)
+        });
+
+        return <div>{output}</div>
+    }
+
     render() {
         const skillTree = this.buildSkillTree(skillData[this.props.activeClassIdx])
+        const doot = this.drawSkillTree();
 
         return <div className="SkillTree">
             Skill Data Goes Here (pew)
+            {doot}
             {skillTree}
             </div>
     }
