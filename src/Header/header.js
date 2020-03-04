@@ -143,11 +143,10 @@ class Header extends Component {
             {levelBox}
             {retirementBox}
             {skillPointsInfo}
-            <ul>
-                <li>RetirementIdx: {this.props.retirementIdx} </li>
-                <li onClick={() => this._clearSkills()}>CLEAR SKILLS!</li>
-                <li onClick={() => this._resetAll()}>RESET</li>
-            </ul>
+            <div>
+                <span onClick={() => this._clearSkills()}>CLEAR SKILLS!</span> &nbsp;
+                <span onClick={() => this._resetAll()}>RESET</span>
+            </div>
         </div>
     }
 }
