@@ -1,7 +1,3 @@
-const BOX_WIDTH = 300;
-const BOX_HEIGHT = 60;
-const LINE_LENGTH = 40;
-const LINE_THICKNESS = 5;
 var treeData = [
     [
         {
@@ -10,19 +6,54 @@ var treeData = [
             coords: {x: 0, y: 0}
         },
         {
-            skillId: 'fire_formula',
+            skillID: 'fire_formula',
             baseSkill: false,
             coords: {x: 0, y: 1}
         },
         {
-            skillId: 'ice_formula',
+            skillID: 'ice_formula',
             baseSkill: false,
             coords: {x: 0, y: 2}
         },
         {
-            skillId: 'volt_formula',
+            skillID: 'volt_formula',
             baseSkill: false,
             coords: {x: 0, y: 3}
+        },
+        {
+            skillID: 'inferno_formula',
+            baseSkill: false,
+            coords: {x: 1, y: 1}
+        },
+        {
+            skillID: 'cocytus_formula',
+            baseSkill: false,
+            coords: {x: 1, y: 2}
+        },
+        {
+            skillID: 'thor_formula',
+            baseSkill: false,
+            coords: {x: 1, y: 3}
+        },
+        {
+            skillID: 'flame_formula',
+            baseSkill: false,
+            coords: {x: 0, y: 4}
+        },
+        {
+            skillID: 'freeze_formula',
+            baseSkill: false,
+            coords: {x: 0, y: 5}
+        },
+        {
+            skillID: 'spark_formula',
+            baseSkill: false,
+            coords: {x: 0, y: 6}
+        },
+        {
+            skillID: 'dilution',
+            baseSkill: false,
+            coords: {x: 1, y: 5}
         }
     ]
 ]
