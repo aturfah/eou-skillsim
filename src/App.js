@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   calculateSpRemaining() {
-    const sp = calculateTotalSP(this.state.level)
+    const sp = calculateTotalSP(this.state.level, this.state.retirementIdx)
     const activeFDegSkills = listIntersect(Object.keys(this.state.skillsChosen), this.firstDegSkills);
     const skillsChosen = this.state.skillsChosen;
 
@@ -103,7 +103,7 @@ class App extends Component {
           level={this.state.level}
           retirementIdx={this.state.retirementIdx}
           skillsChosen={this.state.skillsChosen}
-          skillPointsTotal={calculateTotalSP(this.state.level)}
+          skillPointsTotal={calculateTotalSP(this.state.level, this.state.retirementIdx)}
           skillPointsRemaining={this.calculateSpRemaining()}
           activeClassIdx={this.state.activeClassIdx}
         ></Header>
