@@ -75,6 +75,7 @@ var treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 3,
+            beforeStyle: 'centered'
         },
         {
             skillID: 'analysis',

@@ -33,11 +33,6 @@ class SkillTree extends Component {
         const branches = skillTreeData.branches;
         const output = {};
         branches.forEach(function (skillBranch) {
-            // if (skillBranch.skill_data.length !== 0) {
-            //     output.push(<h2 key={skillBranch.name + 'branch'}>
-            //         {skillBranch.name} Branch</h2>)
-            // }
-
             skillBranch.skill_data.forEach(function (skillDatum) {
                 output[skillDatum._id] = <SkillTreeNode
                     key={skillDatum._id}
@@ -54,11 +49,11 @@ class SkillTree extends Component {
 
     drawSkillTree(skillTreeNodes) {
         const BOX_WIDTH = 170;
-        const BOX_PADDING = 40;
-        const BOX_BORDER_WIDTH = 4;
         const BOX_HEIGHT = 60;
+        const BOX_PADDING = 40;
         const LINE_LENGTH = 80;
         const LINE_THICKNESS = 4;
+        const BOX_BORDER_WIDTH = LINE_THICKNESS;
         const output = [];
 
         const skillTreeStructure = treeData[this.props.activeClassIdx]
@@ -75,7 +70,7 @@ class SkillTree extends Component {
                 xOffset = BOX_WIDTH / 2;
             }
             xCoord = (BOX_WIDTH + BOX_PADDING) * datum.coords.x +
-                (datum.coords.x > 0 ? datum.coords.x : 0) * LINE_LENGTH + xOffset;
+                (datum.coords.x > 0 ? datum.coords.x : 0) * (BOX_PADDING + 2*BOX_BORDER_WIDTH) + xOffset;
             yCoord = (BOX_HEIGHT + BOX_PADDING) * datum.coords.y
 
             // Add the element
@@ -106,23 +101,43 @@ class SkillTree extends Component {
                 output.push(<div className='verticalBar' key='doot'
                             style={barStyle}></div>)
             } else {
-                // draw lines before
-                var barLeftXCoord = xCoord;
-                var barLeftYCoord = yCoord + BOX_HEIGHT / 2;
-                const leftBarStyle = {top: barLeftYCoord + 'px',
-                                  left: barLeftXCoord - (LINE_LENGTH / 2) + 'px',
-                                  width: (LINE_LENGTH / 2) + 'px',
-                                  'border-top-color': '#5B6DCD',
-                                  'border-top-width': LINE_THICKNESS + 'px',
-                                  'border-top-style': 'solid'}
-                if (datum.coords.x == 0) {
-                    // this line is a bit shorter
-                    leftBarStyle.width = BOX_WIDTH / 4
-                    leftBarStyle.left = barLeftXCoord - leftBarStyle.width
-                }
-                output.push(<div className='horizontalBar' style={leftBarStyle}></div>)
+                // draw horizontal lines before
+                if (datum.numBefore > 0) {
+                    var barLeftXCoord = xCoord;
+                    var barLeftYCoord = yCoord + BOX_HEIGHT / 2;
+                    const leftBarStyle = {top: barLeftYCoord + 'px',
+                                      left: barLeftXCoord - (LINE_LENGTH / 2) + 'px',
+                                      width: (LINE_LENGTH)/ 2 + 'px',
+                                      'border-top-color': '#FF0000',
+                                      'border-top-width': LINE_THICKNESS + 'px',
+                                      'border-top-style': 'solid'}
+                    if (datum.coords.x == 0) {
+                        // this line is a bit shorter
+                        leftBarStyle.width = BOX_WIDTH / 4
+                        leftBarStyle.left = barLeftXCoord - leftBarStyle.width
+                    }
+                    output.push(<div className='horizontalBar' style={leftBarStyle}></div>)
 
-                // draw lines after
+                    // Draw vertical line before if necessary
+                    if (datum.numBefore > 1) {
+                        var preBarXCoord = barLeftXCoord - (LINE_LENGTH / 2);
+                        var preBarYCoord = barLeftYCoord + (LINE_THICKNESS / 2);
+                        var preBarHeight = (datum.numBefore - 1) * (BOX_HEIGHT + BOX_PADDING) + LINE_THICKNESS;
+                        if (datum.beforeStyle === 'centered') {
+                            preBarYCoord = preBarYCoord - preBarHeight / 2
+                        }
+                        const preBarStyle = {top: preBarYCoord + 'px',
+                            left: preBarXCoord + 'px',
+                            height: preBarHeight + 'px',
+                            'border-left-color': '#5B6DCD',
+                            'border-left-width': LINE_THICKNESS + 'px',
+                            'border-left-style': 'solid'}
+                        output.push(<div className='verticalBar' key='doot'
+                                style={preBarStyle}></div>)
+                    }
+                }
+
+                // draw horizontal lines after
                 if (datum.numAfter > 0) {
                     var barRightXCoord = xCoord + BOX_WIDTH + 2 * BOX_BORDER_WIDTH;
                     var barRightYCoord = barLeftYCoord;
@@ -133,6 +148,23 @@ class SkillTree extends Component {
                                     'border-top-width': LINE_THICKNESS + 'px',
                                     'border-top-style': 'solid'}
                     output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
+                    // Draw Vertical Bar After if Necessary
+                    if (datum.numAfter > 1) {
+                        var postBarXCoord = barRightXCoord + (LINE_LENGTH / 2);
+                        var postBarYCoord = barRightYCoord;
+                        var postBarHeight = (datum.numAfter - 1) * (BOX_HEIGHT + BOX_PADDING) + LINE_THICKNESS;
+                        if (datum.afterStyle === 'centered') {
+                            postBarYCoord = postBarYCoord - preBarHeight / 2
+                        }
+                        const postBarStyle = {top: postBarYCoord + 'px',
+                            left: postBarXCoord + 'px',
+                            height: postBarHeight + 'px',
+                            'border-left-color': '#5B6DCD',
+                            'border-left-width': LINE_THICKNESS + 'px',
+                            'border-left-style': 'solid'}
+                        output.push(<div className='verticalBar' key='doot'
+                                style={postBarStyle}></div>)
+                    }
                 }
             }
         });
