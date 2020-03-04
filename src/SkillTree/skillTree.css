@@ -7,12 +7,10 @@
 }
 
 .verticalBar {
-    border-left: 4px solid #5B6DCD;
     position: absolute;
 }
 
 .horizontalBar {
-    border-top: 4px solid #5B6DCD;
     position: absolute;
 }
 
