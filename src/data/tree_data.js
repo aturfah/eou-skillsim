@@ -54,6 +54,31 @@ var treeData = [
             skillID: 'dilution',
             baseSkill: false,
             coords: {x: 1, y: 5}
+        },
+        {
+            skillID: 'analysis',
+            baseSkill: false,
+            coords: {x: 0, y: 7}
+        },
+        {
+            skillID: 'pain_formula',
+            baseSkill: false,
+            coords: {x: 0, y: 8}
+        },
+        {
+            skillID: 'firelight',
+            baseSkill: false,
+            coords: {x: 1, y: 8}
+        },
+        {
+            skillID: 'light_formula',
+            baseSkill: false,
+            coords: {x: 2, y: 8}
+        },
+        {
+            skillID: 'light_tincture',
+            baseSkill: false,
+            coords: {x: 2, y: 9}
         }
     ]
 ]
