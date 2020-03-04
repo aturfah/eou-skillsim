@@ -50,8 +50,8 @@ class SkillTree extends Component {
     drawSkillTree(skillTreeNodes) {
         const BOX_WIDTH = 170;
         const BOX_HEIGHT = 60;
-        const BOX_PADDING = 40;
         const LINE_LENGTH = 80;
+        const BOX_PADDING = LINE_LENGTH / 2;
         const LINE_THICKNESS = 4;
         const BOX_BORDER_WIDTH = LINE_THICKNESS;
         const output = [];
@@ -111,7 +111,7 @@ class SkillTree extends Component {
                                       'border-top-color': '#FF0000',
                                       'border-top-width': LINE_THICKNESS + 'px',
                                       'border-top-style': 'solid'}
-                    if (datum.coords.x == 0) {
+                    if (datum.coords.x === 0) {
                         // this line is a bit shorter
                         leftBarStyle.width = BOX_WIDTH / 4
                         leftBarStyle.left = barLeftXCoord - leftBarStyle.width
