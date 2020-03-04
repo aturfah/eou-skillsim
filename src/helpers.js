@@ -29,8 +29,8 @@ export function isNumber(input) {
 }
 
 export function calculateTotalSP(level, retirementIdx) {
-    // TODO: Account for Retirement
-    return level + 2
+    const retirementBonus = [0, 4, 5, 6, 7, 8, 10]
+    return level + 2 + retirementBonus[retirementIdx]
   }
 
 export function listSubtract(listA, listB) {
