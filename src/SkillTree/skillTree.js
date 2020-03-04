@@ -53,7 +53,7 @@ class SkillTree extends Component {
     }
 
     drawSkillTree(skillTreeNodes) {
-        const BOX_WIDTH = 200;
+        const BOX_WIDTH = 170;
         const BOX_PADDING = 40;
         const BOX_HEIGHT = 60;
         const LINE_LENGTH = 40;
@@ -73,7 +73,8 @@ class SkillTree extends Component {
                 className = 'regularSkill';
                 xOffset = BOX_WIDTH / 2;
             }
-            xCoord = (BOX_WIDTH + BOX_PADDING) * datum.coords.x + (datum.coords.x > 0 ? 1 : 0) * LINE_LENGTH + xOffset;
+            xCoord = (BOX_WIDTH + BOX_PADDING) * datum.coords.x +
+                (datum.coords.x > 0 ? datum.coords.x : 0) * LINE_LENGTH + xOffset;
             yCoord = (BOX_HEIGHT + BOX_PADDING) * datum.coords.y
 
             output.push(<div key={datum.skillID}
@@ -91,7 +92,6 @@ class SkillTree extends Component {
         return <div className="SkillTree">
             Skill Data Goes Here (pew)
             {doot}
-
             </div>
     }
 }
