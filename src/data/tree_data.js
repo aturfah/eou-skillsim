@@ -168,6 +168,58 @@ var treeData = [
             numAfter: 0,
             numBefore: 1,
         },
+    ],
+    [
+        {
+            skillID: 'whip_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 0},
+            barSize: 5
+        },
+        {
+            skillID: 'gag',
+            baseSkill: false,
+            coords: {x: 0, y: 1},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'shackles',
+            baseSkill: false,
+            coords: {x: 0, y: 2},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'cuffs',
+            baseSkill: false,
+            coords: {x: 0, y: 3},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'ecstasy',
+            baseSkill: false,
+            coords: {x: 1, y: 2},
+            numAfter: 0,
+            numBefore: 3,
+            beforeStyle: 'centered'
+        },
+        {
+            skillID: 'viper',
+            baseSkill: false,
+            coords: {x: 0, y: 4},
+            numAfter: 2,
+            numBefore: 1,
+        },
+        {
+            skillID: 'climax',
+            baseSkill: false,
+            coords: {x: 1, y: 5},
+            numAfter: 0,
+            numBefore: 1,
+            skippedCols: 1
+        },
     ]
 ]
 
