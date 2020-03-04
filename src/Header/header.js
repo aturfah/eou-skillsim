@@ -36,7 +36,7 @@ class Header extends Component {
     }
 
     levelBoxUpdate() {
-        const levelBox = this.refs.levelInput;
+        const levelBox = this.refs.levelDropdownList;
         if (isNumber(levelBox.value)) {
             let newLevel = levelBox.value;
             if (newLevel) {
@@ -53,17 +53,21 @@ class Header extends Component {
     }
 
     buildLevelBox() {
-        // ref="minCostFilter"
-        // placeholder="Minimum Cost"
-        // value={this.minCostFilter}
-        // aria-label="Minimum Cost"
-        // onChange={this.minCostFilterType}
-        const doot = <div><input ref="levelInput"
-                        value={this.props.level}
-                        maxLength={3}
-                        onChange={this.levelBoxUpdate}></input></div>
+        const levelBoxOpts = []
+        for (let i = 1; i < 100; i++) {
+            levelBoxOpts.push(<option key={i} value={i}>{i}</option>)
+        }
 
-        return doot //<div onClick={this._changeLevel}>Level: <span ref='level'>{this.props.level}</span></div>
+        return <div>
+        <select
+            value={this.props.level}
+            ref='levelDropdownList'
+            id='levelDropdown'
+            onChange={() => {this.levelBoxUpdate()}}
+        >
+            {levelBoxOpts}
+        </select>
+        </div>
     }
 
     buildClassDropdown() {
