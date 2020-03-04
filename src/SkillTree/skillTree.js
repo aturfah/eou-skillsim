@@ -15,7 +15,7 @@ class SkillTree extends Component {
     constructor(props) {
         super(props);
         this.firstSkills = firstDegSkills()
-        this.buildSkillTree = this.buildSkillTree.bind(this);
+        this.buildSkillTreeNodes = this.buildSkillTreeNodes.bind(this);
         this._addSkill = this._addSkill.bind(this)
     }
 
@@ -24,36 +24,35 @@ class SkillTree extends Component {
         this.props.updateMethod('skillsChosen', skillId)
     }
 
-    buildSkillTree(skillTreeData) {
+    buildSkillTreeNodes() {
         const objProps = this.props;
+        const skillTreeData = skillData[objProps.activeClassIdx];
         const addSkillFunc = this._addSkill;
         const updateMethod = this.props.updateMethod;
 
         const branches = skillTreeData.branches;
-        const output = [];
+        const output = {};
         branches.forEach(function (skillBranch) {
-            if (skillBranch.skill_data.length !== 0) {
-                output.push(<h2 key={skillBranch.name + 'branch'}>
-                    {skillBranch.name} Branch</h2>)
-            }
+            // if (skillBranch.skill_data.length !== 0) {
+            //     output.push(<h2 key={skillBranch.name + 'branch'}>
+            //         {skillBranch.name} Branch</h2>)
+            // }
 
             skillBranch.skill_data.forEach(function (skillDatum) {
-                output.push(<SkillTreeNode
+                output[skillDatum._id] = <SkillTreeNode
                     key={skillDatum._id}
                     skillData={skillDatum}
                     activeFlag={Object.keys(objProps.skillsChosen).includes(skillDatum._id)}
                     onClickFunc={() => addSkillFunc(skillDatum._id)}
                     skillLevel={objProps.skillsChosen[skillDatum._id] || 0}
                     updateMethod={updateMethod}
-                ></SkillTreeNode>)
+                ></SkillTreeNode>
             });
         })
-        return <div>
-            {output}
-        </div>
+        return output
     }
 
-    drawSkillTree() {
+    drawSkillTree(skillTreeNodes) {
         const BOX_WIDTH = 200;
         const BOX_PADDING = 40;
         const BOX_HEIGHT = 60;
@@ -72,27 +71,27 @@ class SkillTree extends Component {
 
             if (!datum.baseSkill) {
                 className = 'regularSkill';
-                xOffset = 20;
+                xOffset = BOX_WIDTH / 2;
             }
             xCoord = (BOX_WIDTH + BOX_PADDING) * datum.coords.x + (datum.coords.x > 0 ? 1 : 0) * LINE_LENGTH + xOffset;
             yCoord = (BOX_HEIGHT + BOX_PADDING) * datum.coords.y
 
             output.push(<div key={datum.skillID}
                         className={className + ' skillNode'}
-                        style={{top: yCoord + 'px', left: xCoord + 'px'}}>{datum.skillID}</div>)
+                        style={{top: yCoord + 'px', left: xCoord + 'px'}}>{skillTreeNodes[datum.skillID]}</div>)
         });
 
         return <div>{output}</div>
     }
 
     render() {
-        const skillTree = this.buildSkillTree(skillData[this.props.activeClassIdx])
-        const doot = this.drawSkillTree();
+        const skillTreeNodes = this.buildSkillTreeNodes()
+        const doot = this.drawSkillTree(skillTreeNodes);
 
         return <div className="SkillTree">
             Skill Data Goes Here (pew)
             {doot}
-            {skillTree}
+
             </div>
     }
 }
