@@ -4,7 +4,7 @@ import './header.css';
 import skillData from '../data/skill_data';
 
 // Helper Functions
-import {firstDegSkills, isNumber} from '../helpers'
+import {isNumber} from '../helpers'
 
 function getClasses() {
     const classes = [];
@@ -19,13 +19,13 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.level = props.level;
-        this.firstDegSkills = firstDegSkills();
         this.classOpts = getClasses();
 
         // Element Builder Functions
         this.buildClassDropdown = this.buildClassDropdown.bind(this);
         this.buildLevelBox = this.buildLevelBox.bind(this);
         this.updateLevel = this.updateLevel.bind(this);
+        this.buildRetirementBox = this.buildRetirementBox.bind(this);
 
         // Updater Functions
         this._setLevel = this._setLevel.bind(this);
@@ -33,6 +33,27 @@ class Header extends Component {
         this._clearSkills = this._clearSkills.bind(this);
         this._resetAll = this._resetAll.bind(this);
         this.updateClassIdx = this.updateClassIdx.bind(this);
+    }
+
+
+    updateRetirementIdx() {
+        console.log('HI')
+    }
+
+    buildRetirementBox() {
+        const retirementLabels = ['N/A', '30-39', '40-49', '50-59', '60-69', '70-98', '99']
+        const retirementOpts = []
+        retirementLabels.forEach(function (label, idx) {
+            retirementOpts.push(<option key={label} value={idx}>{label}</option>)
+        })
+
+        return <div>Retirement Level: <select
+                ref="retirementDropdownList"
+                value={this.props.retirementIdx}
+                onChange={() => this.updateRetirementIdx()}>
+                {retirementOpts}
+            </select>
+        </div>
     }
 
     updateLevel() {
@@ -114,10 +135,12 @@ class Header extends Component {
         const classDropdown = this.buildClassDropdown(this.classOpts);
         const skillPointsInfo = <div>Skill Points: {this.props.skillPointsRemaining}/{this.props.skillPointsTotal}</div>;
         const levelBox = this.buildLevelBox()
+        const retirementBox = this.buildRetirementBox()
 
         return <div className="HeaderBar">Header Goes Here (doot)
             {classDropdown}
             {levelBox}
+            {retirementBox}
             {skillPointsInfo}
             <ul>
                 <li>RetirementIdx: {this.props.retirementIdx} </li>
