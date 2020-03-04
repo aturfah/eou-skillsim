@@ -115,48 +115,48 @@ var treeData = [
         {
             skillID: 'tp_up',
             baseSkill: true,
-            coords: {x: 0, y: 10},
+            coords: {x: 3, y: 0},
             barSize: 5
         },
         {
             skillID: 'return_formula',
             baseSkill: false,
-            coords: {x: 0, y: 11},
+            coords: {x: 3, y: 1},
             numAfter: 1,
             numBefore: 1,
         },
         {
             skillID: 'flee',
             baseSkill: false,
-            coords: {x: 1, y: 11},
+            coords: {x: 4, y: 1},
             numAfter: 0,
             numBefore: 1,
         },
         {
             skillID: 'alchemy',
             baseSkill: false,
-            coords: {x: 0, y: 12},
+            coords: {x: 3, y: 2},
             numAfter: 0,
             numBefore: 1,
         },
         {
             skillID: 'scavenge',
             baseSkill: false,
-            coords: {x: 0, y: 13},
+            coords: {x: 3, y: 3},
             numAfter: 0,
             numBefore: 1,
         },
         {
             skillID: 'sight_formula',
             baseSkill: false,
-            coords: {x: 0, y: 14},
+            coords: {x: 3, y: 4},
             numAfter: 0,
             numBefore: 1,
         },
         {
             skillID: 'focus',
             baseSkill: false,
-            coords: {x: 0, y: 15},
+            coords: {x: 3, y: 5},
             numAfter: 0,
             numBefore: 1,
         },
@@ -164,7 +164,7 @@ var treeData = [
         {
             skillID: 'chop',
             baseSkill: true,
-            coords: {x: 0, y: 16}
+            coords: {x: 3, y: 6}
         },
     ]
 ]
