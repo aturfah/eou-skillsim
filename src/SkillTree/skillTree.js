@@ -57,8 +57,8 @@ class SkillTree extends Component {
         const BOX_PADDING = 40;
         const BOX_BORDER_WIDTH = 4;
         const BOX_HEIGHT = 60;
-        const LINE_LENGTH = 40;
-        const LINE_THICKNESS = 5;
+        const LINE_LENGTH = 80;
+        const LINE_THICKNESS = 4;
         const output = [];
 
         const skillTreeStructure = treeData[this.props.activeClassIdx]
@@ -96,20 +96,44 @@ class SkillTree extends Component {
             if (datum.baseSkill) {
                 var barXCoord = xCoord + BOX_WIDTH / 4;
                 var barYCoord = yCoord + BOX_HEIGHT + 2 * BOX_BORDER_WIDTH;
-                var barLength = datum.barSize * (BOX_HEIGHT + BOX_PADDING) - BOX_HEIGHT / 2;
+                var barLength = datum.barSize * (BOX_HEIGHT + BOX_PADDING) - BOX_HEIGHT / 2 - LINE_THICKNESS;
                 const barStyle = {top: barYCoord + 'px',
                                   left: barXCoord + 'px',
-                                  height: barLength + 'px'}
+                                  height: barLength + 'px',
+                                  'border-left-color': '#5B6DCD',
+                                  'border-left-width': LINE_THICKNESS + 'px',
+                                  'border-left-style': 'solid'}
                 output.push(<div className='verticalBar' key='doot'
                             style={barStyle}></div>)
             } else {
                 // draw lines before
+                var barLeftXCoord = xCoord;
+                var barLeftYCoord = yCoord + BOX_HEIGHT / 2;
+                const leftBarStyle = {top: barLeftYCoord + 'px',
+                                  left: barLeftXCoord - (LINE_LENGTH / 2) + 'px',
+                                  width: (LINE_LENGTH / 2) + 'px',
+                                  'border-top-color': '#5B6DCD',
+                                  'border-top-width': LINE_THICKNESS + 'px',
+                                  'border-top-style': 'solid'}
                 if (datum.coords.x == 0) {
                     // this line is a bit shorter
+                    leftBarStyle.width = BOX_WIDTH / 4
+                    leftBarStyle.left = barLeftXCoord - leftBarStyle.width
                 }
+                output.push(<div className='horizontalBar' style={leftBarStyle}></div>)
 
                 // draw lines after
-
+                if (datum.numAfter > 0) {
+                    var barRightXCoord = xCoord + BOX_WIDTH + 2 * BOX_BORDER_WIDTH;
+                    var barRightYCoord = barLeftYCoord;
+                    const rightBarStyle = {top: barRightYCoord + 'px',
+                                    left: barRightXCoord + 'px',
+                                    width: (LINE_LENGTH / 2) + 'px',
+                                    'border-top-color': '#5B6DCD',
+                                    'border-top-width': LINE_THICKNESS + 'px',
+                                    'border-top-style': 'solid'}
+                    output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
+                }
             }
         });
 

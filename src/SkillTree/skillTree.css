@@ -17,9 +17,6 @@
 }
 
 .skillNode {
-    _width: 200px;
-    _height: 60px;
-    _border: solid black 4px;
     position: absolute;
 }
 
