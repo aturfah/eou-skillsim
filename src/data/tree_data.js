@@ -850,14 +850,14 @@ var treeData = [
             skillID: 'tornado',
             baseSkill: false,
             coords: {x: 0, y: 2},
-            numAfter: 0,
+            numAfter: 1,
             numBefore: 1,
         },
         {
             skillID: 'blinding_slap',
             baseSkill: false,
             coords: {x: 0, y: 3},
-            numAfter: 0,
+            numAfter: 1,
             numBefore: 1,
         },
         {
@@ -872,6 +872,64 @@ var treeData = [
             baseSkill: true,
             coords: {x: 0, y: 5},
             barSize: 4
+        },
+        {
+            skillID: 'boomerang_axe',
+            baseSkill: false,
+            coords: {x: 0, y: 6},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'head_bash',
+            baseSkill: false,
+            coords: {x: 0, y: 7},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'stunning_smash',
+            baseSkill: false,
+            coords: {x: 0, y: 8},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'power_crush',
+            baseSkill: false,
+            coords: {x: 0, y: 9},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'double_strike',
+            baseSkill: false,
+            coords: {x: 1, y: 5},
+            numAfter: 0,
+            numBefore: 5, // really only 2 but need to make line longer
+            beforeStyle: 'centered',
+        },
+        {
+            skillID: 'ice_chaser',
+            baseSkill: false,
+            coords: {x: 2, y: 5},
+            numAfter: 0,
+            numBefore: 7, // really only 2 but need to make line longer
+            beforeStyle: 'centered',
+        },
+        {
+            skillID: 'fire_chaser',
+            baseSkill: false,
+            coords: {x: 2, y: 4},
+            numAfter: 0,
+            numBefore: 1
+        },
+        {
+            skillID: 'volt_chaser',
+            baseSkill: false,
+            coords: {x: 2, y: 6},
+            numAfter: 0,
+            numBefore: 1
         },
     ]
 ]
