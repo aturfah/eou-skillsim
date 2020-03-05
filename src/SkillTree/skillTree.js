@@ -148,10 +148,10 @@ class SkillTree extends Component {
                         // this line is a bit shorter
                         leftBarStyle.width = BOX_WIDTH / 4
                         leftBarStyle.left = barLeftXCoord - leftBarStyle.width
-                    } else if (datum.skippedCols > 0) {
-                        var newOffset = datum.skippedCols * BOX_WIDTH;
+                    } else if (datum.beforeSkip > 0) {
+                        var newOffset = datum.beforeSkip * BOX_WIDTH;
                         newOffset += 2 * BOX_BORDER_WIDTH;
-                        newOffset += datum.skippedCols * BOX_PADDING + 
+                        newOffset += datum.beforeSkip * BOX_PADDING + 
                              (datum.coords.x === 1 ? BOX_WIDTH / 4 : BOX_PADDING)
                         leftBarStyle.width = parseInt(leftBarStyle.width.replace('px', '')) + newOffset;
                         leftBarStyle.left = parseInt(leftBarStyle.left.replace('px', '')) - newOffset;
@@ -189,7 +189,14 @@ class SkillTree extends Component {
                                     borderTopColor: '#5B6DCD',
                                     borderTopWidth: LINE_THICKNESS + 'px',
                                     borderTopStyle: 'solid'}
-                    // TODO: be able to extend line further out
+
+                    if (datum.afterSkip > 0) {
+                        var newOffset = datum.afterSkip * BOX_WIDTH;
+                        newOffset += 2 * BOX_BORDER_WIDTH;
+                        newOffset += datum.afterSkip * BOX_PADDING + 
+                             (datum.coords.x === 1 ? BOX_WIDTH / 4 : BOX_PADDING)
+                        rightBarStyle.width = parseInt(rightBarStyle.width.replace('px', '')) + newOffset;
+                    }
                     output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
                     // Draw Vertical Bar After if Necessary
                     if (datum.numAfter > 1) {
