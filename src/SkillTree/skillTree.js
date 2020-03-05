@@ -16,10 +16,13 @@ class SkillTree extends Component {
         super(props);
         this.firstSkills = firstDegSkills()
         this.divHeight = null;
+        this.divWidth = null;
         this.buildSkillTreeNodes = this.buildSkillTreeNodes.bind(this);
         this._addSkill = this._addSkill.bind(this)
         this._setHeight = this._setHeight.bind(this)
         this._getHeight = this._getHeight.bind(this)
+        this._setWidth = this._setWidth.bind(this)
+        this._getWidth = this._getWidth.bind(this)
     }
 
     _setHeight(newHeight) {
@@ -28,6 +31,14 @@ class SkillTree extends Component {
 
     _getHeight() {
         return this.divHeight;
+    }
+
+    _setWidth(newWidth) {
+        this.divWidth = newWidth;
+    }
+
+    _getWidth() {
+        return this.divWidth;
     }
 
     _addSkill(skillId) {
@@ -70,6 +81,8 @@ class SkillTree extends Component {
         const skillTreeStructure = treeData[this.props.activeClassIdx]
         const setHeightMethod = this._setHeight
         const getHeightMethod = this._getHeight
+        const setWidthMethod = this._setWidth
+        const getWidthMethod = this._getWidth
 
         skillTreeStructure.forEach(function (datum) {
             console.log(datum)
@@ -101,6 +114,9 @@ class SkillTree extends Component {
 
             if (yCoord + 2 * BOX_HEIGHT > getHeightMethod()) {
                 setHeightMethod(yCoord + BOX_HEIGHT)
+            }
+            if (xCoord + BOX_WIDTH + BOX_PADDING > getWidthMethod()) {
+                setWidthMethod(xCoord + BOX_WIDTH + BOX_PADDING)
             }
 
             // Add Vertical and Horizontal bars as necessary
@@ -202,7 +218,10 @@ class SkillTree extends Component {
     render() {
         const skillTreeNodes = this.buildSkillTreeNodes()
         const doot = this.drawSkillTree(skillTreeNodes);
-        const divStyle = {height: this._getHeight()}
+        const divStyle = {
+            height: this._getHeight(),
+            width: this._getWidth()
+        }
 
         return <div className="SkillTree" style={divStyle}>
             Skill Data Goes Here (pew)
