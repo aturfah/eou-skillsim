@@ -490,7 +490,7 @@ var treeData = [
             numBefore: 1,
         },
         {
-            skillID: 'shell_shock',
+            skillID: 'double_strike',
             baseSkill: false,
             coords: {x: 1, y: 14},
             numAfter: 0,
@@ -502,6 +502,7 @@ var treeData = [
             coords: {x: 0, y: 16},
             numAfter: 0,
             numBefore: 0,
+            barSize: 0
         },
     ],
     [ // Hexer
@@ -702,7 +703,7 @@ var treeData = [
             numBefore: 1,
         },
         {
-            skillID: 'draining_burst',
+            skillID: 'legion_burst',
             baseSkill: false,
             coords: {x: 1, y: 3},
             numAfter: 0,
@@ -803,6 +804,32 @@ var treeData = [
             coords: {x: 0, y: 14},
             numAfter: 0,
             numBefore: 1,
+        },
+        {
+            skillID: 'hp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 15},
+            barSize: 2
+        },
+        {
+            skillID: 'limitless',
+            baseSkill: false,
+            coords: {x: 0, y: 16},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'black_sabbath',
+            baseSkill: false,
+            coords: {x: 0, y: 17},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'mine',
+            baseSkill: false,
+            coords: {x: 1, y: 15},
+            barSize: 0
         },
     ]
 ]
