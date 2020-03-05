@@ -15,8 +15,19 @@ class SkillTree extends Component {
     constructor(props) {
         super(props);
         this.firstSkills = firstDegSkills()
+        this.divHeight = null;
         this.buildSkillTreeNodes = this.buildSkillTreeNodes.bind(this);
         this._addSkill = this._addSkill.bind(this)
+        this._setHeight = this._setHeight.bind(this)
+        this._getHeight = this._getHeight.bind(this)
+    }
+
+    _setHeight(newHeight) {
+        this.divHeight = newHeight;
+    }
+
+    _getHeight() {
+        return this.divHeight;
     }
 
     _addSkill(skillId) {
@@ -57,6 +68,8 @@ class SkillTree extends Component {
         const output = [];
 
         const skillTreeStructure = treeData[this.props.activeClassIdx]
+        const setHeightMethod = this._setHeight
+        const getHeightMethod = this._getHeight
 
         skillTreeStructure.forEach(function (datum) {
             console.log(datum)
@@ -86,6 +99,9 @@ class SkillTree extends Component {
                         className={className + ' skillNode'}
                         style={boxStyle}>{skillTreeNodes[datum.skillID]}</div>)
 
+            if (yCoord + 2 * BOX_HEIGHT > getHeightMethod()) {
+                setHeightMethod(yCoord + BOX_HEIGHT)
+            }
 
             // Add Vertical and Horizontal bars as necessary
             if (datum.baseSkill) {
@@ -182,8 +198,9 @@ class SkillTree extends Component {
     render() {
         const skillTreeNodes = this.buildSkillTreeNodes()
         const doot = this.drawSkillTree(skillTreeNodes);
+        const divStyle = {height: this._getHeight()}
 
-        return <div className="SkillTree">
+        return <div className="SkillTree" style={divStyle}>
             Skill Data Goes Here (pew)
             {doot}
             </div>
