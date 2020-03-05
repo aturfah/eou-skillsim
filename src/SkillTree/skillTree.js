@@ -146,9 +146,10 @@ class SkillTree extends Component {
                     if (datum.numBefore > 1) {
                         var preBarXCoord = barLeftXCoord - (LINE_LENGTH / 2);
                         var preBarYCoord = barLeftYCoord + (LINE_THICKNESS / 2);
-                        var preBarHeight = (datum.numBefore - 1) * (BOX_HEIGHT + BOX_PADDING) + LINE_THICKNESS;
+                        var preBarHeight = (datum.numBefore - 1) * (BOX_HEIGHT + BOX_PADDING) + LINE_THICKNESS / 2;
                         if (datum.beforeStyle === 'centered') {
-                            preBarYCoord = preBarYCoord - preBarHeight / 2
+                            preBarYCoord = preBarYCoord - preBarHeight / 2 - LINE_THICKNESS / 4
+                            preBarHeight += LINE_THICKNESS / 2
                         }
                         const preBarStyle = {top: preBarYCoord + 'px',
                             left: preBarXCoord + 'px',
