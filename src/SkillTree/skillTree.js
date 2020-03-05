@@ -85,7 +85,7 @@ class SkillTree extends Component {
         const getWidthMethod = this._getWidth
 
         skillTreeStructure.forEach(function (datum) {
-            console.log(datum)
+            console.log(datum.skillID)
             var className = 'baseSkill';
             var xOffset = 0;
             var xCoord = null;
@@ -108,7 +108,7 @@ class SkillTree extends Component {
                               width: BOX_WIDTH + 'px',
                               height: BOX_HEIGHT + 'px'
                             }
-            output.push(<div key={datum.skillID}
+            output.push(<div key={datum.skillID + 'node'}
                         className={className + ' skillNode'}
                         style={boxStyle}>{skillTreeNodes[datum.skillID]}</div>)
 
@@ -121,18 +121,21 @@ class SkillTree extends Component {
 
             // Add Vertical and Horizontal bars as necessary
             if (datum.baseSkill) {
-                var barXCoord = xCoord + BOX_WIDTH / 4;
-                var barYCoord = yCoord + BOX_HEIGHT + 2 * BOX_BORDER_WIDTH;
-                var barLength = datum.barSize * (BOX_HEIGHT + BOX_PADDING) - BOX_HEIGHT / 2 - LINE_THICKNESS;
-                const barStyle = {top: barYCoord + 'px',
-                                  left: barXCoord + 'px',
-                                  height: barLength + 'px',
-                                  borderLeftColor: '#5B6DCD',
-                                  borderLeftWidth: LINE_THICKNESS + 'px',
-                                  borderLeftStyle: 'solid'}
-                output.push(<div className='verticalBar'
-                            style={barStyle}></div>)
+                if (datum.barSize) {
+                    var barXCoord = xCoord + BOX_WIDTH / 4;
+                    var barYCoord = yCoord + BOX_HEIGHT + 2 * BOX_BORDER_WIDTH;
+                    var barLength = datum.barSize * (BOX_HEIGHT + BOX_PADDING) - BOX_HEIGHT / 2 - LINE_THICKNESS;
+                    const barStyle = {top: barYCoord + 'px',
+                                    left: barXCoord + 'px',
+                                    height: barLength + 'px',
+                                    borderLeftColor: '#5B6DCD',
+                                    borderLeftWidth: LINE_THICKNESS + 'px',
+                                    borderLeftStyle: 'solid'}
+                    output.push(<div className='verticalBar'
+                                style={barStyle}></div>)
+                } else if (datum.numAfter > 0) {
                 // TODO: be able to add line horizontally when only 1 skill
+                }
             } else {
                 // draw horizontal lines before
                 if (datum.numBefore > 0) {
