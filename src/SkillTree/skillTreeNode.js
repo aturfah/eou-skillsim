@@ -55,9 +55,9 @@ class SkillTreeNode extends Component {
 
         let levelInfo = <span>Lv.{this.props.skillLevel}</span>;
 
-        return(<div id={this.props.skillData._id}
+        return(<div className="clickableNode" id={this.props.skillData._id}
                 onClick={() => {}}>
-                    {header} {levelInfo} <br/>
+                    <span  className="skillInfo">{header} {levelInfo}</span> <br/>
                     <span onClick={() => this.increaseSkillLevel()}>(Lv. &uarr;)</span> &nbsp;
                     <span onClick={() => this.maxSkillLevel()}>(Lv. &uArr;)</span> &nbsp;
                     <span onClick={() => this.decreaseSkillLevel()}>(Lv. &darr;)</span> &nbsp;

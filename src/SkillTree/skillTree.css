@@ -3,7 +3,6 @@
     padding-bottom: 15px;
     position: relative;
     padding-top: 30px;
-    font-size: 13px;
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -18,6 +17,18 @@
 
 .skillNode {
     position: absolute;
+    display: table;
+    background-color: green;
+}
+
+.clickableNode {
+    font-size: 13px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.skillInfo {
+    font-size: 15px;
 }
 
 .baseSkill {
