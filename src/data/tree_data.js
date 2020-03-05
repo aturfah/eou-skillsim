@@ -296,6 +296,45 @@ var treeData = [
             coords: {x: 1, y: 13},
             numAfter: 0,
             numBefore: 2,
+        },
+        {
+            skillID: 'tp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 15},
+            barSize: 2
+        },
+        {
+            skillID: 'bind_heart',
+            baseSkill: false,
+            coords: {x: 0, y: 16},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'shadow_veil',
+            baseSkill: false,
+            coords: {x: 0, y: 17},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'dark_curse',
+            baseSkill: false,
+            coords: {x: 1, y: 16},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'hp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 18},
+            barSize: 0
+        },
+        {
+            skillID: 'take',
+            baseSkill: true,
+            coords: {x: 1, y: 18},
+            barSize: 0
         }
     ]
 ]
