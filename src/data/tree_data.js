@@ -636,7 +636,35 @@ var treeData = [
             coords: {x: 1, y: 12},
             numAfter: 0,
             numBefore: 1,
-        }
+        },
+        {
+            skillID: 'tp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 13},
+            numAfter: 1,
+            numBefore: 0,
+            barSize: 1
+        },
+        {
+            skillID: 'staggering_word',
+            baseSkill: false,
+            coords: {x: 0, y: 14},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'hp_up',
+            baseSkill: false,
+            coords: {x: 1, y: 13},
+            numAfter: 0,
+            numBefore: 0,
+        },
+        {
+            skillID: 'chop',
+            baseSkill: false,
+            coords: {x: 2, y: 13}
+        },
+        
     ]
 ]
 
