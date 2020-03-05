@@ -119,7 +119,7 @@ class SkillTree extends Component {
                         var newOffset = datum.skippedCols * BOX_WIDTH;
                         newOffset += 2 * BOX_BORDER_WIDTH;
                         newOffset += datum.skippedCols * BOX_PADDING + 
-                             (datum.coords.x == 1 ? BOX_WIDTH / 4 : BOX_PADDING)
+                             (datum.coords.x === 1 ? BOX_WIDTH / 4 : BOX_PADDING)
                         leftBarStyle.width = parseInt(leftBarStyle.width.replace('px', '')) + newOffset;
                         leftBarStyle.left = parseInt(leftBarStyle.left.replace('px', '')) - newOffset;
                     }
