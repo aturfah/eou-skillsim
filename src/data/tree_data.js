@@ -949,7 +949,8 @@ var treeData = [
             baseSkill: true,
             coords: {x: 0, y: 11},
             numAfter: 1,
-            numBefore: 0
+            numBefore: 0,
+            barSize: 0
         },
         {
             skillID: 'triple_charge',
