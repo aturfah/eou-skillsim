@@ -770,6 +770,40 @@ var treeData = [
             numAfter: 0,
             numBefore: 1,
         },
+        {
+            skillID: 'def_up',
+            baseSkill: true,
+            coords: {x: 0, y: 11},
+            barSize: 3
+        },
+        {
+            skillID: 'battle_instinct',
+            baseSkill: false,
+            coords: {x: 0, y: 12},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'blood_fortune',
+            baseSkill: false,
+            coords: {x: 0, y: 13},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'allied_bonds',
+            baseSkill: false,
+            coords: {x: 1, y: 12},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'spirit_shield',
+            baseSkill: false,
+            coords: {x: 0, y: 14},
+            numAfter: 0,
+            numBefore: 1,
+        },
     ]
 ]
 
