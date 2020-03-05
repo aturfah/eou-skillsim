@@ -160,13 +160,12 @@ var treeData = [
             numAfter: 0,
             numBefore: 1,
         },
-        ,
         {
             skillID: 'chop',
             baseSkill: true,
             coords: {x: 0, y: 16},
             numAfter: 0,
-            numBefore: 1,
+            numBefore: 0,
         },
     ],
     [ // Dark Hunter
@@ -500,9 +499,8 @@ var treeData = [
             skillID: 'take',
             baseSkill: true,
             coords: {x: 0, y: 16},
-            numAfter: 0,
-            numBefore: 0,
-            barSize: 0
+            barSize: 0,
+            numAfter: 0
         },
     ],
     [ // Hexer
@@ -510,7 +508,9 @@ var treeData = [
             skillID: 'curse_mastery',
             baseSkill: true,
             coords: {x: 0, y: 0},
-            barSize: 9
+            barSize: 9,
+            numBefore: 0,
+            numAfter: 0
         },
         {
             skillID: 'sapping_curse',
@@ -663,7 +663,9 @@ var treeData = [
         {
             skillID: 'chop',
             baseSkill: false,
-            coords: {x: 2, y: 13}
+            coords: {x: 2, y: 13},
+            numBefore: 0,
+            numAfter: 0
         },
         
     ],
@@ -837,7 +839,9 @@ var treeData = [
             skillID: 'sword_mastery',
             baseSkill: true,
             coords: {x: 0, y: 0},
-            barSize: 4
+            barSize: 4,
+            numBefore: 0,
+            numAfter: 0
         },
         {
             skillID: 'raging_edge',
@@ -871,7 +875,9 @@ var treeData = [
             skillID: 'axe_mastery',
             baseSkill: true,
             coords: {x: 0, y: 5},
-            barSize: 4
+            barSize: 4,
+            numBefore: 0,
+            numAfter: 0
         },
         {
             skillID: 'boomerang_axe',
@@ -930,6 +936,57 @@ var treeData = [
             coords: {x: 2, y: 6},
             numAfter: 0,
             numBefore: 1
+        },
+        {
+            skillID: 'hp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 10},
+            numAfter: 1,
+            numBefore: 0
+        },
+        {
+            skillID: 'tp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 11},
+            numAfter: 1,
+            numBefore: 0
+        },
+        {
+            skillID: 'triple_charge',
+            baseSkill: false,
+            coords: {x: 1, y: 10},
+            numAfter: 1,
+            numBefore: 2
+        },
+        {
+            skillID: 'atk_up',
+            baseSkill: true,
+            coords: {x: 0, y: 12},
+            numAfter: 1,
+            numBefore: 0
+        },
+        {
+            skillID: 'war_cry',
+            baseSkill: false,
+            coords: {x: 1, y: 12},
+            numAfter: 1,
+            numBefore: 1
+        },
+        {
+            skillID: 'strike_chaser',
+            baseSkill: false,
+            coords: {x: 2, y: 11},
+            numAfter: 0,
+            numBefore: 3,
+            beforeStyle: 'centered'
+        },
+        {
+            skillID: 'mine',
+            baseSkill: true,
+            coords: {x: 0, y: 13},
+            barSize: 0,
+            numAfter: 1,
+            numBefore: 0
         },
     ]
 ]
