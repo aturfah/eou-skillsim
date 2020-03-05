@@ -990,7 +990,175 @@ var treeData = [
         },
     ],
     [ // Medic
-
+        {
+            skillID: 'heal_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 0},
+            barSize: 6
+        },
+        {
+            skillID: 'cure',
+            baseSkill: false,
+            coords: {x: 0, y: 1},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'salve',
+            baseSkill: false,
+            coords: {x: 1, y: 1},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'unbind',
+            baseSkill: false,
+            coords: {x: 0, y: 2},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'refresh',
+            baseSkill: false,
+            coords: {x: 0, y: 3},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'immunize',
+            baseSkill: false,
+            coords: {x: 1, y: 2},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'regenerate',
+            baseSkill: false,
+            coords: {x: 0, y: 4},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'delayed_heal',
+            baseSkill: false,
+            coords: {x: 1, y: 4},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'heal',
+            baseSkill: false,
+            coords: {x: 0, y: 5},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'revive',
+            baseSkill: false,
+            coords: {x: 0, y: 6},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'cpr',
+            baseSkill: false,
+            coords: {x: 1, y: 6},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'hp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 7},
+            barSize: 5,
+            numBefore: 0,
+            numAfter: 0
+        },
+        {
+            skillID: 'anaesthetic',
+            baseSkill: false,
+            coords: {x: 0, y: 8},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'toxin_injection',
+            baseSkill: false,
+            coords: {x: 0, y: 9},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'curare',
+            baseSkill: false,
+            coords: {x: 0, y: 10},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'diagnosis',
+            baseSkill: false,
+            coords: {x: 0, y: 11},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'clear_strike',
+            baseSkill: false,
+            coords: {x: 0, y: 12},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'tp_up',
+            baseSkill: true,
+            coords: {x: 2, y: 7},
+            barSize: 3,
+            numBefore: 0,
+            numAfter: 0
+        },
+        {
+            skillID: 'safe_passage',
+            baseSkill: false,
+            coords: {x: 2, y: 8},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'scavenge',
+            baseSkill: false,
+            coords: {x: 2, y: 9},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'focus',
+            baseSkill: false,
+            coords: {x: 2, y: 10},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'atk_up',
+            baseSkill: false,
+            coords: {x: 0, y: 13},
+            numAfter: 1,
+            numBefore: 0
+        },
+        {
+            skillID: 'caduceus',
+            baseSkill: false,
+            coords: {x: 1, y: 13},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'chop',
+            baseSkill: false,
+            coords: {x: 2, y: 13},
+            numAfter: 0,
+            numBefore: 0,
+        }
     ]
 ]
 
