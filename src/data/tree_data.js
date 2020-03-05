@@ -1,5 +1,5 @@
 var treeData = [
-    [
+    [ // Alchemist
         {
             skillID: 'formula_mastery',
             baseSkill: true,
@@ -169,7 +169,7 @@ var treeData = [
             numBefore: 1,
         },
     ],
-    [
+    [ // Dark Hunter
         {
             skillID: 'whip_mastery',
             baseSkill: true,
@@ -336,6 +336,112 @@ var treeData = [
             coords: {x: 1, y: 18},
             barSize: 0
         }
+    ],
+    [ // Gunner
+        {
+            skillID: 'gun_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 0},
+            barSize: 9
+        },
+        {
+            skillID: 'head_snipe',
+            baseSkill: false,
+            coords: {x: 0, y: 1},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'arm_snipe',
+            baseSkill: false,
+            coords: {x: 0, y: 2},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'leg_snipe',
+            baseSkill: false,
+            coords: {x: 0, y: 3},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'fire_rounds',
+            baseSkill: false,
+            coords: {x: 0, y: 4},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'charged_fire',
+            baseSkill: false,
+            coords: {x: 1, y: 4},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'ice_rounds',
+            baseSkill: false,
+            coords: {x: 0, y: 5},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'charged_ice',
+            baseSkill: false,
+            coords: {x: 1, y: 5},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'volt_rounds',
+            baseSkill: false,
+            coords: {x: 0, y: 6},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'charged_volt',
+            baseSkill: false,
+            coords: {x: 1, y: 6},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'charged_shot',
+            baseSkill: false,
+            coords: {x: 0, y: 7},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'penetrator', // GIVE PENETRATOR 2 LINES
+            baseSkill: false,
+            coords: {x: 0, y: 8},
+            numAfter: 2,
+            numBefore: 1,
+        },
+        {
+            skillID: 'recharge',
+            baseSkill: false,
+            coords: {x: 1, y: 7},
+            numAfter: 0,
+            numBefore: 2
+        },
+        {
+            skillID: 'ricochet',
+            baseSkill: false,
+            coords: {x: 0, y: 9},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'action_boost',
+            baseSkill: false,
+            coords: {x: 1, y: 9},
+            numAfter: 0,
+            numBefore: 1,
+        },
     ]
 ]
 
