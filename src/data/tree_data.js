@@ -831,6 +831,48 @@ var treeData = [
             coords: {x: 1, y: 15},
             barSize: 0
         },
+    ],
+    [ // Landsknecht
+        {
+            skillID: 'sword_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 0},
+            barSize: 4
+        },
+        {
+            skillID: 'raging_edge',
+            baseSkill: false,
+            coords: {x: 0, y: 1},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'tornado',
+            baseSkill: false,
+            coords: {x: 0, y: 2},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'blinding_slap',
+            baseSkill: false,
+            coords: {x: 0, y: 3},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'falcon_slash',
+            baseSkill: false,
+            coords: {x: 0, y: 4},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'axe_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 5},
+            barSize: 4
+        },
     ]
 ]
 
