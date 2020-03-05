@@ -220,6 +220,83 @@ var treeData = [
             numBefore: 1,
             skippedCols: 1
         },
+        {
+            skillID: 'sword_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 6},
+            barSize: 5
+        },
+        {
+            skillID: 'hypno_bite',
+            baseSkill: false,
+            coords: {x: 0, y: 7},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'nerve_bite',
+            baseSkill: false,
+            coords: {x: 0, y: 8},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'mirage_bite',
+            baseSkill: false,
+            coords: {x: 0, y: 9},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'soul_liberator',
+            baseSkill: false,
+            coords: {x: 1, y: 8},
+            numAfter: 0,
+            numBefore: 3,
+            beforeStyle: 'centered'
+        },
+        {
+            skillID: 'drain_bite',
+            baseSkill: false,
+            coords: {x: 0, y: 10},
+            numAfter: 2,
+            numBefore: 1,
+        },
+        {
+            skillID: 'catastrophe',
+            baseSkill: false,
+            coords: {x: 1, y: 11},
+            numAfter: 0,
+            numBefore: 1,
+            skippedCols: 1
+        },
+        {
+            skillID: 'atk_up',
+            baseSkill: true,
+            coords: {x: 0, y: 12},
+            barSize: 2
+        },
+        {
+            skillID: 'boost_up',
+            baseSkill: false,
+            coords: {x: 0, y: 13},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'wraths_might',
+            baseSkill: false,
+            coords: {x: 0, y: 14},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'bait',
+            baseSkill: false,
+            coords: {x: 1, y: 13},
+            numAfter: 0,
+            numBefore: 2,
+        }
     ]
 ]
 
