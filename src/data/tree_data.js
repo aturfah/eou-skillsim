@@ -442,6 +442,67 @@ var treeData = [
             numAfter: 0,
             numBefore: 1,
         },
+        {
+            skillID: 'hp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 10},
+            barSize: 2
+        },
+        {
+            skillID: 'medic_bullet',
+            baseSkill: false,
+            coords: {x: 0, y: 11},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'cover_fire',
+            baseSkill: false,
+            coords: {x: 0, y: 12},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'shell_shock',
+            baseSkill: false,
+            coords: {x: 1, y: 11},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'atk_up',
+            baseSkill: true,
+            coords: {x: 0, y: 13},
+            barSize: 2
+        },
+        {
+            skillID: 'high_caliber',
+            baseSkill: false,
+            coords: {x: 0, y: 14},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'vulcan_stance',
+            baseSkill: false,
+            coords: {x: 0, y: 15},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'shell_shock',
+            baseSkill: false,
+            coords: {x: 1, y: 14},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'take',
+            baseSkill: true,
+            coords: {x: 0, y: 16},
+            numAfter: 0,
+            numBefore: 0,
+        },
     ]
 ]
 
