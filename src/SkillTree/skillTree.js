@@ -172,6 +172,7 @@ class SkillTree extends Component {
                                     borderTopColor: '#5B6DCD',
                                     borderTopWidth: LINE_THICKNESS + 'px',
                                     borderTopStyle: 'solid'}
+                    // TODO: be able to extend line further out
                     output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
                     // Draw Vertical Bar After if Necessary
                     if (datum.numAfter > 1) {
