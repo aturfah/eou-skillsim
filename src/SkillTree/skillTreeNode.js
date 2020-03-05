@@ -46,16 +46,19 @@ class SkillTreeNode extends Component {
 
     render() {
         // console.log(this.props)
-        let header = null;
+        let header = <span>{this.props.skillData.name}</span>;
+        let nodeColor = 'green';
         if(this.props.activeFlag) {
             header = <b>{this.props.skillData.name}</b>
-        } else {
-            header=<span>{this.props.skillData.name}</span>
+            nodeColor = 'lightgreen'
         }
 
         let levelInfo = <span>Lv.{this.props.skillLevel}</span>;
+        const nodeStyle = {
+            backgroundColor: nodeColor
+        }
 
-        return(<div className="clickableNode" id={this.props.skillData._id}
+        return(<div style={nodeStyle} className="clickableNode" id={this.props.skillData._id}
                 onClick={() => {}}>
                     <span  className="skillInfo">{header} {levelInfo}</span> <br/>
                     <span onClick={() => this.increaseSkillLevel()}>(Lv. &uarr;)</span> &nbsp;
