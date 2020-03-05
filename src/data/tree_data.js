@@ -217,7 +217,7 @@ var treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 1,
-            skippedCols: 1
+            beforeSkip: 1
         },
         {
             skillID: 'sword_mastery',
@@ -267,7 +267,7 @@ var treeData = [
             coords: {x: 1, y: 11},
             numAfter: 0,
             numBefore: 1,
-            skippedCols: 1
+            beforeSkip: 1
         },
         {
             skillID: 'atk_up',
@@ -326,14 +326,12 @@ var treeData = [
         {
             skillID: 'hp_up',
             baseSkill: true,
-            coords: {x: 0, y: 18},
-            barSize: 0
+            coords: {x: 0, y: 18}
         },
         {
             skillID: 'take',
             baseSkill: true,
-            coords: {x: 1, y: 18},
-            barSize: 0
+            coords: {x: 1, y: 18}
         }
     ],
     [ // Gunner
@@ -499,8 +497,6 @@ var treeData = [
             skillID: 'take',
             baseSkill: true,
             coords: {x: 0, y: 16},
-            barSize: 0,
-            numAfter: 0
         },
     ],
     [ // Hexer
@@ -830,8 +826,7 @@ var treeData = [
         {
             skillID: 'mine',
             baseSkill: false,
-            coords: {x: 1, y: 15},
-            barSize: 0
+            coords: {x: 1, y: 15}
         },
     ],
     [ // Landsknecht
@@ -856,6 +851,7 @@ var treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            afterSkip: 1
         },
         {
             skillID: 'blinding_slap',
@@ -899,6 +895,7 @@ var treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
+            afterSkip: 1
         },
         {
             skillID: 'power_crush',
@@ -949,8 +946,7 @@ var treeData = [
             baseSkill: true,
             coords: {x: 0, y: 11},
             numAfter: 1,
-            numBefore: 0,
-            barSize: 0
+            numBefore: 0
         },
         {
             skillID: 'triple_charge',
@@ -985,7 +981,6 @@ var treeData = [
             skillID: 'mine',
             baseSkill: true,
             coords: {x: 0, y: 13},
-            barSize: 0,
             numAfter: 1,
             numBefore: 0
         },
@@ -1326,6 +1321,15 @@ var treeData = [
             numAfter: 0,
             numBefore: 0,
         },
+    ],
+    [ // Ronin
+
+    ],
+    [ // Survivalist
+
+    ],
+    [ // Troubadour
+
     ]
 ]
 
