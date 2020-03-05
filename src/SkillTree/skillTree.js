@@ -116,6 +116,7 @@ class SkillTree extends Component {
                                   borderLeftStyle: 'solid'}
                 output.push(<div className='verticalBar'
                             style={barStyle}></div>)
+                // TODO: be able to add line horizontally when only 1 skill
             } else {
                 // draw horizontal lines before
                 if (datum.numBefore > 0) {
