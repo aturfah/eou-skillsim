@@ -138,6 +138,7 @@ class SkillTree extends Component {
                              (datum.coords.x === 1 ? BOX_WIDTH / 4 : BOX_PADDING)
                         leftBarStyle.width = parseInt(leftBarStyle.width.replace('px', '')) + newOffset;
                         leftBarStyle.left = parseInt(leftBarStyle.left.replace('px', '')) - newOffset;
+                        barLeftXCoord -= newOffset;
                     }
                     output.push(<div className='horizontalBar' style={leftBarStyle}></div>)
 
