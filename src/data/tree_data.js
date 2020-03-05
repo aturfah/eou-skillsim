@@ -671,7 +671,7 @@ var treeData = [
             skillID: 'spear_mastery',
             baseSkill: true,
             coords: {x: 0, y: 0},
-            barSize: 9
+            barSize: 6
         },
         {
             skillID: 'long_thrust',
@@ -688,10 +688,86 @@ var treeData = [
             numBefore: 1,
         },
         {
+            skillID: 'draining_burst',
+            baseSkill: false,
+            coords: {x: 1, y: 2},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
             skillID: 'legion_thrust',
             baseSkill: false,
             coords: {x: 0, y: 3},
             numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'draining_burst',
+            baseSkill: false,
+            coords: {x: 1, y: 3},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'head_pierce',
+            baseSkill: false,
+            coords: {x: 0, y: 4},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'spear_assist',
+            baseSkill: false,
+            coords: {x: 0, y: 5},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'delayed_charge',
+            baseSkill: false,
+            coords: {x: 0, y: 6},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'cross_charge',
+            baseSkill: false,
+            coords: {x: 1, y: 6},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'atk_up',
+            baseSkill: true,
+            coords: {x: 0, y: 7},
+            barSize: 3
+        },
+        {
+            skillID: 'turning_tide',
+            baseSkill: false,
+            coords: {x: 0, y: 8},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'bloody_offense',
+            baseSkill: false,
+            coords: {x: 0, y: 9},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'bloodlust',
+            baseSkill: false,
+            coords: {x: 1, y: 8},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'stigmata',
+            baseSkill: false,
+            coords: {x: 0, y: 10},
+            numAfter: 0,
             numBefore: 1,
         },
     ]
