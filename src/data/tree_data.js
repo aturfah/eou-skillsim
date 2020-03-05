@@ -1271,6 +1271,61 @@ var treeData = [
             numAfter: 0,
             numBefore: 2,
         },
+        {
+            skillID: 'hp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 12},
+            barSize: 3
+        },
+        {
+            skillID: 'safe_passage',
+            baseSkill: false,
+            coords: {x: 0, y: 13},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'flee',
+            baseSkill: false,
+            coords: {x: 1, y: 13},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'cure',
+            baseSkill: false,
+            coords: {x: 0, y: 14},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'party_cure',
+            baseSkill: false,
+            coords: {x: 0, y: 15},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'prayer',
+            baseSkill: false,
+            coords: {x: 1, y: 14},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'tp_up',
+            baseSkill: false,
+            coords: {x: 1, y: 8},
+            numAfter: 0,
+            numBefore: 0,
+        },
+        {
+            skillID: 'mine',
+            baseSkill: false,
+            coords: {x: 1, y: 12},
+            numAfter: 0,
+            numBefore: 0,
+        },
     ]
 ]
 
