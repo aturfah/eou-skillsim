@@ -182,7 +182,7 @@ class SkillTree extends Component {
                 // draw horizontal lines after
                 if (datum.numAfter > 0) {
                     var barRightXCoord = xCoord + BOX_WIDTH + 2 * BOX_BORDER_WIDTH;
-                    var barRightYCoord = barLeftYCoord;
+                    var barRightYCoord = yCoord + BOX_HEIGHT / 2;;
                     const rightBarStyle = {top: barRightYCoord + 'px',
                                     left: barRightXCoord + 'px',
                                     width: (LINE_LENGTH / 2) + 'px',
