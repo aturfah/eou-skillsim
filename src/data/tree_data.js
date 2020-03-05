@@ -1160,6 +1160,117 @@ var treeData = [
             numAfter: 0,
             numBefore: 0,
         }
+    ],
+    [ // Protector
+        {
+            skillID: 'shield_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 0},
+            barSize: 7
+        },
+        {
+            skillID: 'front_guard',
+            baseSkill: false,
+            coords: {x: 0, y: 1},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'rear_guard',
+            baseSkill: false,
+            coords: {x: 0, y: 2},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'defender',
+            baseSkill: false,
+            coords: {x: 1, y: 1},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'fire_wall',
+            baseSkill: false,
+            coords: {x: 0, y: 3},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'ice_wall',
+            baseSkill: false,
+            coords: {x: 0, y: 4},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'volt_wall',
+            baseSkill: false,
+            coords: {x: 0, y: 5},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'shield_smite',
+            baseSkill: false,
+            coords: {x: 0, y: 6},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'shield_rush',
+            baseSkill: false,
+            coords: {x: 1, y: 6},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'braverys_gift',
+            baseSkill: false,
+            coords: {x: 0, y: 7},
+            numBefore: 1,
+        },
+        {
+            skillID: 'def_up',
+            baseSkill: true,
+            coords: {x: 0, y: 8},
+            barSize: 3
+        },
+        {
+            skillID: 'provoke',
+            baseSkill: false,
+            coords: {x: 0, y: 9},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'parry',
+            baseSkill: false,
+            coords: {x: 1, y: 9},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'fortify',
+            baseSkill: false,
+            coords: {x: 0, y: 10},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'aegis',
+            baseSkill: false,
+            coords: {x: 0, y: 11},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'en_garde',
+            baseSkill: false,
+            coords: {x: 1, y: 10},
+            numAfter: 0,
+            numBefore: 2,
+        },
     ]
 ]
 
