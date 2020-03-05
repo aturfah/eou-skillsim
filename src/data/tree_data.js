@@ -665,6 +665,35 @@ var treeData = [
             coords: {x: 2, y: 13}
         },
         
+    ],
+    [ // Highlander
+        {
+            skillID: 'spear_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 0},
+            barSize: 9
+        },
+        {
+            skillID: 'long_thrust',
+            baseSkill: false,
+            coords: {x: 0, y: 1},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'draining_thrust',
+            baseSkill: false,
+            coords: {x: 0, y: 2},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'legion_thrust',
+            baseSkill: false,
+            coords: {x: 0, y: 3},
+            numAfter: 1,
+            numBefore: 1,
+        },
     ]
 ]
 
