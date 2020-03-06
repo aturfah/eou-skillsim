@@ -1326,7 +1326,41 @@ var treeData = [
 
     ],
     [ // Survivalist
-
+        {
+            skillID: 'bow_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 0},
+            barSize: 3
+        },
+        {
+            skillID: 'power_shot',
+            baseSkill: false,
+            coords: {x: 0, y: 1},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'disabling_shot',
+            baseSkill: false,
+            coords: {x: 0, y: 2},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'multi-shot',
+            baseSkill: false,
+            coords: {x: 1, y: 1},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'sagittarius_shot',
+            baseSkill: false,
+            coords: {x: 0, y: 3},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        
     ],
     [ // Troubadour
         {
