@@ -1416,6 +1416,77 @@ var treeData = [
             numAfter: 0,
             numBefore: 1
         },
+        {
+            skillID: 'predator',
+            baseSkill: true,
+            coords: {x: 0, y: 10},
+            barSize: 3
+        },
+        {
+            skillID: 'owl-eye',
+            baseSkill: false,
+            coords: {x: 0, y: 11},
+            numAfter: 0,
+            numBefore: 1
+        },
+        {
+            skillID: 'awareness',
+            baseSkill: false,
+            coords: {x: 0, y: 12},
+            numAfter: 0,
+            numBefore: 1
+        },
+        {
+            skillID: 'stalker',
+            baseSkill: false,
+            coords: {x: 0, y: 13},
+            numAfter: 0,
+            numBefore: 1
+        },
+        {
+            skillID: 'hp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 14},
+            barSize: 0,
+            numAfter: 1,
+            numBefore: 0
+        },
+        {
+            skillID: 'efficiency',
+            baseSkill: false,
+            coords: {x: 1, y: 14},
+            numAfter: 1,
+            numBefore: 1,
+            beforeSkip: 0.2725
+        },
+        {
+            skillID: 'resuscitate',
+            baseSkill: false,
+            coords: {x: 2, y: 14},
+            numAfter: 0,
+            numBefore: 1
+        },
+        {
+            skillID: 'chop',
+            baseSkill: false,
+            coords: {x: 1, y: 10},
+            numAfter: 0,
+            numBefore: 0
+        },
+        {
+            skillID: 'mine',
+            baseSkill: false,
+            coords: {x: 2, y: 10},
+            numAfter: 0,
+            numBefore: 0
+        },
+        {
+            skillID: 'take',
+            baseSkill: false,
+            coords: {x: 1, y: 11},
+            numAfter: 0,
+            numBefore: 0
+        },
     ],
     [ // Troubadour
         {
