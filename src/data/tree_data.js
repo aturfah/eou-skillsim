@@ -1360,7 +1360,62 @@ var treeData = [
             numAfter: 0,
             numBefore: 1,
         },
-        
+        {
+            skillID: 'agi_up',
+            baseSkill: true,
+            coords: {x: 0, y: 4},
+            barSize: 5
+        },
+        {
+            skillID: 'hasten',
+            baseSkill: false,
+            coords: {x: 0, y: 5},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'trickery',
+            baseSkill: false,
+            coords: {x: 0, y: 6},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'sure_shot',
+            baseSkill: false,
+            coords: {x: 0, y: 7},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'chain_dance',
+            baseSkill: false,
+            coords: {x: 1, y: 6},
+            numAfter: 1,
+            numBefore: 3,
+            beforeStyle: 'centered'
+        },
+        {
+            skillID: 'endorphins',
+            baseSkill: false,
+            coords: {x: 2, y: 6},
+            numAfter: 0,
+            numBefore: 1
+        },
+        {
+            skillID: 'act_first',
+            baseSkill: false,
+            coords: {x: 0, y: 8},
+            numAfter: 0,
+            numBefore: 1
+        },
+        {
+            skillID: 'quick_step',
+            baseSkill: false,
+            coords: {x: 0, y: 9},
+            numAfter: 0,
+            numBefore: 1
+        },
     ],
     [ // Troubadour
         {
