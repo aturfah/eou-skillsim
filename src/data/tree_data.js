@@ -1329,7 +1329,171 @@ var treeData = [
 
     ],
     [ // Troubadour
-
+        {
+            skillID: 'song_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 0},
+            barSize: 9
+        },
+        {
+            skillID: 'warrior_song',
+            baseSkill: false,
+            coords: {x: 0, y: 1},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'shelter_song',
+            baseSkill: false,
+            coords: {x: 0, y: 2},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'holy_gift',
+            baseSkill: false,
+            coords: {x: 1, y: 1},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'skanda_song',
+            baseSkill: false,
+            coords: {x: 0, y: 3},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'insight_melody',
+            baseSkill: false,
+            coords: {x: 0, y: 4},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'recovery_aria',
+            baseSkill: false,
+            coords: {x: 1, y: 3},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'fire_prelude',
+            baseSkill: false,
+            coords: {x: 0, y: 5},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'flame_fantasia',
+            baseSkill: false,
+            coords: {x: 1, y: 5},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'ice_prelude',
+            baseSkill: false,
+            coords: {x: 0, y: 6},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'frost_fantasia',
+            baseSkill: false,
+            coords: {x: 1, y: 6},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'volt_prelude',
+            baseSkill: false,
+            coords: {x: 0, y: 7},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'shock_fantasia',
+            baseSkill: false,
+            coords: {x: 1, y: 7},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'echoing_rondo',
+            baseSkill: false,
+            coords: {x: 0, y: 8},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'healing_lullaby',
+            baseSkill: false,
+            coords: {x: 1, y: 8},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'eerie_chorus',
+            baseSkill: false,
+            coords: {x: 0, y: 9},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'peace_ballad',
+            baseSkill: false,
+            coords: {x: 1, y: 9},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'taboo_rondo',
+            baseSkill: false,
+            coords: {x: 2, y: 8},
+            numAfter: 0,
+            numBefore: 2,
+        },
+        {
+            skillID: 'hp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 10},
+            barSize: 3
+        },
+        {
+            skillID: 'frightful_yawl',
+            baseSkill: false,
+            coords: {x: 0, y: 11},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'restful_tune',
+            baseSkill: false,
+            coords: {x: 0, y: 12},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'barbaric_march',
+            baseSkill: false,
+            coords: {x: 0, y: 13},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'tp_up',
+            baseSkill: false,
+            coords: {x: 1, y: 10},
+            barSize: 0
+        },
+        {
+            skillID: 'frightful_yawl',
+            baseSkill: false,
+            coords: {x: 1, y: 11},
+            barSize: 0
+        },
+        
     ]
 ]
 
