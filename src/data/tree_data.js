@@ -1,4 +1,5 @@
-var treeData = [
+const beforeSkipBase = 0.2725;
+const treeData = [
     [ // Alchemist
         {
             skillID: 'formula_mastery',
@@ -1457,7 +1458,7 @@ var treeData = [
             coords: {x: 1, y: 14},
             numAfter: 1,
             numBefore: 1,
-            beforeSkip: 0.2725
+            beforeSkip: beforeSkipBase
         },
         {
             skillID: 'resuscitate',
