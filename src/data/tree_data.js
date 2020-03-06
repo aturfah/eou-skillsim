@@ -1448,43 +1448,40 @@ const treeData = [
             skillID: 'hp_up',
             baseSkill: true,
             coords: {x: 0, y: 14},
-            barSize: 0,
-            numAfter: 1,
-            numBefore: 0
+            barSize: 1,
         },
         {
             skillID: 'efficiency',
             baseSkill: false,
-            coords: {x: 1, y: 14},
-            numAfter: 1,
+            coords: {x: 0, y: 15},
             numBefore: 1,
-            beforeSkip: beforeSkipBase
+            numAfter: 1
         },
         {
             skillID: 'resuscitate',
             baseSkill: false,
-            coords: {x: 2, y: 14},
+            coords: {x: 1, y: 15},
             numAfter: 0,
             numBefore: 1
         },
         {
             skillID: 'chop',
             baseSkill: false,
-            coords: {x: 1, y: 10},
+            coords: {x: 1, y: 14},
             numAfter: 0,
             numBefore: 0
         },
         {
             skillID: 'mine',
             baseSkill: false,
-            coords: {x: 2, y: 10},
+            coords: {x: 2, y: 14},
             numAfter: 0,
             numBefore: 0
         },
         {
             skillID: 'take',
             baseSkill: false,
-            coords: {x: 1, y: 11},
+            coords: {x: 2, y: 15},
             numAfter: 0,
             numBefore: 0
         },
