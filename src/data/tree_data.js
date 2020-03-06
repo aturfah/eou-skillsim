@@ -1488,7 +1488,7 @@ var treeData = [
             barSize: 0
         },
         {
-            skillID: 'frightful_yawl',
+            skillID: 'take',
             baseSkill: false,
             coords: {x: 1, y: 11},
             barSize: 0

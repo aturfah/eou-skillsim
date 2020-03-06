@@ -17,7 +17,7 @@ function defaultState() {
     level: 1,
     retirementIdx: 0,
     skillsChosen: {},
-    activeClassIdx: 0
+    activeClassIdx: 10
   };
 }
 
