@@ -1324,7 +1324,54 @@ const treeData = [
         },
     ],
     [ // Ronin
-
+        {
+            skillID: 'katana_mastery',
+            baseSkill: true,
+            coords: {x: 0, y: 0},
+            barSize: 9
+        },
+        {
+            skillID: 'slantwise_cut',
+            baseSkill: false,
+            coords: {x: 0, y: 1},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'perfect_chaser',
+            baseSkill: false,
+            coords: {x: 1, y: 1},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'upper_stance',
+            baseSkill: false,
+            coords: {x: 0, y: 2},
+            numAfter: 2,
+            numBefore: 1,
+        },
+        {
+            skillID: 'horse_slash',
+            baseSkill: false,
+            coords: {x: 1, y: 2},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'flame_grater',
+            baseSkill: false,
+            coords: {x: 2, y: 2},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'swallow_strike',
+            baseSkill: false,
+            coords: {x: 1, y: 3},
+            numAfter: 0,
+            numBefore: 1,
+        },
     ],
     [ // Survivalist
         {
