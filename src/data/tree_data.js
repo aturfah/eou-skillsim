@@ -1120,6 +1120,7 @@ const treeData = [
             coords: {x: 2, y: 8},
             numAfter: 0,
             numBefore: 1,
+            baseBefore: true
         },
         {
             skillID: 'scavenge',
@@ -1127,6 +1128,7 @@ const treeData = [
             coords: {x: 2, y: 9},
             numAfter: 0,
             numBefore: 1,
+            baseBefore: true
         },
         {
             skillID: 'focus',
@@ -1134,6 +1136,7 @@ const treeData = [
             coords: {x: 2, y: 10},
             numAfter: 0,
             numBefore: 1,
+            baseBefore: true
         },
         {
             skillID: 'atk_up',
