@@ -1,4 +1,40 @@
 .SkillTree {
-    background-color: lightblue;
+    margin-top: 20px;
     padding-bottom: 15px;
+    position: relative;
+    padding-top: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.verticalBar {
+    position: absolute;
+}
+
+.horizontalBar {
+    position: absolute;
+}
+
+.skillNode {
+    position: absolute;
+    display: table;
+}
+
+.clickableNode {
+    font-size: 13px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.skillInfo {
+    font-size: 15px;
+}
+
+.baseSkill {
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+.regularSkill {
+    padding-left: 0px;
 }

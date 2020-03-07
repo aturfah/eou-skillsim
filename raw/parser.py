@@ -4,6 +4,7 @@ from os import listdir
 from os.path import isfile, join
 import xml.etree.ElementTree as ET
 import json
+import re
 
 def get_xml_root(filename):
     tree = ET.parse(filename)
@@ -46,7 +47,14 @@ def parse_table(table_node):
         # Check for name
         if name is None:
             _id = row[0][0].attrib.get('id')
-            name = _id.replace('_', ' ')
+            if '.27' in _id :
+                row_string = str(ET.tostring(row[0]))
+                matches = re.findall('/\>(.+)\</th\>', row_string)[0]
+                name = matches.replace('\\\'', '\'')
+                _id = name.replace(' ', '_').replace('\\', '').replace('\'', '')
+            else:
+                name = _id.replace('_', ' ')
+
             _id = _id.lower()
             continue
         
