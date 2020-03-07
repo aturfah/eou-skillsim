@@ -1,17 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Etrian Odyssey Untold 1 Skill Simulator
 
 Check it out live @ [https://aturfah.github.io/eou-skillsim/](https://aturfah.github.io/eou-skillsim/)
 
 ## Available Scripts
+- `npm start` runs app locally
+- `npm run deploy` deploys app on `gh-pages` branch
 
-In the project directory, you can run:
-
-### `npm start`
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm run deploy`
-Deploys app to `gh-pages` branch.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
