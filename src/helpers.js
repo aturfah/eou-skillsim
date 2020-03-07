@@ -51,6 +51,49 @@ export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
     return output
 }
 
+export function buildBarsAfter(datum, xCoord, yCoord, graphParams) {
+    const output = []
+    if (datum.numAfter > 0) {
+        // Draw Horizontal Bar
+        var barRightXCoord = xCoord + graphParams.BOX_WIDTH + 2 *  graphParams.BOX_BORDER_WIDTH;
+        var barRightYCoord = yCoord + graphParams.BOX_HEIGHT / 2;;
+        const rightBarStyle = {top: barRightYCoord + 'px',
+                        left: barRightXCoord + 'px',
+                        width: ( graphParams.LINE_LENGTH / 2) + 'px',
+                        borderTopColor: '#5B6DCD',
+                        borderTopWidth: graphParams.LINE_THICKNESS + 'px',
+                        borderTopStyle: 'solid'}
+
+        if (datum.afterSkip > 0) {
+            var newOffset = datum.afterSkip * graphParams.BOX_WIDTH;
+            newOffset += 2 * graphParams.BOX_BORDER_WIDTH;
+            newOffset += datum.afterSkip * graphParams.BOX_PADDING + 
+                 (datum.coords.x === 1 ? graphParams.BOX_WIDTH / 4 : graphParams.BOX_PADDING)
+            rightBarStyle.width = parseInt(rightBarStyle.width.replace('px', '')) + newOffset;
+        }
+        output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
+
+        // Draw Vertical Bar After if Necessary
+        if (datum.numAfter > 1) {
+            var postBarXCoord = barRightXCoord + (graphParams.LINE_LENGTH / 2);
+            var postBarYCoord = barRightYCoord;
+            var postBarHeight = (datum.numAfter - 1) * (graphParams.BOX_HEIGHT + graphParams.BOX_PADDING) + graphParams.LINE_THICKNESS;
+            if (datum.afterStyle === 'centered') {
+                postBarYCoord = postBarYCoord - postBarHeight / 2
+            }
+            const postBarStyle = {top: postBarYCoord + 'px',
+                left: postBarXCoord + 'px',
+                height: postBarHeight + 'px',
+                borderLeftColor: '#5B6DCD',
+                borderLeftWidth: graphParams.LINE_THICKNESS + 'px',
+                borderLeftStyle: 'solid'}
+            output.push(<div className='verticalBar'
+                    style={postBarStyle}></div>)
+        }
+    }
+    return output
+}
+
 function deepCopy (inObject) {
     // Stolen From
     // https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089

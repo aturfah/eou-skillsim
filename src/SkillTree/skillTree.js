@@ -8,7 +8,7 @@ import skillData from '../data/skill_data';
 import treeData from '../data/tree_data'
 
 // Helper Functions
-import {firstDegSkills, buildBarsBefore} from '../helpers';
+import {firstDegSkills, buildBarsBefore, buildBarsAfter} from '../helpers';
 
 
 class SkillTree extends Component {
@@ -67,10 +67,6 @@ class SkillTree extends Component {
             });
         })
         return output
-    }
-
-    buildBarsAfter(datum, xCoord, yCoord) {
-
     }
 
     drawSkillTree(skillTreeNodes) {
@@ -146,50 +142,12 @@ class SkillTree extends Component {
                     output.push(<div className='verticalBar'
                                 style={barStyle}></div>)
                 } else if (datum.numAfter > 0) {
-                // TODO: be able to add line horizontally when only 1 skill
-
+                    // TODO: be able to add line horizontally when only 1 skill
+                    buildBarsAfter(datum, xCoord, yCoord, lineParams).forEach((doot) => {output.push(doot)})
                 }
             } else {
-                // draw horizontal lines before
                 buildBarsBefore(datum, xCoord, yCoord, lineParams).forEach((doot) => {output.push(doot)})
-
-                // draw horizontal lines after
-                if (datum.numAfter > 0) {
-                    var barRightXCoord = xCoord + BOX_WIDTH + 2 * BOX_BORDER_WIDTH;
-                    var barRightYCoord = yCoord + BOX_HEIGHT / 2;;
-                    const rightBarStyle = {top: barRightYCoord + 'px',
-                                    left: barRightXCoord + 'px',
-                                    width: (LINE_LENGTH / 2) + 'px',
-                                    borderTopColor: '#5B6DCD',
-                                    borderTopWidth: LINE_THICKNESS + 'px',
-                                    borderTopStyle: 'solid'}
-
-                    if (datum.afterSkip > 0) {
-                        var newOffset = datum.afterSkip * BOX_WIDTH;
-                        newOffset += 2 * BOX_BORDER_WIDTH;
-                        newOffset += datum.afterSkip * BOX_PADDING + 
-                             (datum.coords.x === 1 ? BOX_WIDTH / 4 : BOX_PADDING)
-                        rightBarStyle.width = parseInt(rightBarStyle.width.replace('px', '')) + newOffset;
-                    }
-                    output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
-                    // Draw Vertical Bar After if Necessary
-                    if (datum.numAfter > 1) {
-                        var postBarXCoord = barRightXCoord + (LINE_LENGTH / 2);
-                        var postBarYCoord = barRightYCoord;
-                        var postBarHeight = (datum.numAfter - 1) * (BOX_HEIGHT + BOX_PADDING) + LINE_THICKNESS;
-                        if (datum.afterStyle === 'centered') {
-                            postBarYCoord = postBarYCoord - postBarHeight / 2
-                        }
-                        const postBarStyle = {top: postBarYCoord + 'px',
-                            left: postBarXCoord + 'px',
-                            height: postBarHeight + 'px',
-                            borderLeftColor: '#5B6DCD',
-                            borderLeftWidth: LINE_THICKNESS + 'px',
-                            borderLeftStyle: 'solid'}
-                        output.push(<div className='verticalBar'
-                                style={postBarStyle}></div>)
-                    }
-                }
+                buildBarsAfter(datum, xCoord, yCoord, lineParams).forEach((doot) => {output.push(doot)})
             }
         });
 
