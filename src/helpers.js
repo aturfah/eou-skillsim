@@ -1,5 +1,55 @@
+import React from 'react';
 import masterySkills from './data/mastery_skills';
 import prereqData from './data/prereq_data';
+
+
+export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
+    const output = []
+    if (datum.numBefore > 0) {
+        var barLeftXCoord = xCoord;
+        var barLeftYCoord = yCoord + graphParams.BOX_HEIGHT / 2;
+        const leftBarStyle = {top: barLeftYCoord + 'px',
+                          left: barLeftXCoord - (graphParams.LINE_LENGTH / 2) + 'px',
+                          width: (graphParams.LINE_LENGTH)/ 2 + 'px',
+                          borderTopColor: '#FF0000',
+                          borderTopWidth: graphParams.LINE_THICKNESS + 'px',
+                          borderTopStyle: 'solid'}
+        if (datum.coords.x === 0) {
+            // this line is a bit shorter
+            leftBarStyle.width = graphParams.BOX_WIDTH / 4
+            leftBarStyle.left = barLeftXCoord - leftBarStyle.width
+        } else if (datum.beforeSkip > 0) {
+            var newOffset = datum.beforeSkip * graphParams.BOX_WIDTH;
+            newOffset += 2 * graphParams.BOX_BORDER_WIDTH;
+            newOffset += datum.beforeSkip * graphParams.BOX_PADDING + 
+                 (datum.coords.x === 1 ? graphParams.BOX_WIDTH / 4 : graphParams.BOX_PADDING)
+            leftBarStyle.width = parseInt(leftBarStyle.width.replace('px', '')) + newOffset;
+            leftBarStyle.left = parseInt(leftBarStyle.left.replace('px', '')) - newOffset;
+            barLeftXCoord -= newOffset;
+        }
+        output.push(<div className='horizontalBar' style={leftBarStyle}></div>)
+
+        // Draw vertical line before if necessary
+        if (datum.numBefore > 1) {
+            var preBarXCoord = barLeftXCoord - (graphParams.LINE_LENGTH / 2);
+            var preBarYCoord = barLeftYCoord + (graphParams.LINE_THICKNESS / 2);
+            var preBarHeight = (datum.numBefore - 1) * (graphParams.BOX_HEIGHT + graphParams.BOX_PADDING) + graphParams.LINE_THICKNESS / 2;
+            if (datum.beforeStyle === 'centered') {
+                preBarYCoord = preBarYCoord - preBarHeight / 2 - graphParams.LINE_THICKNESS / 4
+                preBarHeight += graphParams.LINE_THICKNESS / 2
+            }
+            const preBarStyle = {top: preBarYCoord + 'px',
+                left: preBarXCoord + 'px',
+                height: preBarHeight + 'px',
+                borderLeftColor: '#5B6DCD',
+                borderLeftWidth: graphParams.LINE_THICKNESS + 'px',
+                borderLeftStyle: 'solid'}
+            output.push(<div className='verticalBar'
+                    style={preBarStyle}></div>)
+        }
+    }
+    return output
+}
 
 function deepCopy (inObject) {
     // Stolen From
