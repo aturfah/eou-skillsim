@@ -236,7 +236,6 @@ class SkillTree extends Component {
         }
 
         return <div className="SkillTree" style={divStyle}>
-            Skill Data Goes Here (pew)
             {doot}
             </div>
     }

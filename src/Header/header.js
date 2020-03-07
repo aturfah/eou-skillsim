@@ -138,7 +138,7 @@ class Header extends Component {
         const levelBox = this.buildLevelBox()
         const retirementBox = this.buildRetirementBox()
 
-        return <div className="HeaderBar">Header Goes Here (doot)
+        return <div className="HeaderBar">
             {classDropdown}
             {levelBox}
             {retirementBox}
