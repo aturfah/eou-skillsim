@@ -2,6 +2,9 @@ import React from 'react';
 import masterySkills from './data/mastery_skills';
 import prereqData from './data/prereq_data';
 
+export function parsePX (pxStr) {
+    return parseInt(pxStr.replace('px', ''));
+}
 
 export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
     const output = []
@@ -55,22 +58,33 @@ export function buildBarsAfter(datum, xCoord, yCoord, graphParams) {
     const output = []
     if (datum.numAfter > 0) {
         // Draw Horizontal Bar
-        var barRightXCoord = xCoord + graphParams.BOX_WIDTH + 2 *  graphParams.BOX_BORDER_WIDTH;
-        var barRightYCoord = yCoord + graphParams.BOX_HEIGHT / 2;;
-        const rightBarStyle = {top: barRightYCoord + 'px',
-                        left: barRightXCoord + 'px',
-                        width: ( graphParams.LINE_LENGTH / 2) + 'px',
-                        borderTopColor: '#5B6DCD',
-                        borderTopWidth: graphParams.LINE_THICKNESS + 'px',
-                        borderTopStyle: 'solid'}
+        var barRightXCoord = xCoord + graphParams.BOX_WIDTH + 2 * graphParams.BOX_BORDER_WIDTH;
+        var barRightYCoord = yCoord + graphParams.BOX_HEIGHT / 2;
+        var barRightWidth = ( graphParams.LINE_LENGTH / 2);
 
         if (datum.afterSkip > 0) {
             var newOffset = datum.afterSkip * graphParams.BOX_WIDTH;
             newOffset += 2 * graphParams.BOX_BORDER_WIDTH;
             newOffset += datum.afterSkip * graphParams.BOX_PADDING + 
                  (datum.coords.x === 1 ? graphParams.BOX_WIDTH / 4 : graphParams.BOX_PADDING)
-            rightBarStyle.width = parseInt(rightBarStyle.width.replace('px', '')) + newOffset;
+            barRightWidth += newOffset;
         }
+        if (datum.baseSkill) {
+            console.log(datum);
+            console.log(xCoord, yCoord, graphParams)
+            console.log(barRightXCoord, barRightYCoord, barRightWidth);
+            barRightXCoord += 10
+            barRightWidth += graphParams.LINE_LENGTH
+            barRightWidth += 15
+        }
+
+        const rightBarStyle = {top: barRightYCoord + 'px',
+                        left: barRightXCoord + 'px',
+                        width: barRightWidth + 'px',
+                        borderTopColor: '#5B6DCD',
+                        borderTopWidth: graphParams.LINE_THICKNESS + 'px',
+                        borderTopStyle: 'solid'}
+
         output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
 
         // Draw Vertical Bar After if Necessary
