@@ -1372,6 +1372,34 @@ const treeData = [
             numAfter: 0,
             numBefore: 1,
         },
+        {
+            skillID: 'clear_stance',
+            baseSkill: false,
+            coords: {x: 0, y: 4},
+            numAfter: 2,
+            numBefore: 1,
+        },
+        {
+            skillID: 'razor_dodge',
+            baseSkill: false,
+            coords: {x: 1, y: 4},
+            numAfter: 1,
+            numBefore: 1,
+        },
+        {
+            skillID: 'lightning_stab',
+            baseSkill: false,
+            coords: {x: 2, y: 4},
+            numAfter: 0,
+            numBefore: 1,
+        },
+        {
+            skillID: 'arm_strike',
+            baseSkill: false,
+            coords: {x: 1, y: 5},
+            numAfter: 0,
+            numBefore: 1,
+        },
     ],
     [ // Survivalist
         {
