@@ -85,7 +85,7 @@ class SkillTree extends Component {
         const getWidthMethod = this._getWidth
 
         skillTreeStructure.forEach(function (datum) {
-            console.log(datum.skillID)
+            // console.log(datum.skillID)
             var className = 'baseSkill';
             var xOffset = 0;
             var xCoord = null;
@@ -112,7 +112,7 @@ class SkillTree extends Component {
                         className={className + ' skillNode'}
                         style={boxStyle}>{skillTreeNodes[datum.skillID]}</div>)
 
-            if (yCoord + 2 * BOX_HEIGHT > getHeightMethod()) {
+            if (yCoord + BOX_HEIGHT > getHeightMethod()) {
                 setHeightMethod(yCoord + BOX_HEIGHT)
             }
             if (xCoord + BOX_WIDTH + BOX_PADDING > getWidthMethod()) {
@@ -226,6 +226,8 @@ class SkillTree extends Component {
     }
 
     render() {
+        this._setHeight(null);
+        this._setWidth(null);
         const skillTreeNodes = this.buildSkillTreeNodes()
         const doot = this.drawSkillTree(skillTreeNodes);
         const divStyle = {
