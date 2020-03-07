@@ -1485,6 +1485,13 @@ const treeData = [
             beforeSkip: beforeSkipBase,
             numBefore: 1,
         },
+        {
+            skillID: 'mine',
+            baseSkill: false,
+            coords: {x: 1, y: 9},
+            numAfter: 0,
+            numBefore: 0
+        },
     ],
     [ // Survivalist
         {
