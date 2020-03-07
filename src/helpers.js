@@ -73,9 +73,8 @@ export function buildBarsAfter(datum, xCoord, yCoord, graphParams) {
             console.log(datum);
             console.log(xCoord, yCoord, graphParams)
             console.log(barRightXCoord, barRightYCoord, barRightWidth);
-            barRightXCoord += 10
-            barRightWidth += graphParams.LINE_LENGTH
-            barRightWidth += 15
+            barRightXCoord += 10 // I don't know where this 10 comes from
+            barRightWidth += graphParams.REG_SKILL_OFFSET - 6
         }
 
         const rightBarStyle = {top: barRightYCoord + 'px',

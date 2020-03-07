@@ -76,13 +76,15 @@ class SkillTree extends Component {
         const BOX_PADDING = LINE_LENGTH / 2;
         const LINE_THICKNESS = 4;
         const BOX_BORDER_WIDTH = LINE_THICKNESS;
+        const REG_SKILL_OFFSET = BOX_WIDTH / 2;
         const lineParams = {
             BOX_WIDTH: BOX_WIDTH,
             BOX_HEIGHT: BOX_HEIGHT,
             LINE_LENGTH: LINE_LENGTH,
             BOX_PADDING: BOX_PADDING,
             LINE_THICKNESS: LINE_THICKNESS,
-            BOX_BORDER_WIDTH: BOX_BORDER_WIDTH
+            BOX_BORDER_WIDTH: BOX_BORDER_WIDTH,
+            REG_SKILL_OFFSET: REG_SKILL_OFFSET
         }
         const output = [];
 
@@ -101,7 +103,7 @@ class SkillTree extends Component {
 
             if (!datum.baseSkill) {
                 className = 'regularSkill';
-                xOffset = BOX_WIDTH / 2;
+                xOffset = REG_SKILL_OFFSET;
             }
             xCoord = (BOX_WIDTH + BOX_PADDING) * datum.coords.x +
                 (datum.coords.x > 0 ? datum.coords.x : 0) * (BOX_PADDING + 2*BOX_BORDER_WIDTH) + xOffset;
