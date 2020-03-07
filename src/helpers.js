@@ -17,8 +17,8 @@ export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
                           borderTopColor: '#FF0000',
                           borderTopWidth: graphParams.LINE_THICKNESS + 'px',
                           borderTopStyle: 'solid'}
-        if (datum.coords.x === 0) {
-            // this line is a bit shorter
+        if (datum.coords.x === 0 || datum.baseBefore) {
+            // this line is a bit longer
             leftBarStyle.width = graphParams.BOX_WIDTH / 4
             leftBarStyle.left = barLeftXCoord - leftBarStyle.width
         } else if (datum.beforeSkip > 0) {
