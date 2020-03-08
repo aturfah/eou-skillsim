@@ -14,7 +14,7 @@ function buildTextSkillTree(datum, hBarStyle) {
     const WIDTH = 20;
 
     const textStyle = {
-        left: parsePX(hBarStyle.left) - WIDTH / 2 + 'px',
+        left: parsePX(hBarStyle.left) - WIDTH / 1.5 + 'px',
         top: parsePX(hBarStyle.top) - FONT_SIZE / 1.5 + 'px',
         color: '#FFF',
         fontSize: FONT_SIZE + 'px',
