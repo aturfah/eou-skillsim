@@ -48,7 +48,7 @@ class Header extends Component {
             retirementOpts.push(<option key={label} value={idx}>{label}</option>)
         })
 
-        return <div><b>Retirement Level:</b> <select
+        return <div><span className="HeaderLabel">Retirement Level:</span> <select
                 ref="retirementDropdownList"
                 value={this.props.retirementIdx}
                 onChange={() => this.updateRetirementIdx()}>
@@ -70,7 +70,7 @@ class Header extends Component {
         }
 
         return <div>
-        <b>Max Level:</b> <select
+        <span className="HeaderLabel">Max Level:</span> <select
             value={this.props.maxLevel}
             ref='maxLevelDropdownList'
             id='maxLevelDropdown'
@@ -105,7 +105,7 @@ class Header extends Component {
         }
 
         return <div>
-        <b>Level:</b> <select
+        <span className="HeaderLabel">Level:</span> <select
             value={this.props.level}
             ref='levelDropdownList'
             id='levelDropdown'
@@ -122,7 +122,7 @@ class Header extends Component {
             classOptions.push(<option key={idx + className} value={idx} >{className}</option>)
         })
         return <div>
-            <b>Class:</b> <select
+            <span className="HeaderLabel">Class:</span> <select
                 value={this.props.activeClassIdx}
                 ref='classDropdownList'
                 id="classDropdown"
@@ -158,7 +158,7 @@ class Header extends Component {
 
     render() {
         const classDropdown = this.buildClassDropdown(this.classOpts);
-        const skillPointsInfo = <div><b>Skill Points:</b> {this.props.skillPointsRemaining}/{this.props.skillPointsTotal}</div>;
+        const skillPointsInfo = <div><span className="HeaderLabel">Skill Points:</span> {this.props.skillPointsRemaining}/{this.props.skillPointsTotal}</div>;
         const levelBox = this.buildLevelBox()
         const retirementBox = this.buildRetirementBox()
         const maxLevelBox = this.buildMaxLevelBox()

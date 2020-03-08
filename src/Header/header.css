@@ -22,3 +22,7 @@
     margin-left:auto;
     vertical-align: middle;
 }
+
+.HeaderLabel {
+    font-weight: bold;
+}
