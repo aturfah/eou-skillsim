@@ -1879,6 +1879,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'shelter_song',
@@ -1887,6 +1888,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'holy_gift',
@@ -1902,6 +1904,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'insight_melody',
@@ -1910,6 +1913,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'recovery_aria',
@@ -1981,6 +1985,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'eerie_chorus',
@@ -1997,6 +2002,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [5],
+            postReqLevels: [5],
         },
         {
             skillID: 'taboo_rondo',
