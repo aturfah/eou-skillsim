@@ -10,14 +10,15 @@ import {fixSkillDependencyAdd,
   fixSkillDependencyDelete,
   firstDegSkills,
   calculateTotalSP,
-  listIntersect} from './helpers'
+  listIntersect, deepCopy} from './helpers'
 
 function defaultState() {
   return {
     level: 1,
     retirementIdx: 0,
     skillsChosen: {},
-    activeClassIdx: 0
+    activeClassIdx: 0,
+    maxLevel: 70
   };
 }
 
@@ -29,10 +30,10 @@ class App extends Component {
     this.calculateSpRemaining = this.calculateSpRemaining.bind(this)
   }
 
-  calculateSpRemaining() {
-    const sp = calculateTotalSP(this.state.level, this.state.retirementIdx)
-    const activeFDegSkills = listIntersect(Object.keys(this.state.skillsChosen), this.firstDegSkills);
-    const skillsChosen = this.state.skillsChosen;
+  calculateSpRemaining(skillState) {
+    const sp = calculateTotalSP(skillState.level, skillState.retirementIdx)
+    const activeFDegSkills = listIntersect(Object.keys(skillState.skillsChosen), this.firstDegSkills);
+    const skillsChosen = skillState.skillsChosen;
 
     let totalSpSpent = 0;
     Object.keys(skillsChosen).forEach(function (key) {
@@ -47,10 +48,10 @@ class App extends Component {
     if (key === undefined) {
       console.log('Resetting State...')
       this.setState(defaultState);
-      return
+      return;
     }
     //Set a specific part of state
-    let oldState = this.state;
+    let oldState = deepCopy(this.state);
     if (value === undefined) {
       value = defaultState()[key]
     }
@@ -86,13 +87,18 @@ class App extends Component {
       oldState[key] = value;
     }
 
-    const spRemaining = this.calculateSpRemaining()
+    const spRemaining = this.calculateSpRemaining(oldState)
     if (spRemaining < 0) {
-      console.log('Increasing level by', -1*spRemaining, 'to meet SP needs');
-      oldState['level'] -= spRemaining;
+        console.log('Increasing level by', -1*spRemaining, 'to meet SP needs');
+        oldState['level'] -= spRemaining;
     }
 
-    this.setState(oldState);
+    // After everything, we are within valid level range
+    if (oldState.level > oldState.maxLevel) {
+      alert('This change would exceed the set maximum level.')
+    } else {
+      this.setState(oldState);
+    }
   }
 
   render() {
@@ -104,8 +110,9 @@ class App extends Component {
           retirementIdx={this.state.retirementIdx}
           skillsChosen={this.state.skillsChosen}
           skillPointsTotal={calculateTotalSP(this.state.level, this.state.retirementIdx)}
-          skillPointsRemaining={this.calculateSpRemaining()}
+          skillPointsRemaining={this.calculateSpRemaining(this.state)}
           activeClassIdx={this.state.activeClassIdx}
+          maxLevel={this.state.maxLevel}
         ></Header>
         <SkillTree
           updateMethod={this.updateState.bind(this)}
