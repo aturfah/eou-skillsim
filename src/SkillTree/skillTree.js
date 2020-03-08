@@ -118,7 +118,8 @@ class SkillTree extends Component {
                               borderWidth: BOX_BORDER_WIDTH + 'px',
                               borderStyle: 'solid',
                               width: BOX_WIDTH + 'px',
-                              height: BOX_HEIGHT + 'px'
+                              height: BOX_HEIGHT + 'px',
+                              borderRadius: BOX_WIDTH / 12 + 'px'
                             }
             output.push(<div key={datum.skillID + 'node'}
                         className={className + ' skillNode'}
