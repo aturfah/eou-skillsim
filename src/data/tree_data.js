@@ -12,6 +12,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1]
         },
         {
             skillID: 'ice_formula',
@@ -19,6 +20,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1]
         },
         {
             skillID: 'volt_formula',
@@ -26,6 +28,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1]
         },
         {
             skillID: 'inferno_formula',
@@ -33,6 +36,7 @@ const treeData = [
             coords: {x: 1, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5]
         },
         {
             skillID: 'cocytus_formula',
@@ -40,6 +44,7 @@ const treeData = [
             coords: {x: 1, y: 2},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5]
         },
         {
             skillID: 'thor_formula',
@@ -47,6 +52,7 @@ const treeData = [
             coords: {x: 1, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5]
         },
         {
             skillID: 'flame_formula',
