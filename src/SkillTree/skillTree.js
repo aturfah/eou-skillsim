@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react';
 import SkillTreeNode from './skillTreeNode'
+import SkillInfoPanel from '../SkillInfo/skillInfo'
 import './skillTree.css';
 
 // Data Import
@@ -14,6 +15,7 @@ import {firstDegSkills, buildBarsBefore, buildBarsAfter} from '../helpers';
 class SkillTree extends Component {
     constructor(props) {
         super(props);
+        this.state = {activeSkillID: null}
         this.firstSkills = firstDegSkills(props.activeClassIdx)
         this.divHeight = null;
         this.divWidth = null;
@@ -23,6 +25,10 @@ class SkillTree extends Component {
         this._getHeight = this._getHeight.bind(this)
         this._setWidth = this._setWidth.bind(this)
         this._getWidth = this._getWidth.bind(this)
+    }
+
+    _setActiveSkill(skillID) {
+        this.setState({activeSkillID: skillID});
     }
 
     _setHeight(newHeight) {
@@ -171,6 +177,10 @@ class SkillTree extends Component {
 
         return <div className="SkillTree" style={divStyle}>
             {doot}
+            <SkillInfoPanel
+                activeSkillID={this.state.activeSkillID}
+                activeClassIdx={this.props.activeClassIdx}
+            ></SkillInfoPanel>
             </div>
     }
 }
