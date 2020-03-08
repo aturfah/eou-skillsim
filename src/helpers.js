@@ -6,6 +6,13 @@ export function parsePX (pxStr) {
     return parseInt(pxStr.replace('px', ''));
 }
 
+function buildTextSkillTree(datum, hBarStyle) {
+    console.log(datum)
+    console.log(hBarStyle)
+
+    return <div className='reqLevel'></div>
+}
+
 export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
     const output = []
     if (datum.numBefore > 0) {
@@ -31,6 +38,11 @@ export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
             barLeftXCoord -= newOffset;
         }
         output.push(<div className='horizontalBar' style={leftBarStyle}></div>)
+
+        // Add for skill prerequisites
+        if (datum.preReqLevels !== undefined) {
+            output.push(buildTextSkillTree(datum, leftBarStyle))
+        }
 
         // Draw vertical line before if necessary
         if (datum.numBefore > 1) {
