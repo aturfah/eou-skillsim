@@ -1089,6 +1089,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'salve',
@@ -1096,6 +1097,7 @@ const treeData = [
             coords: {x: 1, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'unbind',
@@ -1103,6 +1105,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'refresh',
@@ -1110,6 +1113,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'immunize',
@@ -1124,6 +1128,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'delayed_heal',
@@ -1131,6 +1136,7 @@ const treeData = [
             coords: {x: 1, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'heal',
@@ -1138,6 +1144,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'revive',
@@ -1145,6 +1152,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'cpr',
@@ -1152,6 +1160,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'hp_up',
@@ -1167,6 +1176,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'toxin_injection',
@@ -1174,6 +1184,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'curare',
@@ -1181,6 +1192,7 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'diagnosis',
@@ -1188,6 +1200,7 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'clear_strike',
@@ -1195,6 +1208,7 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'tp_up',
@@ -1210,7 +1224,8 @@ const treeData = [
             coords: {x: 2, y: 8},
             numAfter: 0,
             numBefore: 1,
-            baseBefore: true
+            baseBefore: true,
+            preReqLevels: [1],
         },
         {
             skillID: 'scavenge',
@@ -1218,7 +1233,8 @@ const treeData = [
             coords: {x: 2, y: 9},
             numAfter: 0,
             numBefore: 1,
-            baseBefore: true
+            baseBefore: true,
+            preReqLevels: [3],
         },
         {
             skillID: 'focus',
@@ -1226,7 +1242,8 @@ const treeData = [
             coords: {x: 2, y: 10},
             numAfter: 0,
             numBefore: 1,
-            baseBefore: true
+            baseBefore: true,
+            preReqLevels: [10],
         },
         {
             skillID: 'atk_up',
@@ -1241,6 +1258,7 @@ const treeData = [
             coords: {x: 1, y: 13},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'chop',
