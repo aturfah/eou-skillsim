@@ -743,6 +743,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'draining_thrust',
@@ -750,6 +751,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
         },
         {
             skillID: 'draining_burst',
@@ -757,6 +759,7 @@ const treeData = [
             coords: {x: 1, y: 2},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'legion_thrust',
@@ -764,6 +767,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
         },
         {
             skillID: 'legion_burst',
@@ -771,6 +775,7 @@ const treeData = [
             coords: {x: 1, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'head_pierce',
@@ -778,6 +783,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'spear_assist',
@@ -785,6 +791,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'delayed_charge',
@@ -792,6 +799,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'cross_charge',
@@ -799,6 +807,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'atk_up',
@@ -812,6 +821,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'bloody_offense',
@@ -819,6 +829,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'bloodlust',
@@ -833,6 +844,7 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'def_up',
@@ -846,6 +858,7 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'blood_fortune',
@@ -853,6 +866,7 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'allied_bonds',
@@ -867,6 +881,7 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'hp_up',
@@ -880,6 +895,7 @@ const treeData = [
             coords: {x: 0, y: 16},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'black_sabbath',
@@ -887,6 +903,7 @@ const treeData = [
             coords: {x: 0, y: 17},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'mine',
