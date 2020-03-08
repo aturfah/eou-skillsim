@@ -1281,6 +1281,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'rear_guard',
@@ -1288,6 +1289,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'defender',
@@ -1302,6 +1304,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'ice_wall',
@@ -1309,6 +1312,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'volt_wall',
@@ -1316,6 +1320,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'shield_smite',
@@ -1323,6 +1328,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'shield_rush',
@@ -1330,12 +1336,14 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'braverys_gift',
             baseSkill: false,
             coords: {x: 0, y: 7},
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'def_up',
@@ -1349,6 +1357,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'parry',
@@ -1356,6 +1365,7 @@ const treeData = [
             coords: {x: 1, y: 9},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'fortify',
@@ -1363,6 +1373,7 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'aegis',
@@ -1370,6 +1381,7 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'en_garde',
@@ -1390,6 +1402,7 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'flee',
@@ -1397,6 +1410,7 @@ const treeData = [
             coords: {x: 1, y: 13},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'cure',
@@ -1404,6 +1418,7 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'party_cure',
@@ -1411,6 +1426,7 @@ const treeData = [
             coords: {x: 0, y: 15},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'prayer',
