@@ -849,6 +849,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [3],
         },
         {
             skillID: 'bloody_offense',
@@ -857,6 +858,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'bloodlust',
@@ -886,6 +888,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [3],
         },
         {
             skillID: 'blood_fortune',
@@ -894,6 +897,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'allied_bonds',
