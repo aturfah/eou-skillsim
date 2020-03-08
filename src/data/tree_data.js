@@ -926,6 +926,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'tornado',
@@ -933,7 +934,8 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
-            afterSkip: 1
+            afterSkip: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'blinding_slap',
@@ -941,6 +943,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'falcon_slash',
@@ -948,6 +951,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'axe_mastery',
@@ -963,6 +967,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'head_bash',
@@ -970,6 +975,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'stunning_smash',
@@ -977,7 +983,8 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
-            afterSkip: 1
+            afterSkip: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'power_crush',
@@ -985,6 +992,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'double_strike',
@@ -1049,7 +1057,8 @@ const treeData = [
             baseSkill: false,
             coords: {x: 1, y: 12},
             numAfter: 1,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'strike_chaser',
