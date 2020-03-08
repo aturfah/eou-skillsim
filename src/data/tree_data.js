@@ -1,4 +1,3 @@
-const beforeSkipBase = 0.2725;
 const treeData = [
     [ // Alchemist
         {
