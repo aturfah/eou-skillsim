@@ -104,7 +104,7 @@ export function buildBarsAfter(datum, xCoord, yCoord, graphParams) {
     return output
 }
 
-function deepCopy (inObject) {
+export function deepCopy (inObject) {
     // Stolen From
     // https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
     let outObject, value, key
