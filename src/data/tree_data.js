@@ -60,6 +60,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'freeze_formula',
@@ -67,6 +68,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'spark_formula',
@@ -74,6 +76,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'dilution',
@@ -89,6 +92,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'pain_formula',
@@ -96,6 +100,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'firelight',
@@ -103,6 +108,7 @@ const treeData = [
             coords: {x: 1, y: 8},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'light_formula',
@@ -110,6 +116,7 @@ const treeData = [
             coords: {x: 2, y: 8},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'light_tincture',
@@ -130,6 +137,7 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'flee',
@@ -137,6 +145,7 @@ const treeData = [
             coords: {x: 1, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'alchemy',
@@ -144,6 +153,7 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [2],
         },
         {
             skillID: 'scavenge',
@@ -151,6 +161,7 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'sight_formula',
@@ -158,6 +169,7 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'focus',
@@ -165,6 +177,7 @@ const treeData = [
             coords: {x: 0, y: 15},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'chop',
