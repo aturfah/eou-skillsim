@@ -967,6 +967,7 @@ const treeData = [
             numBefore: 1,
             afterSkip: 1,
             preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'blinding_slap',
@@ -975,6 +976,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'falcon_slash',
@@ -1007,6 +1009,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'stunning_smash',
@@ -1016,6 +1019,7 @@ const treeData = [
             numBefore: 1,
             afterSkip: 1,
             preReqLevels: [5],
+            postReqLevels: [5],
         },
         {
             skillID: 'power_crush',
@@ -1060,21 +1064,24 @@ const treeData = [
             baseSkill: true,
             coords: {x: 0, y: 10},
             numAfter: 1,
-            numBefore: 0
+            numBefore: 0,
+            postReqLevels: [2],
         },
         {
             skillID: 'tp_up',
             baseSkill: true,
             coords: {x: 0, y: 11},
             numAfter: 1,
-            numBefore: 0
+            numBefore: 0,
+            postReqLevels: [2],
         },
         {
             skillID: 'triple_charge',
             baseSkill: false,
             coords: {x: 1, y: 10},
             numAfter: 1,
-            numBefore: 2
+            numBefore: 2,
+            postReqLevels: [3],
         },
         {
             skillID: 'atk_up',
@@ -1090,6 +1097,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'strike_chaser',
