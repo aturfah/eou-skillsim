@@ -200,6 +200,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'shackles',
@@ -207,6 +208,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'cuffs',
@@ -214,6 +216,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'ecstasy',
@@ -229,6 +232,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'climax',
@@ -236,7 +240,8 @@ const treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 1,
-            beforeSkip: 1
+            beforeSkip: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'sword_mastery',
@@ -250,6 +255,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'nerve_bite',
@@ -257,6 +263,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'mirage_bite',
@@ -264,6 +271,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'soul_liberator',
@@ -271,7 +279,7 @@ const treeData = [
             coords: {x: 1, y: 8},
             numAfter: 0,
             numBefore: 3,
-            beforeStyle: 'centered'
+            beforeStyle: 'centered',
         },
         {
             skillID: 'drain_bite',
@@ -279,6 +287,7 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'catastrophe',
@@ -286,7 +295,8 @@ const treeData = [
             coords: {x: 1, y: 11},
             numAfter: 0,
             numBefore: 1,
-            beforeSkip: 1
+            beforeSkip: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'atk_up',
@@ -300,6 +310,7 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'wraths_might',
@@ -307,6 +318,7 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'bait',
@@ -327,6 +339,7 @@ const treeData = [
             coords: {x: 0, y: 16},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'shadow_veil',
@@ -334,6 +347,7 @@ const treeData = [
             coords: {x: 0, y: 17},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'dark_curse',
