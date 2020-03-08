@@ -57,6 +57,30 @@ class Header extends Component {
         </div>
     }
 
+    updateMaxLevel() {
+        const maxLevelBox = this.refs.maxLevelDropdownList;
+        let newLevel = maxLevelBox.value;
+        this.props.updateMethod('maxLevel', newLevel);
+    }
+
+    buildMaxLevelBox() {
+        const levelBoxOpts = []
+        for (let i = 1; i < 100; i++) {
+            levelBoxOpts.push(<option key={i} value={i}>{i}</option>)
+        }
+
+        return <div>
+        <b>Max Level:</b> <select
+            value={this.props.maxLevel}
+            ref='maxLevelDropdownList'
+            id='maxLevelDropdown'
+            onChange={() => {this.updateMaxLevel()}}
+        >
+            {levelBoxOpts}
+        </select>
+        </div>
+    }
+
     updateLevel() {
         const levelBox = this.refs.levelDropdownList;
         if (isNumber(levelBox.value)) {
@@ -137,6 +161,7 @@ class Header extends Component {
         const skillPointsInfo = <div><b>Skill Points:</b> {this.props.skillPointsRemaining}/{this.props.skillPointsTotal}</div>;
         const levelBox = this.buildLevelBox()
         const retirementBox = this.buildRetirementBox()
+        const maxLevelBox = this.buildMaxLevelBox()
 
         const imgStyle = {
             float: 'left',
@@ -150,6 +175,7 @@ class Header extends Component {
             <div className="HeaderControls">
                 {classDropdown}
                 {levelBox}
+                {maxLevelBox}
                 {retirementBox}
                 {skillPointsInfo}
                 <div>
