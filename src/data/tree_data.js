@@ -1644,6 +1644,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'disabling_shot',
@@ -1651,6 +1652,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'multi-shot',
@@ -1665,6 +1667,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'agi_up',
@@ -1678,6 +1681,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'trickery',
@@ -1685,6 +1689,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
         },
         {
             skillID: 'sure_shot',
@@ -1692,6 +1697,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'chain_dance',
@@ -1706,21 +1712,24 @@ const treeData = [
             baseSkill: false,
             coords: {x: 2, y: 6},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'act_first',
             baseSkill: false,
             coords: {x: 0, y: 8},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'quick_step',
             baseSkill: false,
             coords: {x: 0, y: 9},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'predator',
@@ -1733,21 +1742,24 @@ const treeData = [
             baseSkill: false,
             coords: {x: 0, y: 11},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'awareness',
             baseSkill: false,
             coords: {x: 0, y: 12},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'stalker',
             baseSkill: false,
             coords: {x: 0, y: 13},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'hp_up',
@@ -1762,14 +1774,16 @@ const treeData = [
             baseSkill: false,
             coords: {x: 1, y: 14},
             numBefore: 1,
-            numAfter: 1
+            numAfter: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'resuscitate',
             baseSkill: false,
             coords: {x: 2, y: 14},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'chop',
