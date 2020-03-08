@@ -138,14 +138,24 @@ class Header extends Component {
         const levelBox = this.buildLevelBox()
         const retirementBox = this.buildRetirementBox()
 
+        const imgStyle = {
+            float: 'left',
+            marginLeft: '5%',
+        }
+
         return <div className="HeaderBar">
-            {classDropdown}
-            {levelBox}
-            {retirementBox}
-            {skillPointsInfo}
-            <div>
-                <span onClick={() => this._clearSkills()}>(CLEAR SKILLS)</span> &nbsp;
-                <span onClick={() => this._resetAll()}>(RESET TO DEFAULT)</span>
+            <div className="HeaderImg">
+                <img src="https://www.atlus.com/untold/images/main/main_06.png"  alt="alt_text" style={imgStyle}/>
+            </div>
+            <div className="HeaderControls">
+                {classDropdown}
+                {levelBox}
+                {retirementBox}
+                {skillPointsInfo}
+                <div>
+                    <span onClick={() => this._clearSkills()}>(CLEAR SKILLS)</span> &nbsp;
+                    <span onClick={() => this._resetAll()}>(RESET TO DEFAULT)</span>
+                </div>
             </div>
         </div>
     }
