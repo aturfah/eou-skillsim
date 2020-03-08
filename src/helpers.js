@@ -7,9 +7,6 @@ export function parsePX (pxStr) {
 }
 
 function buildTextSkillTree(datum, hBarStyle, leftBar) {
-    console.log(datum)
-    console.log(hBarStyle)
-
     const FONT_SIZE = 16;
     const WIDTH = 20;
 
