@@ -204,15 +204,17 @@ def get_dependency_structure(skill_data):
                 if skill['mastery']:
                     mastery_data.append(skill['_id'])
 
-    dependancy_output = {}
+    dependancy_output = []
     for eo_class in skill_data:
+        class_data = {}
         for branch in eo_class['branches']:
             for skill in branch['skill_data']:
                 skill_id = skill['_id']
                 depends_on = skill['prerequisites']
                 if not depends_on:
                     continue
-                dependancy_output[skill_id] = depends_on
+                class_data[skill_id] = depends_on
+        dependancy_output.append(class_data)
 
     return mastery_data, dependancy_output
 
