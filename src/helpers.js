@@ -14,7 +14,7 @@ export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
         const leftBarStyle = {top: barLeftYCoord + 'px',
                           left: barLeftXCoord - (graphParams.LINE_LENGTH / 2) + 'px',
                           width: (graphParams.LINE_LENGTH)/ 2 + 'px',
-                          borderTopColor: '#FF0000',
+                          borderTopColor: graphParams.BORDER_COLOR,
                           borderTopWidth: graphParams.LINE_THICKNESS + 'px',
                           borderTopStyle: 'solid'}
         if (datum.coords.x === 0 || datum.baseBefore) {
@@ -44,7 +44,7 @@ export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
             const preBarStyle = {top: preBarYCoord + 'px',
                 left: preBarXCoord + 'px',
                 height: preBarHeight + 'px',
-                borderLeftColor: '#5B6DCD',
+                borderLeftColor: graphParams.BORDER_COLOR,
                 borderLeftWidth: graphParams.LINE_THICKNESS + 'px',
                 borderLeftStyle: 'solid'}
             output.push(<div className='verticalBar'
@@ -77,7 +77,7 @@ export function buildBarsAfter(datum, xCoord, yCoord, graphParams) {
         const rightBarStyle = {top: barRightYCoord + 'px',
                         left: barRightXCoord + 'px',
                         width: barRightWidth + 'px',
-                        borderTopColor: '#5B6DCD',
+                        borderTopColor: graphParams.BORDER_COLOR,
                         borderTopWidth: graphParams.LINE_THICKNESS + 'px',
                         borderTopStyle: 'solid'}
 
@@ -94,7 +94,7 @@ export function buildBarsAfter(datum, xCoord, yCoord, graphParams) {
             const postBarStyle = {top: postBarYCoord + 'px',
                 left: postBarXCoord + 'px',
                 height: postBarHeight + 'px',
-                borderLeftColor: '#5B6DCD',
+                borderLeftColor: graphParams.BORDER_COLOR,
                 borderLeftWidth: graphParams.LINE_THICKNESS + 'px',
                 borderLeftStyle: 'solid'}
             output.push(<div className='verticalBar'

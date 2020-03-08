@@ -77,6 +77,7 @@ class SkillTree extends Component {
         const LINE_THICKNESS = 4;
         const BOX_BORDER_WIDTH = LINE_THICKNESS;
         const REG_SKILL_OFFSET = BOX_WIDTH / 2;
+        const BORDER_COLOR = 'black';
         const lineParams = {
             BOX_WIDTH: BOX_WIDTH,
             BOX_HEIGHT: BOX_HEIGHT,
@@ -84,7 +85,8 @@ class SkillTree extends Component {
             BOX_PADDING: BOX_PADDING,
             LINE_THICKNESS: LINE_THICKNESS,
             BOX_BORDER_WIDTH: BOX_BORDER_WIDTH,
-            REG_SKILL_OFFSET: REG_SKILL_OFFSET
+            REG_SKILL_OFFSET: REG_SKILL_OFFSET,
+            BORDER_COLOR: BORDER_COLOR
         }
         const output = [];
 
@@ -112,7 +114,7 @@ class SkillTree extends Component {
             // Add the element
             const boxStyle = {top: yCoord + 'px',
                               left: xCoord + 'px',
-                              borderColor: '#000000',
+                              borderColor: BORDER_COLOR,
                               borderWidth: BOX_BORDER_WIDTH + 'px',
                               borderStyle: 'solid',
                               width: BOX_WIDTH + 'px',
@@ -138,7 +140,7 @@ class SkillTree extends Component {
                     const barStyle = {top: barYCoord + 'px',
                                     left: barXCoord + 'px',
                                     height: barLength + 'px',
-                                    borderLeftColor: '#5B6DCD',
+                                    borderLeftColor: '#000000',
                                     borderLeftWidth: LINE_THICKNESS + 'px',
                                     borderLeftStyle: 'solid'}
                     output.push(<div className='verticalBar'
