@@ -1698,6 +1698,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'disabling_shot',
@@ -1706,6 +1707,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'multi-shot',
@@ -1735,6 +1737,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [2],
         },
         {
             skillID: 'trickery',
@@ -1743,6 +1746,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [2],
+            postReqLevels: [2],
         },
         {
             skillID: 'sure_shot',
@@ -1751,6 +1755,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [2],
         },
         {
             skillID: 'chain_dance',
