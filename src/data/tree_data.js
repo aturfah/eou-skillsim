@@ -380,6 +380,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'arm_snipe',
@@ -387,6 +388,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'leg_snipe',
@@ -394,6 +396,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'fire_rounds',
@@ -401,6 +404,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'charged_fire',
@@ -408,6 +412,7 @@ const treeData = [
             coords: {x: 1, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'ice_rounds',
@@ -415,6 +420,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'charged_ice',
@@ -422,6 +428,7 @@ const treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'volt_rounds',
@@ -429,6 +436,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'charged_volt',
@@ -436,6 +444,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'charged_shot',
@@ -443,6 +452,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'penetrator', // GIVE PENETRATOR 2 LINES
@@ -450,6 +460,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'recharge',
@@ -464,6 +475,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'action_boost',
@@ -484,6 +496,7 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'cover_fire',
@@ -491,6 +504,7 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'shell_shock',
@@ -511,6 +525,7 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'vulcan_stance',
@@ -518,6 +533,7 @@ const treeData = [
             coords: {x: 0, y: 15},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'double_strike',
