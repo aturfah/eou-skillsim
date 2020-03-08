@@ -1145,6 +1145,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'refresh',
@@ -1153,6 +1154,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'immunize',
