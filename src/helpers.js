@@ -3,14 +3,25 @@ import masterySkills from './data/mastery_skills';
 import prereqData from './data/prereq_data';
 
 export function parsePX (pxStr) {
-    return parseInt(pxStr.replace('px', ''));
+    return parseInt(String(pxStr).replace('px', ''));
 }
 
 function buildTextSkillTree(datum, hBarStyle) {
     console.log(datum)
     console.log(hBarStyle)
 
-    return <div className='reqLevel'></div>
+    const FONT_SIZE = 16;
+    const WIDTH = 20;
+
+    const textStyle = {
+        left: parsePX(hBarStyle.left) - WIDTH / 2 + 'px',
+        top: parsePX(hBarStyle.top) - FONT_SIZE / 1.5 + 'px',
+        color: '#FFF',
+        fontSize: FONT_SIZE + 'px',
+        fontWeight: 'bold'
+    }
+
+    return <div style={textStyle} className='reqLevel'>Lv. {datum.preReqLevels[0]}</div>
 }
 
 export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
@@ -39,7 +50,7 @@ export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
         }
         output.push(<div className='horizontalBar' style={leftBarStyle}></div>)
 
-        // Add for skill prerequisites
+        // Add level for skill prerequisites
         if (datum.preReqLevels !== undefined) {
             output.push(buildTextSkillTree(datum, leftBarStyle))
         }
