@@ -7,9 +7,6 @@ export function parsePX (pxStr) {
 }
 
 function buildTextSkillTree(datum, hBarStyle, leftBar) {
-    console.log(datum)
-    console.log(hBarStyle)
-
     const FONT_SIZE = 16;
     const WIDTH = 20;
 
@@ -185,10 +182,10 @@ export function listIntersect(listA, listB) {
     return listA.filter(x => listB.includes(x))
 }
 
-export function firstDegSkills() {
+export function firstDegSkills(activeClassIdx) {
     const output = [];
-    Object.keys(prereqData).forEach(function (key) {
-        const datum = prereqData[key];
+    Object.keys(prereqData[activeClassIdx]).forEach(function (key) {
+        const datum = prereqData[activeClassIdx][key];
         let firstDeg = false;
 
         datum.forEach(function(prereqSkill) {
@@ -232,11 +229,11 @@ export function objCompare(objA, objB) {
     return outputFlag;
 }
 
-function verifySkillDependenciesAdd(chosenSkills) {
+function verifySkillDependenciesAdd(chosenSkills, activeClassIdx) {
     let newChosenSkills = deepCopy(chosenSkills);
 
     Object.keys(newChosenSkills).forEach(function (skillId) {
-        let preReq = prereqData[skillId]
+        let preReq = prereqData[activeClassIdx][skillId]
         if (preReq !== undefined) {
             preReq.forEach(function (preReqSkill) {
                 if (Object.keys(newChosenSkills).includes(preReqSkill._id)) {
@@ -257,14 +254,14 @@ function verifySkillDependenciesAdd(chosenSkills) {
     }
 }
 
-function fixMasterySkills(chosenSkills) {
+function fixMasterySkills(chosenSkills, activeClassIdx) {
     // Check if Mastery unlocks other skills
-    firstDegSkills().forEach(function (key) {
+    firstDegSkills(activeClassIdx).forEach(function (key) {
         if (Object.keys(chosenSkills).includes(key)) {
             return
         }
 
-        const preReq = prereqData[key];
+        const preReq = prereqData[activeClassIdx][key];
         let validSkill = true;
         preReq.forEach(function (prSkill) {
             if (!Object.keys(chosenSkills).includes(prSkill._id)) {
@@ -279,23 +276,23 @@ function fixMasterySkills(chosenSkills) {
     })
 }
 
-export function fixSkillDependencyAdd(chosenSkills) {
+export function fixSkillDependencyAdd(chosenSkills, activeClassIdx) {
     // Check if Prerequisites needed
-    let temp = verifySkillDependenciesAdd(chosenSkills);
+    let temp = verifySkillDependenciesAdd(chosenSkills, activeClassIdx);
     while (temp !== -1) {
         chosenSkills = temp;
-        temp = verifySkillDependenciesAdd(temp);
+        temp = verifySkillDependenciesAdd(temp, activeClassIdx);
     }
-    fixMasterySkills(chosenSkills)
+    fixMasterySkills(chosenSkills, activeClassIdx)
 
     return chosenSkills
 }
 
-function verifySkillDependenciesDel(chosenSkills) {
+function verifySkillDependenciesDel(chosenSkills, activeClassIdx) {
     let validSkills = {};
     Object.keys(chosenSkills).forEach(function (skillId) {
         let validSkill = true;
-        let preReq = prereqData[skillId];
+        let preReq = prereqData[activeClassIdx][skillId];
         if (preReq !== undefined) {
             preReq.forEach(function (prSkill) {
                 if (!Object.keys(chosenSkills).includes(prSkill._id)) {
@@ -318,13 +315,13 @@ function verifySkillDependenciesDel(chosenSkills) {
     }
 }
 
-export function fixSkillDependencyDelete(chosenSkills) {
-    let temp = verifySkillDependenciesDel(chosenSkills);
+export function fixSkillDependencyDelete(chosenSkills, activeClassIdx) {
+    let temp = verifySkillDependenciesDel(chosenSkills, activeClassIdx);
     while (temp !== -1) {
         chosenSkills = temp;
-        temp = verifySkillDependenciesDel(chosenSkills);
+        temp = verifySkillDependenciesDel(chosenSkills, activeClassIdx);
     }
 
-    fixMasterySkills(chosenSkills)
+    fixMasterySkills(chosenSkills, activeClassIdx)
     return chosenSkills
 }

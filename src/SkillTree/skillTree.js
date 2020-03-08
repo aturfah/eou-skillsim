@@ -14,7 +14,7 @@ import {firstDegSkills, buildBarsBefore, buildBarsAfter} from '../helpers';
 class SkillTree extends Component {
     constructor(props) {
         super(props);
-        this.firstSkills = firstDegSkills()
+        this.firstSkills = firstDegSkills(props.activeClassIdx)
         this.divHeight = null;
         this.divWidth = null;
         this.buildSkillTreeNodes = this.buildSkillTreeNodes.bind(this);
