@@ -1,10 +1,11 @@
 .HeaderBar {
-    background-color: lightcoral;
+    background-color: #002D01;
     padding-bottom: 10px;
     padding-top: 10px;
     height: 180px;
     display: table;
     width: 100%;
+    color: white;
 }
 
 .HeaderImg {
@@ -20,4 +21,8 @@
     width: 35%;
     margin-left:auto;
     vertical-align: middle;
+}
+
+.HeaderLabel {
+    font-weight: bold;
 }
