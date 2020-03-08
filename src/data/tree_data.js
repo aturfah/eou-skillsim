@@ -204,6 +204,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'shackles',
@@ -212,6 +213,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'cuffs',
@@ -220,6 +222,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'ecstasy',
@@ -236,6 +239,7 @@ const treeData = [
             numAfter: 2,
             numBefore: 1,
             preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'climax',
@@ -259,6 +263,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'nerve_bite',
@@ -267,6 +272,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'mirage_bite',
@@ -275,6 +281,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'soul_liberator',
@@ -291,6 +298,7 @@ const treeData = [
             numAfter: 2,
             numBefore: 1,
             preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'catastrophe',
@@ -314,6 +322,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'wraths_might',
@@ -322,6 +331,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'bait',
@@ -343,6 +353,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [2],
         },
         {
             skillID: 'shadow_veil',
@@ -351,6 +362,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [2],
         },
         {
             skillID: 'dark_curse',
