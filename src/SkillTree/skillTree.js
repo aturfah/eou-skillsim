@@ -15,7 +15,7 @@ import {firstDegSkills, buildBarsBefore, buildBarsAfter} from '../helpers';
 class SkillTree extends Component {
     constructor(props) {
         super(props);
-        this.state = {activeSkillID: null}
+        this.state = {activeSkillID: null, activeSkillBox: null}
         this.firstSkills = firstDegSkills(props.activeClassIdx)
         this.divHeight = null;
         this.divWidth = null;
@@ -27,8 +27,11 @@ class SkillTree extends Component {
         this._getWidth = this._getWidth.bind(this)
     }
 
-    _setActiveSkill(skillID) {
-        this.setState({activeSkillID: skillID});
+    _setActiveSkill(skillID, skillBoxInfo) {
+        this.setState({
+            activeSkillID: skillID,
+            activeSkillBox: skillBoxInfo
+        });
     }
 
     _setHeight(newHeight) {
@@ -178,7 +181,7 @@ class SkillTree extends Component {
         return <div className="SkillTree" style={divStyle}>
             {doot}
             <SkillInfoPanel
-                activeSkillID={this.state.activeSkillID}
+                activeInfo={this.state}
                 activeClassIdx={this.props.activeClassIdx}
             ></SkillInfoPanel>
             </div>
