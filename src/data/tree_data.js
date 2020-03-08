@@ -1463,6 +1463,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'perfect_chaser',
@@ -1470,6 +1471,7 @@ const treeData = [
             coords: {x: 1, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'upper_stance',
@@ -1477,6 +1479,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'horse_slash',
@@ -1491,6 +1494,7 @@ const treeData = [
             coords: {x: 2, y: 2},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'swallow_strike',
@@ -1505,6 +1509,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'razor_dodge',
@@ -1519,6 +1524,7 @@ const treeData = [
             coords: {x: 2, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'arm_strike',
@@ -1533,6 +1539,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'beheading_cut',
@@ -1547,6 +1554,7 @@ const treeData = [
             coords: {x: 2, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'charging_slash',
@@ -1561,6 +1569,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'atk_up',
@@ -1574,6 +1583,7 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'severing_slash',
@@ -1581,6 +1591,7 @@ const treeData = [
             coords: {x: 1, y: 10},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'hp_up',
@@ -1595,6 +1606,7 @@ const treeData = [
             coords: {x: 1, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'tp_up',
@@ -1609,6 +1621,7 @@ const treeData = [
             coords: {x: 1, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'mine',
