@@ -14,21 +14,26 @@ function buildTextSkillTree(datum, hBarStyle, leftBar) {
     const WIDTH = 20;
 
     var textLeft = null;
+    var text = null;
     if (leftBar === true) {
-        textLeft = parsePX(hBarStyle.left) - WIDTH / 1.5
+        textLeft = parsePX(hBarStyle.left)
+        text = 'Lv.' + datum.preReqLevels[0]
     } else {
-
+        textLeft = parsePX(hBarStyle.left) + parsePX(hBarStyle.width)
+        text = 'Lv.' + datum.postReqLevels[0]
     }
+    textLeft -= WIDTH / 1.5
 
     const textStyle = {
         left: textLeft + 'px',
         top: parsePX(hBarStyle.top) - FONT_SIZE / 1.5 + 'px',
         color: '#FFF',
         fontSize: FONT_SIZE + 'px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        zIndex: 1
     }
 
-    return <div style={textStyle} className='reqLevel'>Lv. {datum.preReqLevels[0]}</div>
+    return <div style={textStyle} className='reqLevel'>{text}</div>
 }
 
 export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
@@ -112,6 +117,12 @@ export function buildBarsAfter(datum, xCoord, yCoord, graphParams) {
                         borderTopStyle: 'solid'}
 
         output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
+
+        // Add level for skill prerequisites
+        if (datum.postReqLevels !== undefined) {
+            output.push(buildTextSkillTree(datum, rightBarStyle, false))
+        }
+
 
         // Draw Vertical Bar After if Necessary
         if (datum.numAfter > 1) {
