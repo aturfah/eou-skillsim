@@ -26,7 +26,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = defaultState()
-    this.firstDegSkills = firstDegSkills();
+    this.firstDegSkills = firstDegSkills(this.state.activeClassIdx);
     this.calculateSpRemaining = this.calculateSpRemaining.bind(this)
   }
 
@@ -47,7 +47,8 @@ class App extends Component {
     // Reset Everything
     if (key === undefined) {
       console.log('Resetting State...')
-      this.setState(defaultState);
+        this.firstDegSkills = firstDegSkills(defaultState().activeClassIdx)
+        this.setState(defaultState());
       return;
     }
     //Set a specific part of state
@@ -59,6 +60,7 @@ class App extends Component {
     if (key === 'activeClassIdx') { 
       console.log('Class change -> resetting state...')
       oldState = defaultState();
+      this.firstDegSkills = firstDegSkills(oldState.activeClassIdx)
     }
 
     // Change parameters
@@ -71,16 +73,16 @@ class App extends Component {
       } else if (skillLevel === 0) {
         console.log('Removing', skillId)
         delete oldState.skillsChosen[skillId];
-        oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
+        oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen, oldState.activeClassIdx);
       } else if (!Object.keys(oldState.skillsChosen).includes(skillId) ||
           oldState.skillsChosen[skillId] < skillLevel) {
         console.log('Increasing level of', skillId, 'to', skillLevel)
         oldState.skillsChosen[skillId] = skillLevel;
-        oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen);
+        oldState.skillsChosen = fixSkillDependencyAdd(oldState.skillsChosen, oldState.activeClassIdx);
       } else if (oldState.skillsChosen[skillId] > skillLevel) {
         console.log('Decreasing level of', skillId, 'to', skillLevel);
         oldState.skillsChosen[skillId] = skillLevel;
-        oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen);
+        oldState.skillsChosen = fixSkillDependencyDelete(oldState.skillsChosen, oldState.activeClassIdx);
       }
     } else {
       console.log('Setting', key, 'to', value)
