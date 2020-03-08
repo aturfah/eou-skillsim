@@ -48,7 +48,7 @@ class Header extends Component {
             retirementOpts.push(<option key={label} value={idx}>{label}</option>)
         })
 
-        return <div>Retirement Level: <select
+        return <div><b>Retirement Level:</b> <select
                 ref="retirementDropdownList"
                 value={this.props.retirementIdx}
                 onChange={() => this.updateRetirementIdx()}>
@@ -81,7 +81,7 @@ class Header extends Component {
         }
 
         return <div>
-        Level: <select
+        <b>Level:</b> <select
             value={this.props.level}
             ref='levelDropdownList'
             id='levelDropdown'
@@ -98,7 +98,7 @@ class Header extends Component {
             classOptions.push(<option key={idx + className} value={idx} >{className}</option>)
         })
         return <div>
-            Class: <select
+            <b>Class:</b> <select
                 value={this.props.activeClassIdx}
                 ref='classDropdownList'
                 id="classDropdown"
@@ -134,18 +134,28 @@ class Header extends Component {
 
     render() {
         const classDropdown = this.buildClassDropdown(this.classOpts);
-        const skillPointsInfo = <div>Skill Points: {this.props.skillPointsRemaining}/{this.props.skillPointsTotal}</div>;
+        const skillPointsInfo = <div><b>Skill Points:</b> {this.props.skillPointsRemaining}/{this.props.skillPointsTotal}</div>;
         const levelBox = this.buildLevelBox()
         const retirementBox = this.buildRetirementBox()
 
+        const imgStyle = {
+            float: 'left',
+            marginLeft: '5%',
+        }
+
         return <div className="HeaderBar">
-            {classDropdown}
-            {levelBox}
-            {retirementBox}
-            {skillPointsInfo}
-            <div>
-                <span onClick={() => this._clearSkills()}>(CLEAR SKILLS)</span> &nbsp;
-                <span onClick={() => this._resetAll()}>(RESET TO DEFAULT)</span>
+            <div className="HeaderImg">
+                <img src="https://www.atlus.com/untold/images/main/main_06.png"  alt="alt_text" style={imgStyle}/>
+            </div>
+            <div className="HeaderControls">
+                {classDropdown}
+                {levelBox}
+                {retirementBox}
+                {skillPointsInfo}
+                <div>
+                    <span onClick={() => this._clearSkills()}>(CLEAR SKILLS)</span> &nbsp;
+                    <span onClick={() => this._resetAll()}>(RESET TO DEFAULT)</span>
+                </div>
             </div>
         </div>
     }
