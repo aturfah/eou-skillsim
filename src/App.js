@@ -95,6 +95,7 @@ class App extends Component {
 
     // After everything, we are within valid level range
     if (oldState.level > oldState.maxLevel) {
+      console.log('ERROR: Exceeding maxLevel')
       alert('This change would exceed the set maximum level.')
     } else {
       this.setState(oldState);
