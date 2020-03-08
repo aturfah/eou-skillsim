@@ -3,7 +3,37 @@ import masterySkills from './data/mastery_skills';
 import prereqData from './data/prereq_data';
 
 export function parsePX (pxStr) {
-    return parseInt(pxStr.replace('px', ''));
+    return parseInt(String(pxStr).replace('px', ''));
+}
+
+function buildTextSkillTree(datum, hBarStyle, leftBar) {
+    console.log(datum)
+    console.log(hBarStyle)
+
+    const FONT_SIZE = 16;
+    const WIDTH = 20;
+
+    var textLeft = null;
+    var text = null;
+    if (leftBar === true) {
+        textLeft = parsePX(hBarStyle.left)
+        text = 'Lv.' + datum.preReqLevels[0]
+    } else {
+        textLeft = parsePX(hBarStyle.left) + parsePX(hBarStyle.width)
+        text = 'Lv.' + datum.postReqLevels[0]
+    }
+    textLeft -= WIDTH / 1.5
+
+    const textStyle = {
+        left: textLeft + 'px',
+        top: parsePX(hBarStyle.top) - FONT_SIZE / 1.5 + 'px',
+        color: '#FFF',
+        fontSize: FONT_SIZE + 'px',
+        fontWeight: 'bold',
+        zIndex: 1
+    }
+
+    return <div style={textStyle} className='reqLevel'>{text}</div>
 }
 
 export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
@@ -31,6 +61,11 @@ export function buildBarsBefore(datum, xCoord, yCoord, graphParams) {
             barLeftXCoord -= newOffset;
         }
         output.push(<div className='horizontalBar' style={leftBarStyle}></div>)
+
+        // Add level for skill prerequisites
+        if (datum.preReqLevels !== undefined) {
+            output.push(buildTextSkillTree(datum, leftBarStyle, true))
+        }
 
         // Draw vertical line before if necessary
         if (datum.numBefore > 1) {
@@ -82,6 +117,12 @@ export function buildBarsAfter(datum, xCoord, yCoord, graphParams) {
                         borderTopStyle: 'solid'}
 
         output.push(<div className='horizontalBar' style={rightBarStyle}></div>)
+
+        // Add level for skill prerequisites
+        if (datum.postReqLevels !== undefined) {
+            output.push(buildTextSkillTree(datum, rightBarStyle, false))
+        }
+
 
         // Draw Vertical Bar After if Necessary
         if (datum.numAfter > 1) {

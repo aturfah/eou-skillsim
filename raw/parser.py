@@ -76,6 +76,7 @@ def parse_table(table_node):
                             continue
                         prereq_name, prereq_level = raw_prereq.split(', ')
                         prereq_name = prereq_name.lower().replace(' ', '_')
+                        prereq_name = prereq_name.replace('\'', '')
                         prereq_level = int(prereq_level.replace('lv. ', ''))
                         prerequisites.append({'_id': prereq_name, 'level': prereq_level})
 

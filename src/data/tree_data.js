@@ -12,6 +12,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'ice_formula',
@@ -19,6 +20,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1]
         },
         {
             skillID: 'volt_formula',
@@ -26,6 +28,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1]
         },
         {
             skillID: 'inferno_formula',
@@ -33,6 +36,7 @@ const treeData = [
             coords: {x: 1, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5]
         },
         {
             skillID: 'cocytus_formula',
@@ -40,6 +44,7 @@ const treeData = [
             coords: {x: 1, y: 2},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5]
         },
         {
             skillID: 'thor_formula',
@@ -47,6 +52,7 @@ const treeData = [
             coords: {x: 1, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5]
         },
         {
             skillID: 'flame_formula',
@@ -54,6 +60,8 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'freeze_formula',
@@ -61,6 +69,8 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'spark_formula',
@@ -68,6 +78,8 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'dilution',
@@ -83,6 +95,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'pain_formula',
@@ -90,6 +103,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'firelight',
@@ -97,6 +111,7 @@ const treeData = [
             coords: {x: 1, y: 8},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'light_formula',
@@ -104,6 +119,7 @@ const treeData = [
             coords: {x: 2, y: 8},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'light_tincture',
@@ -124,6 +140,7 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'flee',
@@ -131,6 +148,7 @@ const treeData = [
             coords: {x: 1, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'alchemy',
@@ -138,6 +156,7 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [2],
         },
         {
             skillID: 'scavenge',
@@ -145,6 +164,7 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'sight_formula',
@@ -152,6 +172,7 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'focus',
@@ -159,6 +180,7 @@ const treeData = [
             coords: {x: 0, y: 15},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'chop',
@@ -181,6 +203,8 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'shackles',
@@ -188,6 +212,8 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'cuffs',
@@ -195,6 +221,8 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'ecstasy',
@@ -210,6 +238,8 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'climax',
@@ -217,7 +247,8 @@ const treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 1,
-            beforeSkip: 1
+            beforeSkip: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'sword_mastery',
@@ -231,6 +262,8 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'nerve_bite',
@@ -238,6 +271,8 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'mirage_bite',
@@ -245,6 +280,8 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [7],
         },
         {
             skillID: 'soul_liberator',
@@ -252,7 +289,7 @@ const treeData = [
             coords: {x: 1, y: 8},
             numAfter: 0,
             numBefore: 3,
-            beforeStyle: 'centered'
+            beforeStyle: 'centered',
         },
         {
             skillID: 'drain_bite',
@@ -260,6 +297,8 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'catastrophe',
@@ -267,7 +306,8 @@ const treeData = [
             coords: {x: 1, y: 11},
             numAfter: 0,
             numBefore: 1,
-            beforeSkip: 1
+            beforeSkip: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'atk_up',
@@ -281,6 +321,8 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'wraths_might',
@@ -288,6 +330,8 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'bait',
@@ -308,6 +352,8 @@ const treeData = [
             coords: {x: 0, y: 16},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [2],
         },
         {
             skillID: 'shadow_veil',
@@ -315,6 +361,8 @@ const treeData = [
             coords: {x: 0, y: 17},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [2],
         },
         {
             skillID: 'dark_curse',
@@ -347,6 +395,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'arm_snipe',
@@ -354,6 +403,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'leg_snipe',
@@ -361,6 +411,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'fire_rounds',
@@ -368,6 +419,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'charged_fire',
@@ -375,6 +427,7 @@ const treeData = [
             coords: {x: 1, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'ice_rounds',
@@ -382,6 +435,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'charged_ice',
@@ -389,6 +443,7 @@ const treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'volt_rounds',
@@ -396,6 +451,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'charged_volt',
@@ -403,6 +459,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'charged_shot',
@@ -410,6 +467,8 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'penetrator', // GIVE PENETRATOR 2 LINES
@@ -417,6 +476,8 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [7],
+            postReqLevels: [3],
         },
         {
             skillID: 'recharge',
@@ -431,6 +492,8 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
+            postReqLevels: [3],
         },
         {
             skillID: 'action_boost',
@@ -451,6 +514,8 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [3],
         },
         {
             skillID: 'cover_fire',
@@ -458,6 +523,8 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'shell_shock',
@@ -478,6 +545,8 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [3],
         },
         {
             skillID: 'vulcan_stance',
@@ -485,6 +554,8 @@ const treeData = [
             coords: {x: 0, y: 15},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'double_strike',
@@ -514,6 +585,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'frailty_curse',
@@ -521,6 +593,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'leaden_curse',
@@ -528,6 +601,8 @@ const treeData = [
             coords: {x: 1, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
+            postReqLevels: [5],
         },
         {
             skillID: 'deceit_curse',
@@ -535,6 +610,8 @@ const treeData = [
             coords: {x: 1, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
+            postReqLevels: [5],
         },
         {
             skillID: 'revenge_curse',
@@ -549,6 +626,8 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [2],
         },
         {
             skillID: 'madness_curse',
@@ -556,6 +635,8 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'torpor_curse',
@@ -563,6 +644,8 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [2],
         },
         {
             skillID: 'corrupt_curse',
@@ -584,6 +667,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'abdomen_curse',
@@ -591,6 +675,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'immobile_curse',
@@ -598,6 +683,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'evil_eye',
@@ -605,6 +691,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 4,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'luring_whisper',
@@ -612,6 +699,7 @@ const treeData = [
             coords: {x: 1, y: 9},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'muting_word',
@@ -619,6 +707,7 @@ const treeData = [
             coords: {x: 1, y: 10},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'conflict_word',
@@ -626,6 +715,7 @@ const treeData = [
             coords: {x: 1, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'suicide_word',
@@ -633,6 +723,7 @@ const treeData = [
             coords: {x: 1, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'tp_up',
@@ -648,6 +739,7 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'hp_up',
@@ -678,6 +770,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'draining_thrust',
@@ -685,6 +778,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
         },
         {
             skillID: 'draining_burst',
@@ -692,6 +786,7 @@ const treeData = [
             coords: {x: 1, y: 2},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'legion_thrust',
@@ -699,6 +794,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
         },
         {
             skillID: 'legion_burst',
@@ -706,6 +802,7 @@ const treeData = [
             coords: {x: 1, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'head_pierce',
@@ -713,6 +810,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'spear_assist',
@@ -720,6 +818,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'delayed_charge',
@@ -727,6 +826,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'cross_charge',
@@ -734,6 +834,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'atk_up',
@@ -747,6 +848,8 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [3],
         },
         {
             skillID: 'bloody_offense',
@@ -754,6 +857,8 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'bloodlust',
@@ -768,6 +873,7 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'def_up',
@@ -781,6 +887,8 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [3],
         },
         {
             skillID: 'blood_fortune',
@@ -788,6 +896,8 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'allied_bonds',
@@ -802,6 +912,7 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'hp_up',
@@ -815,6 +926,7 @@ const treeData = [
             coords: {x: 0, y: 16},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'black_sabbath',
@@ -822,6 +934,7 @@ const treeData = [
             coords: {x: 0, y: 17},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'mine',
@@ -844,6 +957,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'tornado',
@@ -851,7 +965,9 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
-            afterSkip: 1
+            afterSkip: 1,
+            preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'blinding_slap',
@@ -859,6 +975,8 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'falcon_slash',
@@ -866,6 +984,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'axe_mastery',
@@ -881,6 +1000,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'head_bash',
@@ -888,6 +1008,8 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'stunning_smash',
@@ -895,7 +1017,9 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
-            afterSkip: 1
+            afterSkip: 1,
+            preReqLevels: [5],
+            postReqLevels: [5],
         },
         {
             skillID: 'power_crush',
@@ -903,6 +1027,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'double_strike',
@@ -939,21 +1064,24 @@ const treeData = [
             baseSkill: true,
             coords: {x: 0, y: 10},
             numAfter: 1,
-            numBefore: 0
+            numBefore: 0,
+            postReqLevels: [2],
         },
         {
             skillID: 'tp_up',
             baseSkill: true,
             coords: {x: 0, y: 11},
             numAfter: 1,
-            numBefore: 0
+            numBefore: 0,
+            postReqLevels: [2],
         },
         {
             skillID: 'triple_charge',
             baseSkill: false,
             coords: {x: 1, y: 10},
             numAfter: 1,
-            numBefore: 2
+            numBefore: 2,
+            postReqLevels: [3],
         },
         {
             skillID: 'atk_up',
@@ -967,7 +1095,9 @@ const treeData = [
             baseSkill: false,
             coords: {x: 1, y: 12},
             numAfter: 1,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'strike_chaser',
@@ -998,6 +1128,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'salve',
@@ -1005,6 +1136,7 @@ const treeData = [
             coords: {x: 1, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'unbind',
@@ -1012,6 +1144,8 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'refresh',
@@ -1019,6 +1153,8 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'immunize',
@@ -1033,6 +1169,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'delayed_heal',
@@ -1040,6 +1177,7 @@ const treeData = [
             coords: {x: 1, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'heal',
@@ -1047,6 +1185,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'revive',
@@ -1054,6 +1193,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'cpr',
@@ -1061,6 +1201,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'hp_up',
@@ -1076,6 +1217,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'toxin_injection',
@@ -1083,6 +1225,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'curare',
@@ -1090,6 +1233,7 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'diagnosis',
@@ -1097,6 +1241,7 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'clear_strike',
@@ -1104,6 +1249,7 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'tp_up',
@@ -1119,7 +1265,8 @@ const treeData = [
             coords: {x: 2, y: 8},
             numAfter: 0,
             numBefore: 1,
-            baseBefore: true
+            baseBefore: true,
+            preReqLevels: [1],
         },
         {
             skillID: 'scavenge',
@@ -1127,7 +1274,8 @@ const treeData = [
             coords: {x: 2, y: 9},
             numAfter: 0,
             numBefore: 1,
-            baseBefore: true
+            baseBefore: true,
+            preReqLevels: [3],
         },
         {
             skillID: 'focus',
@@ -1135,7 +1283,8 @@ const treeData = [
             coords: {x: 2, y: 10},
             numAfter: 0,
             numBefore: 1,
-            baseBefore: true
+            baseBefore: true,
+            preReqLevels: [10],
         },
         {
             skillID: 'atk_up',
@@ -1150,6 +1299,7 @@ const treeData = [
             coords: {x: 1, y: 13},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'chop',
@@ -1172,6 +1322,8 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'rear_guard',
@@ -1179,6 +1331,8 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'defender',
@@ -1193,6 +1347,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'ice_wall',
@@ -1200,6 +1355,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'volt_wall',
@@ -1207,6 +1363,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'shield_smite',
@@ -1214,6 +1371,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'shield_rush',
@@ -1221,12 +1379,14 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'braverys_gift',
             baseSkill: false,
             coords: {x: 0, y: 7},
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'def_up',
@@ -1240,6 +1400,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'parry',
@@ -1247,6 +1408,7 @@ const treeData = [
             coords: {x: 1, y: 9},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'fortify',
@@ -1254,6 +1416,8 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'aegis',
@@ -1261,6 +1425,8 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [5],
         },
         {
             skillID: 'en_garde',
@@ -1281,6 +1447,7 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'flee',
@@ -1288,6 +1455,7 @@ const treeData = [
             coords: {x: 1, y: 13},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'cure',
@@ -1295,6 +1463,8 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'party_cure',
@@ -1302,6 +1472,8 @@ const treeData = [
             coords: {x: 0, y: 15},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'prayer',
@@ -1338,6 +1510,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'perfect_chaser',
@@ -1345,6 +1518,7 @@ const treeData = [
             coords: {x: 1, y: 1},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'upper_stance',
@@ -1352,6 +1526,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'horse_slash',
@@ -1359,6 +1534,7 @@ const treeData = [
             coords: {x: 1, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'flame_grater',
@@ -1366,6 +1542,7 @@ const treeData = [
             coords: {x: 2, y: 2},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'swallow_strike',
@@ -1373,6 +1550,7 @@ const treeData = [
             coords: {x: 1, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'clear_stance',
@@ -1380,6 +1558,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'razor_dodge',
@@ -1387,6 +1566,7 @@ const treeData = [
             coords: {x: 1, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'lightning_stab',
@@ -1394,6 +1574,7 @@ const treeData = [
             coords: {x: 2, y: 4},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'arm_strike',
@@ -1401,6 +1582,7 @@ const treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'drawing_stance',
@@ -1408,6 +1590,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'beheading_cut',
@@ -1415,6 +1598,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'frigid_slash',
@@ -1422,6 +1606,7 @@ const treeData = [
             coords: {x: 2, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'charging_slash',
@@ -1429,6 +1614,7 @@ const treeData = [
             coords: {x: 1, y: 7},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'peerless_stance',
@@ -1436,6 +1622,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'atk_up',
@@ -1449,6 +1636,7 @@ const treeData = [
             coords: {x: 0, y: 10},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'severing_slash',
@@ -1456,6 +1644,7 @@ const treeData = [
             coords: {x: 1, y: 10},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'hp_up',
@@ -1470,6 +1659,7 @@ const treeData = [
             coords: {x: 1, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'tp_up',
@@ -1484,6 +1674,7 @@ const treeData = [
             coords: {x: 1, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'mine',
@@ -1506,6 +1697,8 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'disabling_shot',
@@ -1513,6 +1706,8 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'multi-shot',
@@ -1527,6 +1722,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'agi_up',
@@ -1540,6 +1736,8 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [2],
         },
         {
             skillID: 'trickery',
@@ -1547,6 +1745,8 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
+            postReqLevels: [2],
         },
         {
             skillID: 'sure_shot',
@@ -1554,6 +1754,8 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [2],
         },
         {
             skillID: 'chain_dance',
@@ -1568,21 +1770,24 @@ const treeData = [
             baseSkill: false,
             coords: {x: 2, y: 6},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'act_first',
             baseSkill: false,
             coords: {x: 0, y: 8},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'quick_step',
             baseSkill: false,
             coords: {x: 0, y: 9},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'predator',
@@ -1595,21 +1800,24 @@ const treeData = [
             baseSkill: false,
             coords: {x: 0, y: 11},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'awareness',
             baseSkill: false,
             coords: {x: 0, y: 12},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'stalker',
             baseSkill: false,
             coords: {x: 0, y: 13},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'hp_up',
@@ -1624,14 +1832,16 @@ const treeData = [
             baseSkill: false,
             coords: {x: 1, y: 14},
             numBefore: 1,
-            numAfter: 1
+            numAfter: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'resuscitate',
             baseSkill: false,
             coords: {x: 2, y: 14},
             numAfter: 0,
-            numBefore: 1
+            numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'chop',
@@ -1668,6 +1878,8 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'shelter_song',
@@ -1675,6 +1887,8 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'holy_gift',
@@ -1689,6 +1903,8 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'insight_melody',
@@ -1696,6 +1912,8 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'recovery_aria',
@@ -1710,6 +1928,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'flame_fantasia',
@@ -1717,6 +1936,7 @@ const treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'ice_prelude',
@@ -1724,6 +1944,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'frost_fantasia',
@@ -1731,6 +1952,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'volt_prelude',
@@ -1738,6 +1960,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'shock_fantasia',
@@ -1745,6 +1968,7 @@ const treeData = [
             coords: {x: 1, y: 7},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'echoing_rondo',
@@ -1752,6 +1976,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'healing_lullaby',
@@ -1759,6 +1984,8 @@ const treeData = [
             coords: {x: 1, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'eerie_chorus',
@@ -1766,6 +1993,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'peace_ballad',
@@ -1773,6 +2001,8 @@ const treeData = [
             coords: {x: 1, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
+            postReqLevels: [5],
         },
         {
             skillID: 'taboo_rondo',
@@ -1793,6 +2023,7 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'restful_tune',
@@ -1800,6 +2031,7 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'barbaric_march',
@@ -1807,6 +2039,7 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'tp_up',
