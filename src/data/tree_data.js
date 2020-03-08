@@ -1820,6 +1820,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'shelter_song',
@@ -1827,6 +1828,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'holy_gift',
@@ -1841,6 +1843,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'insight_melody',
@@ -1848,6 +1851,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'recovery_aria',
@@ -1862,6 +1866,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'flame_fantasia',
@@ -1869,6 +1874,7 @@ const treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'ice_prelude',
@@ -1876,6 +1882,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'frost_fantasia',
@@ -1883,6 +1890,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'volt_prelude',
@@ -1890,6 +1898,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'shock_fantasia',
@@ -1897,6 +1906,7 @@ const treeData = [
             coords: {x: 1, y: 7},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'echoing_rondo',
@@ -1904,6 +1914,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [7],
         },
         {
             skillID: 'healing_lullaby',
@@ -1911,6 +1922,7 @@ const treeData = [
             coords: {x: 1, y: 8},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'eerie_chorus',
@@ -1918,6 +1930,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'peace_ballad',
@@ -1925,6 +1938,7 @@ const treeData = [
             coords: {x: 1, y: 9},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'taboo_rondo',
@@ -1945,6 +1959,7 @@ const treeData = [
             coords: {x: 0, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'restful_tune',
@@ -1952,6 +1967,7 @@ const treeData = [
             coords: {x: 0, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'barbaric_march',
@@ -1959,6 +1975,7 @@ const treeData = [
             coords: {x: 0, y: 13},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'tp_up',
