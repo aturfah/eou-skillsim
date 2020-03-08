@@ -1323,6 +1323,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'rear_guard',
@@ -1331,6 +1332,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [1],
+            postReqLevels: [5],
         },
         {
             skillID: 'defender',
@@ -1415,6 +1417,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'aegis',
@@ -1423,6 +1426,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [5],
+            postReqLevels: [5],
         },
         {
             skillID: 'en_garde',
@@ -1460,6 +1464,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [5],
         },
         {
             skillID: 'party_cure',
@@ -1468,6 +1473,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [5],
+            postReqLevels: [3],
         },
         {
             skillID: 'prayer',
@@ -1528,6 +1534,7 @@ const treeData = [
             coords: {x: 1, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'flame_grater',
@@ -1543,6 +1550,7 @@ const treeData = [
             coords: {x: 1, y: 3},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'clear_stance',
@@ -1558,6 +1566,7 @@ const treeData = [
             coords: {x: 1, y: 4},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'lightning_stab',
@@ -1573,6 +1582,7 @@ const treeData = [
             coords: {x: 1, y: 5},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'drawing_stance',
@@ -1588,6 +1598,7 @@ const treeData = [
             coords: {x: 1, y: 6},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'frigid_slash',
@@ -1603,6 +1614,7 @@ const treeData = [
             coords: {x: 1, y: 7},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'peerless_stance',
