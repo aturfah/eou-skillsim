@@ -602,6 +602,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [2],
+            postReqLevels: [5],
         },
         {
             skillID: 'deceit_curse',
@@ -610,6 +611,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [2],
+            postReqLevels: [5],
         },
         {
             skillID: 'revenge_curse',
@@ -625,6 +627,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [2],
         },
         {
             skillID: 'madness_curse',
@@ -633,6 +636,7 @@ const treeData = [
             numAfter: 2,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [3],
         },
         {
             skillID: 'torpor_curse',
@@ -641,6 +645,7 @@ const treeData = [
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
+            postReqLevels: [2],
         },
         {
             skillID: 'corrupt_curse',
