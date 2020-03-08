@@ -563,6 +563,7 @@ const treeData = [
             coords: {x: 0, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'frailty_curse',
@@ -570,6 +571,7 @@ const treeData = [
             coords: {x: 0, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'leaden_curse',
@@ -577,6 +579,7 @@ const treeData = [
             coords: {x: 1, y: 1},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
         },
         {
             skillID: 'deceit_curse',
@@ -584,6 +587,7 @@ const treeData = [
             coords: {x: 1, y: 2},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [2],
         },
         {
             skillID: 'revenge_curse',
@@ -598,6 +602,7 @@ const treeData = [
             coords: {x: 0, y: 3},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'madness_curse',
@@ -605,6 +610,7 @@ const treeData = [
             coords: {x: 0, y: 4},
             numAfter: 2,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'torpor_curse',
@@ -612,6 +618,7 @@ const treeData = [
             coords: {x: 0, y: 5},
             numAfter: 1,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'corrupt_curse',
@@ -633,6 +640,7 @@ const treeData = [
             coords: {x: 0, y: 6},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'abdomen_curse',
@@ -640,6 +648,7 @@ const treeData = [
             coords: {x: 0, y: 7},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'immobile_curse',
@@ -647,6 +656,7 @@ const treeData = [
             coords: {x: 0, y: 8},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'evil_eye',
@@ -654,6 +664,7 @@ const treeData = [
             coords: {x: 0, y: 9},
             numAfter: 4,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'luring_whisper',
@@ -661,6 +672,7 @@ const treeData = [
             coords: {x: 1, y: 9},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [1],
         },
         {
             skillID: 'muting_word',
@@ -668,6 +680,7 @@ const treeData = [
             coords: {x: 1, y: 10},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'conflict_word',
@@ -675,6 +688,7 @@ const treeData = [
             coords: {x: 1, y: 11},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [5],
         },
         {
             skillID: 'suicide_word',
@@ -682,6 +696,7 @@ const treeData = [
             coords: {x: 1, y: 12},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [10],
         },
         {
             skillID: 'tp_up',
@@ -697,6 +712,7 @@ const treeData = [
             coords: {x: 0, y: 14},
             numAfter: 0,
             numBefore: 1,
+            preReqLevels: [3],
         },
         {
             skillID: 'hp_up',
