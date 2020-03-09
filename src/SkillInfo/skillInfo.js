@@ -28,7 +28,7 @@ class SkillInfoPanel extends Component {
             visibility: visibility,
             left: left,
             top: top,
-            maxWidth: '200px',
+            maxWidth: '300px',
             maxHeight: '200px',
         }
 
