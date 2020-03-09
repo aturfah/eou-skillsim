@@ -15,7 +15,7 @@ import {firstDegSkills, buildBarsBefore, buildBarsAfter} from '../helpers';
 class SkillTree extends Component {
     constructor(props) {
         super(props);
-        this.state = {activeSkillID: null, activeSkillBox: null}
+        this.state = {activeSkillID: null, activeSkillBox: null, graphParams: null}
         this.firstSkills = firstDegSkills(props.activeClassIdx)
         this.divHeight = null;
         this.divWidth = null;
@@ -28,10 +28,11 @@ class SkillTree extends Component {
         this._setActiveSkill = this._setActiveSkill.bind(this)
     }
 
-    _setActiveSkill(skillID, skillBoxInfo) {
+    _setActiveSkill(skillID, skillBoxInfo, graphParams) {
         this.setState({
             activeSkillID: skillID,
-            activeSkillBox: skillBoxInfo
+            activeSkillBox: skillBoxInfo,
+            graphParams: graphParams
         });
     }
 
@@ -135,8 +136,8 @@ class SkillTree extends Component {
             output.push(<div key={datum.skillID + 'node'}
                         className={className + ' skillNode'}
                         style={boxStyle}
-                        onMouseEnter={() => {activeSkillMethod(datum.skillID, boxStyle)}}
-                        onMouseLeave={() => {activeSkillMethod(null, null)}}>
+                        onMouseEnter={() => {activeSkillMethod(datum.skillID, boxStyle, lineParams)}}
+                        onMouseLeave={() => {activeSkillMethod(null, null, lineParams)}}>
                             {skillTreeNodes[datum.skillID]}</div>)
 
             if (yCoord + BOX_HEIGHT > getHeightMethod()) {
