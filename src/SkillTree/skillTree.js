@@ -25,11 +25,13 @@ class SkillTree extends Component {
         this._getHeight = this._getHeight.bind(this)
         this._setWidth = this._setWidth.bind(this)
         this._getWidth = this._getWidth.bind(this)
+        this._setActiveSkill = this._setActiveSkill.bind(this)
     }
 
-    _setActiveSkill(skillID, skillBoxInfo) {
+    _setActiveSkill(skillID, activeClassIdx, skillBoxInfo) {
         this.setState({
             activeSkillID: skillID,
+            activeClassIdx: activeClassIdx,
             activeSkillBox: skillBoxInfo
         });
     }
@@ -104,6 +106,7 @@ class SkillTree extends Component {
         const getHeightMethod = this._getHeight
         const setWidthMethod = this._setWidth
         const getWidthMethod = this._getWidth
+        const activeSkillMethod = this._setActiveSkill;
 
         skillTreeStructure.forEach(function (datum) {
             // console.log(datum.skillID)
@@ -132,7 +135,8 @@ class SkillTree extends Component {
                             }
             output.push(<div key={datum.skillID + 'node'}
                         className={className + ' skillNode'}
-                        style={boxStyle}>{skillTreeNodes[datum.skillID]}</div>)
+                        style={boxStyle}
+                        onHover={() => {activeSkillMethod(datum.skillID, datum.activeClassIdx, boxStyle)}}>{skillTreeNodes[datum.skillID]}</div>)
 
             if (yCoord + BOX_HEIGHT > getHeightMethod()) {
                 setHeightMethod(yCoord + BOX_HEIGHT)
