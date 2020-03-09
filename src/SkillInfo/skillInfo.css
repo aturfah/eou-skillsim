@@ -1,3 +1,8 @@
 .SkillInfoPanel {
     position: absolute;
+    max-width: 200px;
+    max-height: 200px;
+    background-color: lightcoral;
+    padding: 5px;
+    font-size: 12px;
 }
