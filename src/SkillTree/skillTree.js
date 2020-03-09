@@ -28,10 +28,9 @@ class SkillTree extends Component {
         this._setActiveSkill = this._setActiveSkill.bind(this)
     }
 
-    _setActiveSkill(skillID, activeClassIdx, skillBoxInfo) {
+    _setActiveSkill(skillID, skillBoxInfo) {
         this.setState({
             activeSkillID: skillID,
-            activeClassIdx: activeClassIdx,
             activeSkillBox: skillBoxInfo
         });
     }
@@ -136,7 +135,9 @@ class SkillTree extends Component {
             output.push(<div key={datum.skillID + 'node'}
                         className={className + ' skillNode'}
                         style={boxStyle}
-                        onHover={() => {activeSkillMethod(datum.skillID, datum.activeClassIdx, boxStyle)}}>{skillTreeNodes[datum.skillID]}</div>)
+                        onMouseEnter={() => {activeSkillMethod(datum.skillID, boxStyle)}}
+                        onMouseLeave={() => {activeSkillMethod(null, null)}}>
+                            {skillTreeNodes[datum.skillID]}</div>)
 
             if (yCoord + BOX_HEIGHT > getHeightMethod()) {
                 setHeightMethod(yCoord + BOX_HEIGHT)
