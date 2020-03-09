@@ -4,13 +4,44 @@ import './skillInfo.css'
 import skillData from '../data/skill_data';
 import {parsePX} from '../helpers';
 
+function buildSkillText(skillDatum) {
+    if (skillDatum === undefined) {
+        return 'doot'
+    }
+    console.log(skillDatum)
+    return 'pew'
+}
+
+function parseSkillBranches(classSkillInfo) {
+    const output = {};
+    classSkillInfo.branches.forEach(function (branch) {
+        branch.skill_data.forEach(function (skillDatum) {
+            output[skillDatum._id] = skillDatum;
+        });
+    });
+
+    return output;
+}
+
 class SkillInfoPanel extends Component {
+
+    constructor(props) {
+        super(props);
+        this.activeClassIdx = props.activeClassIdx;
+        this.parsedSkillData = parseSkillBranches(skillData[this.activeClassIdx])
+    }
+
     render() {
         const activeClassIdx = this.props.activeClassIdx;
+        if (activeClassIdx !== this.activeClassIdx) {
+            this.parsedSkillData = parseSkillBranches(skillData[activeClassIdx])
+        }
+
         const activeSkillID = this.props.activeInfo.activeSkillID;
         const activeSkillBox = this.props.activeInfo.activeSkillBox;
         const graphParams = this.props.activeInfo.graphParams;
-        const skillDatum = skillData[activeClassIdx][activeSkillID]
+        const skillDatum = this.parsedSkillData[activeSkillID];
+
 
         var visibility = 'hidden';
         var left = -1;
@@ -33,14 +64,7 @@ class SkillInfoPanel extends Component {
         }
 
         return <div className="SkillInfoPanel" style={divStyle}>
-            doot doot doot doot doot doot doot doot doot doot
-            doot doot doot doot doot doot doot doot doot doot
-            doot doot doot doot doot doot doot doot doot doot
-            doot doot doot doot doot doot doot doot doot doot
-            doot doot doot doot doot doot doot doot doot doot
-            doot doot doot doot doot doot doot doot doot doot
-            doot doot doot doot doot doot doot doot doot doot
-            doot doot doot doot doot doot doot doot doot doot
+            {buildSkillText(skillDatum)}
         </div>
     }
 }
