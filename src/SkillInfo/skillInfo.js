@@ -53,9 +53,9 @@ function buildSkillText(skillDatum) {
     levelGrowth.forEach(function (val, idx) {
         const repVal = val.substring(0, val.length - 2);
         if (idx + 1 <= 10) {
-            levelGrowth[idx] = <span>{repVal}<br/></span>;
+            levelGrowth[idx] = <span className='levelGrowthElt'>{repVal}<br/></span>;
         } else {
-            levelGrowth[idx] = <i>{repVal}<br/></i>;
+            levelGrowth[idx] = <i className='levelGrowthElt'>{repVal}<br/></i>;
         }
     })
 
@@ -110,7 +110,10 @@ class SkillInfoPanel extends Component {
                 parsePX(graphParams.BOX_PADDING)) * 0.9 + 15;
             top = parsePX(activeSkillBox.top);
 
-            if (top + 250 > this.props.parentHeight) {
+            if (activeSkillID === 'strike_chaser') {
+                top = this.props.parentHeight - 550;
+            }
+            else if (top + 250 > this.props.parentHeight) {
                 top = this.props.parentHeight - 250;
             }
         }
