@@ -83,7 +83,7 @@ class SkillInfoPanel extends Component {
         super(props);
         this.activeClassIdx = props.activeClassIdx;
         this.parsedSkillData = parseSkillBranches(skillData[this.activeClassIdx])
-        this.maxWidth = 375;
+        this.maxWidth = 420;
     }
 
     render() {
@@ -103,11 +103,15 @@ class SkillInfoPanel extends Component {
         var top = -1;
         if (activeSkillID !== null) {
             visibility = 'visible'
-            left = parsePX(activeSkillBox.left) -
-                (parsePX(graphParams.BOX_WIDTH) + 2 * parsePX(graphParams.BOX_BORDER_WIDTH)) / 4;
-            top = parsePX(activeSkillBox.top) +
-                (parsePX(graphParams.BOX_HEIGHT) + 2 * parsePX(graphParams.BOX_BORDER_WIDTH)) +
-                parsePX(graphParams.BOX_PADDING / 4);
+            left = parsePX(activeSkillBox.left) +
+                (parsePX(graphParams.BOX_WIDTH) +
+                2 * parsePX(graphParams.BOX_BORDER_WIDTH) +
+                parsePX(graphParams.BOX_PADDING)) * 0.9 + 15;
+            top = parsePX(activeSkillBox.top);
+
+            if (top + 300 > this.props.parentHeight) {
+                console.log('Too low')
+            }
         }
 
         const divStyle = {
