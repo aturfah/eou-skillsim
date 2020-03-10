@@ -180,7 +180,7 @@ class Header extends Component {
                 {skillPointsInfo}
                 <div>
                     <span onClick={() => this._clearSkills()}>(CLEAR SKILLS)</span> &nbsp;
-                    <span onClick={() => this._resetAll()}>(RESET TO DEFAULT)</span>
+                    {/* <span onClick={() => this._resetAll()}>(RESET TO DEFAULT)</span> */}
                 </div>
             </div>
         </div>
