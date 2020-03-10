@@ -4,4 +4,5 @@
 
 .ButtonText {
   cursor: pointer;
+  user-select: none;
 }
