@@ -34,9 +34,14 @@ function buildSkillText(skillDatum) {
             rawInfo.forEach(function (pew) {
                 const levelSpan = parseInt(pew.levelspan);
                 for (var i = 0; i < levelSpan; i++) {
-                    trueInfo.push(pew.value);
+                    if (growthID.includes('(turns)')) {
+                        trueInfo.push(pew.value + ' turns');
+                    } else {
+                        trueInfo.push(pew.value);
+                    }
                 }
             });
+            growthID = growthID.replace(' (turns)', '');
 
             trueInfo.forEach(function (skillGrowthDatum, idx) {
                 levelGrowth[idx] += growthID + ' of ' + skillGrowthDatum + ', '
@@ -108,7 +113,7 @@ class SkillInfoPanel extends Component {
             visibility: visibility,
             left: left,
             top: top,
-            maxWidth: '350px',
+            maxWidth: '375px',
             // maxHeight: '200px',
         }
 
