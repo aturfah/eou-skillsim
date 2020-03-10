@@ -137,7 +137,7 @@ class SkillTree extends Component {
                         className={className + ' skillNode'}
                         style={boxStyle}
                         onMouseEnter={() => {activeSkillMethod(datum.skillID, boxStyle, lineParams)}}
-                        onMouseLeave={() => {activeSkillMethod(null, null, lineParams)}}>
+                        onMouseLeave={() => {activeSkillMethod(null, null, null, lineParams)}}>
                             {skillTreeNodes[datum.skillID]}</div>)
 
             if (yCoord + BOX_HEIGHT > getHeightMethod()) {
