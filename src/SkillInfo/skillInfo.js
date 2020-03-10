@@ -9,7 +9,49 @@ function buildSkillText(skillDatum) {
         return 'doot'
     }
     console.log(skillDatum)
-    return 'pew'
+
+    const header = <b className='SkillHeader'>{skillDatum.name}</b>
+    var descr = skillDatum.description
+
+    // Build Text for Skill Info
+    const levelsLength = skillDatum.levels.length;
+    const growthOrder = skillDatum.growth_order;
+    const levelGrowth = []
+
+    // First initialize levelGrowth with 'Level #:' strings
+    skillDatum.levels.forEach(function (level) {
+        if (level.label !== 'Level') {
+            levelGrowth.push('Level ' + level.label + ': ');
+        }
+    })
+
+
+    // Clean up skills to get 15-length vectors
+    growthOrder.forEach(function (growthID) {
+        const rawInfo = skillDatum.growth[growthID];
+        if (rawInfo.length == 1) {
+            descr += ' Has a ' + growthID.toLowerCase() + ' of ' + rawInfo[0].value + ' at all levels.'
+        } else {
+            console.log(growthID);
+            console.log(rawInfo);
+            
+        }
+    });
+
+    // Add line breaks at the end
+    levelGrowth.forEach(function (val, idx) {
+        if (idx + 1 <= 10) {
+            levelGrowth[idx] = <span>{val}<br/></span>;
+        } else {
+            levelGrowth[idx] = <i>{val}<br/></i>;
+        }
+    })
+
+    return <div> {header} <br/> ---- <br/>
+                <span className='SkillDescr'>{descr}</span>
+                <br/> <br/>
+                {levelGrowth}
+            </div>
 }
 
 function parseSkillBranches(classSkillInfo) {
@@ -59,8 +101,8 @@ class SkillInfoPanel extends Component {
             visibility: visibility,
             left: left,
             top: top,
-            maxWidth: '300px',
-            maxHeight: '200px',
+            maxWidth: '250px',
+            // maxHeight: '200px',
         }
 
         return <div className="SkillInfoPanel" style={divStyle}>
