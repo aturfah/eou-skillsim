@@ -19,7 +19,7 @@ function buildSkillText(skillDatum) {
     // First initialize levelGrowth with 'Level #:' strings
     skillDatum.levels.forEach(function (level) {
         if (level.label !== 'Level') {
-            levelGrowth.push('Level ' + level.label + ': ');
+            levelGrowth.push('Lv. ' + level.label + ': ');
         }
     })
 
@@ -83,6 +83,7 @@ class SkillInfoPanel extends Component {
         super(props);
         this.activeClassIdx = props.activeClassIdx;
         this.parsedSkillData = parseSkillBranches(skillData[this.activeClassIdx])
+        this.maxWidth = 375;
     }
 
     render() {
@@ -102,7 +103,7 @@ class SkillInfoPanel extends Component {
         var top = -1;
         if (activeSkillID !== null) {
             visibility = 'visible'
-            left = parsePX(activeSkillBox.left) +
+            left = parsePX(activeSkillBox.left) -
                 (parsePX(graphParams.BOX_WIDTH) + 2 * parsePX(graphParams.BOX_BORDER_WIDTH)) / 4;
             top = parsePX(activeSkillBox.top) +
                 (parsePX(graphParams.BOX_HEIGHT) + 2 * parsePX(graphParams.BOX_BORDER_WIDTH)) +
@@ -113,7 +114,7 @@ class SkillInfoPanel extends Component {
             visibility: visibility,
             left: left,
             top: top,
-            maxWidth: '375px',
+            maxWidth: this.maxWidth + 'px',
         }
 
         return <div className="SkillInfoPanel" style={divStyle}>
