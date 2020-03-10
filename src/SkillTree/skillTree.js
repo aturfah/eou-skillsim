@@ -140,8 +140,8 @@ class SkillTree extends Component {
                         onMouseLeave={() => {activeSkillMethod(null, null, lineParams)}}>
                             {skillTreeNodes[datum.skillID]}</div>)
 
-            if (yCoord + BOX_HEIGHT > getHeightMethod()) {
-                setHeightMethod(yCoord + BOX_HEIGHT)
+            if (yCoord + 1.2 * (BOX_HEIGHT + BOX_PADDING) > getHeightMethod()) {
+                setHeightMethod(yCoord + 1.2 * (BOX_HEIGHT + BOX_PADDING))
             }
             if (xCoord + BOX_WIDTH + BOX_PADDING > getWidthMethod()) {
                 setWidthMethod(xCoord + BOX_WIDTH + BOX_PADDING)
