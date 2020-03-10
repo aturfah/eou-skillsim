@@ -40,6 +40,9 @@ class App extends Component {
         totalSpSpent += skillsChosen[key];
     });
 
+    console.log(this.firstDegSkills);
+    console.log(activeFDegSkills)
+
     return sp - totalSpSpent + activeFDegSkills.length
 }
 
@@ -60,7 +63,7 @@ class App extends Component {
     if (key === 'activeClassIdx') { 
       console.log('Class change -> resetting state...')
       oldState = defaultState();
-      this.firstDegSkills = firstDegSkills(oldState.activeClassIdx)
+      this.firstDegSkills = firstDegSkills(value)
     }
 
     // Change parameters
