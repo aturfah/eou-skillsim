@@ -29,21 +29,30 @@ function buildSkillText(skillDatum) {
     // Clean up skills to get 15-length vectors
     growthOrder.forEach(function (growthID) {
         const rawInfo = skillDatum.growth[growthID];
-        if (rawInfo.length == 1) {
+        if (rawInfo.length === 1) {
             descr += ' Has a ' + growthID.toLowerCase() + ' of ' + rawInfo[0].value + ' at all levels.'
         } else {
-            console.log(growthID);
-            console.log(rawInfo);
-            
+            const trueInfo = []
+            rawInfo.forEach(function (pew) {
+                const levelSpan = parseInt(pew.levelspan);
+                for (var i = 0; i < levelSpan; i++) {
+                    trueInfo.push(pew.value);
+                }
+            });
+
+            trueInfo.forEach(function (skillGrowthDatum, idx) {
+                levelGrowth[idx] += growthID + ' of ' + skillGrowthDatum + ', '
+            })
         }
     });
 
     // Add line breaks at the end
     levelGrowth.forEach(function (val, idx) {
+        const repVal = val.substring(0, val.length - 2);
         if (idx + 1 <= 10) {
-            levelGrowth[idx] = <span>{val}<br/></span>;
+            levelGrowth[idx] = <span>{repVal}<br/></span>;
         } else {
-            levelGrowth[idx] = <i>{val}<br/></i>;
+            levelGrowth[idx] = <i>{repVal}<br/></i>;
         }
     })
 
