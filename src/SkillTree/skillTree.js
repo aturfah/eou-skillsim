@@ -145,8 +145,8 @@ class SkillTree extends Component {
             if (yCoord + BOX_HEIGHT > getHeightMethod()) {
                 setHeightMethod(yCoord + BOX_HEIGHT)
             }
-            if (xCoord + 2 * (BOX_WIDTH + BOX_PADDING) > getWidthMethod()) {
-                setWidthMethod(xCoord + 2 * (BOX_WIDTH + BOX_PADDING))
+            if (xCoord + BOX_WIDTH + BOX_PADDING > getWidthMethod()) {
+                setWidthMethod(xCoord + BOX_WIDTH + BOX_PADDING)
             }
 
             // Add Vertical and Horizontal bars as necessary
@@ -182,8 +182,8 @@ class SkillTree extends Component {
         const skillTreeNodes = this.buildSkillTreeNodes()
         const doot = this.drawSkillTree(skillTreeNodes);
         const divStyle = {
-            height: this._getHeight(),
-            width: this._getWidth()
+            minHeight: this._getHeight(),
+            minWidth: this._getWidth()
         }
 
         return <div className="SkillTree" style={divStyle}>
