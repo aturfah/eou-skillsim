@@ -114,7 +114,6 @@ class SkillInfoPanel extends Component {
             left: left,
             top: top,
             maxWidth: '375px',
-            // maxHeight: '200px',
         }
 
         return <div className="SkillInfoPanel" style={divStyle}>
