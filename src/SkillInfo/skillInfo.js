@@ -8,13 +8,11 @@ function buildSkillText(skillDatum) {
     if (skillDatum === undefined) {
         return 'doot'
     }
-    console.log(skillDatum)
 
     const header = <b className='SkillHeader'>{skillDatum.name}</b>
     var descr = skillDatum.description
 
     // Build Text for Skill Info
-    const levelsLength = skillDatum.levels.length;
     const growthOrder = skillDatum.growth_order;
     const levelGrowth = []
 
@@ -110,7 +108,7 @@ class SkillInfoPanel extends Component {
             visibility: visibility,
             left: left,
             top: top,
-            maxWidth: '250px',
+            maxWidth: '350px',
             // maxHeight: '200px',
         }
 
