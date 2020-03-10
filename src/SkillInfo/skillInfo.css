@@ -1,12 +1,13 @@
 .SkillInfoPanel {
     position: absolute;
-    background-color: lightcoral;
+    background-color: #c6ffec;
     padding: 10px;
     font-size: 12px;
     border-style: solid;
     border-width: 2px;
-    border-color: lightgreen;
+    border-color: #034079;
     z-index: 2;
+    opacity: 0.8;
 }
 
 .levelGrowthElt {
