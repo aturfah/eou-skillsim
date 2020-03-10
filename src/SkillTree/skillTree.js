@@ -28,13 +28,11 @@ class SkillTree extends Component {
         this._setActiveSkill = this._setActiveSkill.bind(this)
     }
 
-    _setActiveSkill(skillID, skillBoxInfo, graphParams, heightMethod, widthMethod) {
+    _setActiveSkill(skillID, skillBoxInfo, graphParams) {
         this.setState({
             activeSkillID: skillID,
             activeSkillBox: skillBoxInfo,
-            graphParams: graphParams,
-            heightMethod: heightMethod,
-            widthMethod: widthMethod
+            graphParams: graphParams
         });
     }
 
@@ -138,8 +136,8 @@ class SkillTree extends Component {
             output.push(<div key={datum.skillID + 'node'}
                         className={className + ' skillNode'}
                         style={boxStyle}
-                        onMouseEnter={() => {activeSkillMethod(datum.skillID, boxStyle, lineParams, getHeightMethod, getWidthMethod)}}
-                        onMouseLeave={() => {activeSkillMethod(null, null, lineParams, null, null)}}>
+                        onMouseEnter={() => {activeSkillMethod(datum.skillID, boxStyle, lineParams)}}
+                        onMouseLeave={() => {activeSkillMethod(null, null, lineParams)}}>
                             {skillTreeNodes[datum.skillID]}</div>)
 
             if (yCoord + BOX_HEIGHT > getHeightMethod()) {
@@ -182,7 +180,7 @@ class SkillTree extends Component {
         const skillTreeNodes = this.buildSkillTreeNodes()
         const doot = this.drawSkillTree(skillTreeNodes);
         const divStyle = {
-            minHeight: this._getHeight(),
+            height: this._getHeight(),
             minWidth: this._getWidth()
         }
 
@@ -191,6 +189,8 @@ class SkillTree extends Component {
             <SkillInfoPanel
                 activeInfo={this.state}
                 activeClassIdx={this.props.activeClassIdx}
+                parentHeight={this._getHeight()}
+                parentWidth={this._getWidth()}
             ></SkillInfoPanel>
             </div>
     }
