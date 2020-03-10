@@ -28,11 +28,13 @@ class SkillTree extends Component {
         this._setActiveSkill = this._setActiveSkill.bind(this)
     }
 
-    _setActiveSkill(skillID, skillBoxInfo, graphParams) {
+    _setActiveSkill(skillID, skillBoxInfo, graphParams, heightMethod, widthMethod) {
         this.setState({
             activeSkillID: skillID,
             activeSkillBox: skillBoxInfo,
-            graphParams: graphParams
+            graphParams: graphParams,
+            heightMethod: heightMethod,
+            widthMethod: widthMethod
         });
     }
 
@@ -136,15 +138,15 @@ class SkillTree extends Component {
             output.push(<div key={datum.skillID + 'node'}
                         className={className + ' skillNode'}
                         style={boxStyle}
-                        onMouseEnter={() => {activeSkillMethod(datum.skillID, boxStyle, lineParams)}}
-                        onMouseLeave={() => {activeSkillMethod(null, null, null, lineParams)}}>
+                        onMouseEnter={() => {activeSkillMethod(datum.skillID, boxStyle, lineParams, getHeightMethod, getWidthMethod)}}
+                        onMouseLeave={() => {activeSkillMethod(null, null, lineParams, null, null)}}>
                             {skillTreeNodes[datum.skillID]}</div>)
 
             if (yCoord + BOX_HEIGHT > getHeightMethod()) {
                 setHeightMethod(yCoord + BOX_HEIGHT)
             }
-            if (xCoord + BOX_WIDTH + BOX_PADDING > getWidthMethod()) {
-                setWidthMethod(xCoord + BOX_WIDTH + BOX_PADDING)
+            if (xCoord + 2 * (BOX_WIDTH + BOX_PADDING) > getWidthMethod()) {
+                setWidthMethod(xCoord + 2 * (BOX_WIDTH + BOX_PADDING))
             }
 
             // Add Vertical and Horizontal bars as necessary
