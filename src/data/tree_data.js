@@ -1102,9 +1102,10 @@ const treeData = [
         {
             skillID: 'strike_chaser',
             baseSkill: false,
-            coords: {x: 2, y: 10},
+            coords: {x: 2, y: 11},
             numAfter: 0,
-            numBefore: 3
+            numBefore: 3,
+            beforeStyle: 'centered'
         },
         {
             skillID: 'mine',
