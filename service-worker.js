@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/eou-skillsim/precache-manifest.ef00607822da695d6b2ec555306a6294.js"
+  "/eou-skillsim/precache-manifest.0046d1459ce6e47593ccb5ed0bf97534.js"
 );
 
 self.addEventListener('message', (event) => {
