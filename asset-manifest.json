@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/eou-skillsim/static/css/main.e23eef38.chunk.css",
-    "main.js": "/eou-skillsim/static/js/main.2cdcc4f7.chunk.js",
-    "main.js.map": "/eou-skillsim/static/js/main.2cdcc4f7.chunk.js.map",
+    "main.css": "/eou-skillsim/static/css/main.69c9f117.chunk.css",
+    "main.js": "/eou-skillsim/static/js/main.6c5ab0ee.chunk.js",
+    "main.js.map": "/eou-skillsim/static/js/main.6c5ab0ee.chunk.js.map",
     "runtime-main.js": "/eou-skillsim/static/js/runtime-main.5f392ff1.js",
     "runtime-main.js.map": "/eou-skillsim/static/js/runtime-main.5f392ff1.js.map",
     "static/js/2.039c2bcc.chunk.js": "/eou-skillsim/static/js/2.039c2bcc.chunk.js",
     "static/js/2.039c2bcc.chunk.js.map": "/eou-skillsim/static/js/2.039c2bcc.chunk.js.map",
     "index.html": "/eou-skillsim/index.html",
-    "precache-manifest.0046d1459ce6e47593ccb5ed0bf97534.js": "/eou-skillsim/precache-manifest.0046d1459ce6e47593ccb5ed0bf97534.js",
+    "precache-manifest.9714e921af927a55d7eba27ecce7795d.js": "/eou-skillsim/precache-manifest.9714e921af927a55d7eba27ecce7795d.js",
     "service-worker.js": "/eou-skillsim/service-worker.js",
-    "static/css/main.e23eef38.chunk.css.map": "/eou-skillsim/static/css/main.e23eef38.chunk.css.map",
+    "static/css/main.69c9f117.chunk.css.map": "/eou-skillsim/static/css/main.69c9f117.chunk.css.map",
     "static/js/2.039c2bcc.chunk.js.LICENSE": "/eou-skillsim/static/js/2.039c2bcc.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.5f392ff1.js",
     "static/js/2.039c2bcc.chunk.js",
-    "static/css/main.e23eef38.chunk.css",
-    "static/js/main.2cdcc4f7.chunk.js"
+    "static/css/main.69c9f117.chunk.css",
+    "static/js/main.6c5ab0ee.chunk.js"
   ]
 }
