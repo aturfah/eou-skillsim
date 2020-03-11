@@ -58,7 +58,7 @@ class SkillTreeNode extends Component {
             backgroundColor: nodeColor,
         }
 
-        return(<div style={nodeStyle} className="clickableNode" id={this.props.skillData._id}
+        return(<div style={nodeStyle} className="clickableNode NoHighlight" id={this.props.skillData._id}
                 onClick={() => {}}>
                     <span  className="skillInfo">{header} {levelInfo}</span> <br/>
                     <span className="ButtonText" onClick={() => this.increaseSkillLevel()}>(Lv. &uarr;)</span> &nbsp;
