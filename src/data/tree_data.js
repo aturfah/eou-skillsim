@@ -624,7 +624,7 @@ const treeData = [
             skillID: 'blinding_curse',
             baseSkill: false,
             coords: {x: 0, y: 3},
-            numAfter: 1,
+            numAfter: 2,
             numBefore: 1,
             preReqLevels: [3],
             postReqLevels: [2],
@@ -650,15 +650,15 @@ const treeData = [
         {
             skillID: 'corrupt_curse',
             baseSkill: false,
-            coords: {x: 1, y: 3},
+            coords: {x: 1, y: 3.5},
             numAfter: 1,
-            numBefore: 2,
+            numBefore: 1,
             postReqLevels: [3],
         },
         {
             skillID: 'stoning_curse',
             baseSkill: false,
-            coords: {x: 1, y: 5},
+            coords: {x: 1, y: 4.5},
             numAfter: 1,
             numBefore: 1,
             postReqLevels: [3],
@@ -668,7 +668,7 @@ const treeData = [
             baseSkill: false,
             coords: {x: 2, y: 4},
             numAfter: 0,
-            numBefore: 3,
+            numBefore: 2,
             beforeStyle: 'centered'
         },
         {
