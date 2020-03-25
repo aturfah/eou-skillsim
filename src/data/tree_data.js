@@ -599,7 +599,7 @@ const treeData = [
             skillID: 'leaden_curse',
             baseSkill: false,
             coords: {x: 1, y: 1},
-            numAfter: 1,
+            numAfter: 2,
             numBefore: 1,
             preReqLevels: [2],
             postReqLevels: [5],
@@ -616,9 +616,9 @@ const treeData = [
         {
             skillID: 'revenge_curse',
             baseSkill: false,
-            coords: {x: 2, y: 1},
+            coords: {x: 2, y: 1.5},
             numAfter: 0,
-            numBefore: 2,
+            numBefore: 1,
         },
         {
             skillID: 'blinding_curse',
