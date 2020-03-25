@@ -482,9 +482,10 @@ const treeData = [
         {
             skillID: 'recharge',
             baseSkill: false,
-            coords: {x: 1, y: 7},
+            coords: {x: 1, y: 7.5},
             numAfter: 0,
-            numBefore: 2
+            numBefore: 2,
+            beforeStyle: 'centered',
         },
         {
             skillID: 'ricochet',
@@ -498,7 +499,7 @@ const treeData = [
         {
             skillID: 'action_boost',
             baseSkill: false,
-            coords: {x: 1, y: 9},
+            coords: {x: 1, y: 8.5},
             numAfter: 0,
             numBefore: 1,
         },
@@ -599,7 +600,7 @@ const treeData = [
             skillID: 'leaden_curse',
             baseSkill: false,
             coords: {x: 1, y: 1},
-            numAfter: 1,
+            numAfter: 2,
             numBefore: 1,
             preReqLevels: [2],
             postReqLevels: [5],
@@ -616,15 +617,15 @@ const treeData = [
         {
             skillID: 'revenge_curse',
             baseSkill: false,
-            coords: {x: 2, y: 1},
+            coords: {x: 2, y: 1.5},
             numAfter: 0,
-            numBefore: 2,
+            numBefore: 1,
         },
         {
             skillID: 'blinding_curse',
             baseSkill: false,
             coords: {x: 0, y: 3},
-            numAfter: 1,
+            numAfter: 2,
             numBefore: 1,
             preReqLevels: [3],
             postReqLevels: [2],
@@ -650,16 +651,26 @@ const treeData = [
         {
             skillID: 'corrupt_curse',
             baseSkill: false,
-            coords: {x: 1, y: 3},
-            numAfter: 0,
-            numBefore: 2,
+            coords: {x: 1, y: 3.5},
+            numAfter: 1,
+            numBefore: 1,
+            postReqLevels: [3],
         },
         {
             skillID: 'stoning_curse',
             baseSkill: false,
-            coords: {x: 1, y: 5},
-            numAfter: 0,
+            coords: {x: 1, y: 4.5},
+            numAfter: 1,
             numBefore: 1,
+            postReqLevels: [3],
+        },
+        {
+            skillID: 'relapse_curse',
+            baseSkill: false,
+            coords: {x: 2, y: 4},
+            numAfter: 0,
+            numBefore: 2,
+            beforeStyle: 'centered'
         },
         {
             skillID: 'cranial_curse',
