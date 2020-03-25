@@ -482,9 +482,10 @@ const treeData = [
         {
             skillID: 'recharge',
             baseSkill: false,
-            coords: {x: 1, y: 7},
+            coords: {x: 1, y: 7.5},
             numAfter: 0,
-            numBefore: 2
+            numBefore: 2,
+            beforeStyle: 'centered',
         },
         {
             skillID: 'ricochet',
@@ -498,7 +499,7 @@ const treeData = [
         {
             skillID: 'action_boost',
             baseSkill: false,
-            coords: {x: 1, y: 9},
+            coords: {x: 1, y: 8.5},
             numAfter: 0,
             numBefore: 1,
         },
