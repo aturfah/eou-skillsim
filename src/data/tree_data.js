@@ -651,15 +651,25 @@ const treeData = [
             skillID: 'corrupt_curse',
             baseSkill: false,
             coords: {x: 1, y: 3},
-            numAfter: 0,
+            numAfter: 1,
             numBefore: 2,
+            postReqLevels: [3],
         },
         {
             skillID: 'stoning_curse',
             baseSkill: false,
             coords: {x: 1, y: 5},
-            numAfter: 0,
+            numAfter: 1,
             numBefore: 1,
+            postReqLevels: [3],
+        },
+        {
+            skillID: 'relapse_curse',
+            baseSkill: false,
+            coords: {x: 2, y: 4},
+            numAfter: 0,
+            numBefore: 3,
+            beforeStyle: 'centered'
         },
         {
             skillID: 'cranial_curse',
