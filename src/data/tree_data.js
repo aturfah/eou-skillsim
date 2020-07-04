@@ -1071,15 +1071,29 @@ const treeData = [
             numBefore: 1
         },
         {
-            skillID: 'hp_up',
+            skillID: 'def_up',
             baseSkill: true,
             coords: {x: 0, y: 10},
             numAfter: 1,
             numBefore: 0,
-            postReqLevels: [2],
+            postReqLevels: [3],
         },
         {
-            skillID: 'tp_up',
+            skillID: 'recover',
+            baseSkill: false,
+            coords: {x: 1, y: 10},
+            numAfter: 1,
+            numBefore: 1,
+            postReqLevels: [3],
+        },
+        {
+            skillID: 'savage_cry',
+            baseSkill: false,
+            coords: {x: 2, y: 10},
+            numBefore: 1,
+        },
+        {
+            skillID: 'hp_up',
             baseSkill: true,
             coords: {x: 0, y: 11},
             numAfter: 1,
@@ -1087,9 +1101,17 @@ const treeData = [
             postReqLevels: [2],
         },
         {
+            skillID: 'tp_up',
+            baseSkill: true,
+            coords: {x: 0, y: 12},
+            numAfter: 1,
+            numBefore: 0,
+            postReqLevels: [2],
+        },
+        {
             skillID: 'triple_charge',
             baseSkill: false,
-            coords: {x: 1, y: 10},
+            coords: {x: 1, y: 11},
             numAfter: 1,
             numBefore: 2,
             postReqLevels: [3],
@@ -1097,14 +1119,14 @@ const treeData = [
         {
             skillID: 'atk_up',
             baseSkill: true,
-            coords: {x: 0, y: 12},
+            coords: {x: 0, y: 13},
             numAfter: 1,
             numBefore: 0
         },
         {
             skillID: 'war_cry',
             baseSkill: false,
-            coords: {x: 1, y: 12},
+            coords: {x: 1, y: 13},
             numAfter: 1,
             numBefore: 1,
             preReqLevels: [3],
@@ -1113,7 +1135,7 @@ const treeData = [
         {
             skillID: 'strike_chaser',
             baseSkill: false,
-            coords: {x: 2, y: 11},
+            coords: {x: 2, y: 12},
             numAfter: 0,
             numBefore: 3,
             beforeStyle: 'centered'
@@ -1121,7 +1143,7 @@ const treeData = [
         {
             skillID: 'mine',
             baseSkill: true,
-            coords: {x: 0, y: 13},
+            coords: {x: 0, y: 14},
             numAfter: 0,
             numBefore: 0
         },
