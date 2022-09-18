@@ -34775,43 +34775,43 @@ var skillData = [
                             "Critical rate increase": [
                                 {
                                     "levelspan": "1",
-                                    "value": "80%"
+                                    "value": "8%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "93%"
+                                    "value": "9.3%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "106%"
+                                    "value": "10.6%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "120%"
+                                    "value": "12%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "133%"
+                                    "value": "13.3%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "146%"
+                                    "value": "14.6%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "160%"
+                                    "value": "16%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "173%"
+                                    "value": "17.3%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "186%"
+                                    "value": "18.6%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "200%"
+                                    "value": "20%"
                                 }
                             ]
                         },
