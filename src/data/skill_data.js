@@ -26417,63 +26417,63 @@ var skillData = [
                             "Critical chance increase": [
                                 {
                                     "levelspan": "1",
-                                    "value": "200%"
+                                    "value": "30%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "240%"
+                                    "value": "34%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "280%"
+                                    "value": "38%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "320%"
+                                    "value": "42%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "380%"
+                                    "value": "48%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "420%"
+                                    "value": "52%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "460%"
+                                    "value": "56%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "500%"
+                                    "value": "60%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "540%"
+                                    "value": "64%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "600%"
+                                    "value": "70%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "630%"
+                                    "value": "73%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "660%"
+                                    "value": "76%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "690%"
+                                    "value": "79%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "720%"
+                                    "value": "82%"
                                 },
                                 {
                                     "levelspan": "1",
-                                    "value": "899%"
+                                    "value": "99.9%"
                                 }
                             ],
                             "Duration (turns)": [
