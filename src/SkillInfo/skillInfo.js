@@ -75,6 +75,7 @@ function buildSkillText(skillDatum) {
         return oldBuildSkillText(skillDatum)
     }
 
+    let skillDescr = skillDatum.description;
 
     // Build the table rows
     const regSkillData = {};
@@ -106,6 +107,15 @@ function buildSkillText(skillDatum) {
     });
     rowOrder.forEach(function(label) {
         let curLevel = 0;
+        if (skillDatum.growth[label].length === 1) {
+            if (skillDescr.includes("\n")) {
+                skillDescr += ' Has a ' + label.toLowerCase() + ' of ' + skillDatum.growth[label][0].value + ' at all levels.'
+            } else {
+                skillDescr += '\n Has a ' + label.toLowerCase() + ' of ' + skillDatum.growth[label][0].value + ' at all levels.'
+            }
+            return
+        }
+
         skillDatum.growth[label].forEach(function(val) {
             const levelSpan = parseInt(val.levelspan)
             if (levelSpan > maxLevel) {
@@ -130,6 +140,9 @@ function buildSkillText(skillDatum) {
     // Get stuff in format to be used by table
     const regSkillRows = []
     rowOrder.forEach(function(val) {
+        if (regSkillData[val].length === 0) {
+            return
+        }
         regSkillRows.push(<tr>
             <td>{val}</td>
             {regSkillData[val]}
@@ -141,7 +154,9 @@ function buildSkillText(skillDatum) {
     let boostRows = true;
     const grimSkillRows = []
     rowOrder.forEach(function(val) {
-        if (grimSkillData[val].length === 0) {
+        if (regSkillData[val].length === 0) {
+            return
+        } else if (grimSkillData[val].length === 0) {
             boostRows = false;
         }
         grimSkillRows.push(<tr>
@@ -169,7 +184,7 @@ function buildSkillText(skillDatum) {
         </thead>
         <tbody>
             <tr>
-                <td>{skillDatum.description}</td>
+                <td>{skillDescr.split("\n").map(str => <p className='SkillDescription'>{str}</p>)}</td>
             </tr>
             <tr>
                 <td className='SkillInfoTable'>

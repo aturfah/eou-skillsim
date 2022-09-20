@@ -10,6 +10,12 @@
     opacity: 0.9;
 }
 
+.SkillDescription {
+    margin: 0;
+    padding: 0;
+    /* color: blue; */
+}
+
 .levelGrowthElt {
     font-size: 14px;
 }
