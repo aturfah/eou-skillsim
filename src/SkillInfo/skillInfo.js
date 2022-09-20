@@ -109,8 +109,9 @@ function buildSkillText(skillDatum) {
         skillDatum.growth[label].forEach(function(val) {
             const levelSpan = parseInt(val.levelspan)
             if (levelSpan > maxLevel) {
-                regSkillData[label].push(<td colSpan={10}>{val.value}</td>)
-                grimSkillData[label].push(<td colSpan={5}>{val.value}</td>)
+                curLevel += levelSpan;
+                regSkillData[label].push(<td colSpan={maxLevel}>{val.value}</td>)
+                grimSkillData[label].push(<td colSpan={levelSpan - maxLevel}>{val.value}</td>)
             } else if (curLevel < maxLevel && (curLevel + levelSpan) > maxLevel) {
                 curLevel += levelSpan;
                 regSkillData[label].push(<td colSpan={1}>{val.value}</td>)
