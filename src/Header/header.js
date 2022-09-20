@@ -156,6 +156,10 @@ class Header extends Component {
         this.props.updateMethod()
     }
 
+    _copySkillsClipboard() {
+        this.props.copySkillsClipboard()
+    }
+
     render() {
         const classDropdown = this.buildClassDropdown(this.classOpts);
         const skillPointsInfo = <div><span className="HeaderLabel">Skill Points:</span> {this.props.skillPointsRemaining}/{this.props.skillPointsTotal}</div>;
@@ -181,8 +185,8 @@ class Header extends Component {
                 {retirementBox}
                 {skillPointsInfo}
                 <div>
-                    <span className="ButtonText" onClick={() => this._clearSkills()}>(CLEAR SKILLS)</span> &nbsp;
-                    {/* <span onClick={() => this._resetAll()}>(RESET TO DEFAULT)</span> */}
+                    <span className="ButtonText" onClick={() => this._clearSkills()}>(CLEAR SKILLS)</span> <br/>
+                    <span className="ButtonText" onClick={() => this._copySkillsClipboard()}>(COPY BUILD)</span>
                 </div>
             </div>
         </div>

@@ -10,7 +10,8 @@ import {fixSkillDependencyAdd,
   fixSkillDependencyDelete,
   firstDegSkills,
   calculateTotalSP,
-  listIntersect, deepCopy} from './helpers'
+  listIntersect, deepCopy,
+  exportSkillList} from './helpers'
 
 function defaultState() {
   return {
@@ -104,11 +105,20 @@ class App extends Component {
     }
   }
 
+  copySkillsClipboard() {
+    const remainingSP = this.calculateSpRemaining(this.state);
+    const output = exportSkillList(this.state, remainingSP);
+
+    navigator.clipboard.writeText(output);
+    alert("Copied build to clipboard");
+  }
+
   render() {
     return (
       <div className="App">
         <Header
           updateMethod={this.updateState.bind(this)}
+          copySkillsClipboard={this.copySkillsClipboard.bind(this)}
           level={this.state.level}
           retirementIdx={this.state.retirementIdx}
           skillsChosen={this.state.skillsChosen}
