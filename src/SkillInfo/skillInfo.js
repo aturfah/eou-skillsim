@@ -4,7 +4,7 @@ import './skillInfo.css'
 import skillData from '../data/skill_data';
 import {parsePX} from '../helpers';
 
-function buildSkillText(skillDatum) {
+function oldBuildSkillText(skillDatum) {
     if (skillDatum === undefined) {
         return 'doot'
     }
@@ -64,6 +64,129 @@ function buildSkillText(skillDatum) {
                 <br/> <br/>
                 {levelGrowth}
             </div>
+}
+
+function buildSkillText(skillDatum) {
+    if (skillDatum === undefined) {
+        return 'doot'
+    }
+
+    if (skillDatum.force_boost === true || skillDatum.force_break === true) {
+        return oldBuildSkillText(skillDatum)
+    }
+
+
+    // Build the table rows
+    const regSkillData = {};
+    const grimSkillData = {};
+    const maxLevel = 10;
+    const rowOrder = skillDatum.growth_order;
+    skillDatum.levels.forEach(function (val, idx) {
+        if (idx === 0) {
+            return
+        }
+        idx = idx - 1
+        
+        if (!Object.keys(regSkillData).includes("Level")) {
+            regSkillData["Level"] = []
+            grimSkillData["Level"] = []
+        }
+        if (idx < maxLevel) {
+            regSkillData["Level"].push(<th>{skillDatum.levels[idx+1].label}</th>)
+        } else {
+            grimSkillData["Level"].push(<th>{skillDatum.levels[idx+1].label}</th>)
+        }
+
+        rowOrder.forEach(function (val) {
+            if (!Object.keys(regSkillData).includes(val)) {
+                regSkillData[val] = []
+                grimSkillData[val] = []
+            }
+        });
+    });
+    rowOrder.forEach(function(label) {
+        let curLevel = 0;
+        skillDatum.growth[label].forEach(function(val) {
+            const levelSpan = parseInt(val.levelspan)
+            if (levelSpan > maxLevel) {
+                regSkillData[label].push(<td colSpan={10}>{val.value}</td>)
+                grimSkillData[label].push(<td colSpan={5}>{val.value}</td>)
+            } else if (curLevel < maxLevel && (curLevel + levelSpan) > maxLevel) {
+                curLevel += levelSpan;
+                regSkillData[label].push(<td colSpan={1}>{val.value}</td>)
+                grimSkillData[label].push(<td colSpan={levelSpan - 1}>{val.value}</td>)
+            } else {
+                curLevel += levelSpan;
+                if (curLevel > maxLevel) {
+                    grimSkillData[label].push(<td colSpan={val.levelspan}>{val.value}</td>)
+                } else {
+                    regSkillData[label].push(<td colSpan={val.levelspan}>{val.value}</td>)
+                }    
+            }
+        })
+    }) 
+
+    // Get stuff in format to be used by table
+    const regSkillRows = []
+    rowOrder.forEach(function(val) {
+        regSkillRows.push(<tr>
+            <td>{val}</td>
+            {regSkillData[val]}
+        </tr>)
+    })
+
+
+    // Check for boost
+    let boostRows = true;
+    const grimSkillRows = []
+    rowOrder.forEach(function(val) {
+        if (grimSkillData[val].length === 0) {
+            boostRows = false;
+        }
+        grimSkillRows.push(<tr>
+            <td>{val}</td>
+            {grimSkillData[val]}
+        </tr>)
+    })
+
+    let boostTable = <>
+        <tr>
+            <th>Level</th>{grimSkillData["Level"]}
+        </tr>
+        {grimSkillRows}
+    </>
+    if (!boostRows) {
+        boostTable = <></>
+    }
+
+    // Give us the table
+    return <div><table>
+        <thead className='SkillHeader'>
+            <tr>
+                <th>{skillDatum.name}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{skillDatum.description}</td>
+            </tr>
+            <tr>
+                <td className='SkillInfoTable'>
+                    <br/>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Level</th>{regSkillData["Level"]}
+                    </tr>
+                    {regSkillRows}
+                    {boostTable}
+                    </tbody>
+                </table>
+                </td>
+            </tr>
+        </tbody>
+
+    </table></div>
 }
 
 function parseSkillBranches(classSkillInfo) {
