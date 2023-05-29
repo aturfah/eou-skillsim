@@ -80,10 +80,10 @@ function buildSkillText(skillDatum) {
     var usesText = null;
     var partText = null;
     if (skillDatum.bodypart !== undefined) {
-        partText = <span><i>Body Part: {skillDatum.bodypart}</i></span>;
+        partText = <span className='SkillDescription'><i>Body Part: {skillDatum.bodypart}</i></span>;
     }
     if (skillDatum.stat !== undefined) {
-        usesText = <span><i>Stat(s) Used: {skillDatum.stat}</i></span>;
+        usesText = <span className='SkillDescription'><i>Stat(s) Used: {skillDatum.stat}</i></span>;
     }
 
     let skillDescr = skillDatum.description;
