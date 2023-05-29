@@ -36094,6 +36094,8 @@ var skillData = [
                         "name": "Power Shot",
                         "description": "Ranged stab attack to 1 enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -36260,6 +36262,8 @@ var skillData = [
                         "_id": "disabling_shot",
                         "name": "Disabling Shot",
                         "description": "Ranged stab attack to 1 enemy. May bind legs.",
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "mastery": false,
                         "levels": [
                             {
@@ -36454,6 +36458,8 @@ var skillData = [
                         "name": "Multi-Shot",
                         "description": "Ranged stab attack to random enemies. Hits twice.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -36625,6 +36631,8 @@ var skillData = [
                         "name": "Sagittarius Shot",
                         "description": "Ranged stab attack to 1 enemy after 2 turns. May stun.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -36975,6 +36983,7 @@ var skillData = [
                         "name": "Hasten",
                         "description": "Raises an ally's turn speed for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
@@ -37157,6 +37166,7 @@ var skillData = [
                         "name": "Trickery",
                         "description": "Lowers an enemy's hit rate for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
@@ -37331,6 +37341,7 @@ var skillData = [
                         "name": "Sure Shot",
                         "description": "Raises hit rate for allies on one line for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
@@ -37513,6 +37524,7 @@ var skillData = [
                         "name": "Chain Dance",
                         "description": "Raises the user's evade rate and chance of being targeted for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
@@ -37976,6 +37988,7 @@ var skillData = [
                         "name": "Quick Step",
                         "description": "May allow a selected ally to act first.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
