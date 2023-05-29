@@ -12032,6 +12032,7 @@ var skillData = [
                         "name": "Sapping Curse",
                         "description": "Lowers all enemies' physical and elemental attack for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -12199,6 +12200,7 @@ var skillData = [
                         "name": "Leaden Curse",
                         "description": "Lowers all enemies' turn speed for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -12373,6 +12375,7 @@ var skillData = [
                         "name": "Frailty Curse",
                         "description": "Lowers all enemies' physical and elemental defense for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -12540,6 +12543,7 @@ var skillData = [
                         "name": "Deceit Curse",
                         "description": "Lowers all enemies' hit rate for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -12714,6 +12718,8 @@ var skillData = [
                         "name": "Revenge Curse",
                         "description": "Ranged almighty attack to 1 enemy that grows stronger as the user's HP falls.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -12885,6 +12891,8 @@ var skillData = [
                         "name": "Blinding Curse",
                         "description": "May blind a line of enemies.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -13052,6 +13060,8 @@ var skillData = [
                         "name": "Madness Curse",
                         "description": "May panic a line of enemies.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -13219,6 +13229,8 @@ var skillData = [
                         "name": "Corrupt Curse",
                         "description": "May curse an enemy line.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -13390,6 +13402,8 @@ var skillData = [
                         "name": "Torpor Curse",
                         "description": "May induce sleep for a line of enemies.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -13557,6 +13571,8 @@ var skillData = [
                         "name": "Stoning Curse",
                         "description": "May petrify an enemy.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -13728,6 +13744,7 @@ var skillData = [
                         "name": "Relapse Curse",
                         "description": "Lowers all enemies' recovery rate from ailments and binds for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -13906,6 +13923,8 @@ var skillData = [
                         "name": "Cranial Curse",
                         "description": "May bind an enemy's head.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -14073,6 +14092,8 @@ var skillData = [
                         "name": "Abdomen Curse",
                         "description": "May bind an enemy's arms.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -14240,6 +14261,8 @@ var skillData = [
                         "name": "Immobile Curse",
                         "description": "May bind an enemy's legs.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -14412,6 +14435,8 @@ var skillData = [
                         "name": "Evil Eye",
                         "description": "May induce fear in a line of enemies.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -14714,6 +14739,7 @@ var skillData = [
                         "name": "Muting Word",
                         "description": "Afraid enemies will be unable to move and have lowered defense this turn.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -14874,6 +14900,7 @@ var skillData = [
                         "name": "Conflict Word",
                         "description": "Afraid enemies will attack each other this turn.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -15034,6 +15061,7 @@ var skillData = [
                         "name": "Suicide Word",
                         "description": "Afraid enemies will attack themselves this turn.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -15369,6 +15397,7 @@ var skillData = [
                         "name": "Staggering Word",
                         "description": "Occasionally stuns all enemies at the start of a battle.",
                         "mastery": false,
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
