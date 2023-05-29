@@ -24180,6 +24180,8 @@ var skillData = [
                         "name": "Cure",
                         "description": "Recovers HP for an ally.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -24359,6 +24361,8 @@ var skillData = [
                         "name": "Salve",
                         "description": "Recovers HP for the party.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -24526,6 +24530,7 @@ var skillData = [
                         "name": "Unbind",
                         "description": "Removes binds from an ally.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -24688,6 +24693,7 @@ var skillData = [
                         "name": "Refresh",
                         "description": "Removes ailments from an ally.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -24835,6 +24841,7 @@ var skillData = [
                         "name": "Immunize",
                         "description": "Raises the party's elemental defense for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -25013,6 +25020,8 @@ var skillData = [
                         "name": "Regenerate",
                         "description": "Restores HP at the end of the turn for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -25195,6 +25204,8 @@ var skillData = [
                         "name": "Delayed Heal",
                         "description": "Restores the party's HP at the start of the next turn.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -25362,6 +25373,8 @@ var skillData = [
                         "name": "Heal",
                         "description": "Greatly recovers HP for an ally.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -25541,6 +25554,7 @@ var skillData = [
                         "name": "Revive",
                         "description": "Resurrects an ally.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -25708,6 +25722,7 @@ var skillData = [
                         "name": "CPR",
                         "description": "Gives the party a chance to survive mortal blows with 1 HP for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -25987,6 +26002,8 @@ var skillData = [
                         "name": "Anaesthetic",
                         "description": "May induce sleep for an enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -26147,6 +26164,8 @@ var skillData = [
                         "name": "Toxin Injection",
                         "description": "May poison an enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -26333,6 +26352,8 @@ var skillData = [
                         "name": "Curare",
                         "description": "May paralyze an enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -26493,6 +26514,7 @@ var skillData = [
                         "name": "Diagnosis",
                         "description": "Raises critical rate for one line.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -26675,6 +26697,8 @@ var skillData = [
                         "name": "Clear Strike",
                         "description": "Melee bash attack to 1 enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "TEC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -27397,6 +27421,8 @@ var skillData = [
                         "name": "Caduceus",
                         "description": "Melee bash attack to 1 enemy. May stun.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
