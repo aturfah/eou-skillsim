@@ -31704,6 +31704,8 @@ var skillData = [
                         "name": "Slantwise Cut",
                         "description": "Melee cut attack to 1 enemy. Enables skills requiring a stance afterward.",
                         "mastery": false,
+                        "bodypart": "Legs",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -31864,6 +31866,8 @@ var skillData = [
                         "name": "Perfect Chaser",
                         "description": "Stance only: Follow all allies' normal attacks this turn with another attack.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -32061,6 +32065,8 @@ var skillData = [
                         "name": "Upper Stance",
                         "description": "An overhead stance that raises physical attack and defense for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -32278,6 +32284,8 @@ var skillData = [
                         "name": "Horse Slash",
                         "description": "Upper Stance only: Melee cut attack to 1 enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -32438,6 +32446,8 @@ var skillData = [
                         "name": "Flame Grater",
                         "description": "Upper Stance only: Melee cut and fire attack to a line of enemies.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -32598,6 +32608,8 @@ var skillData = [
                         "name": "Swallow Strike",
                         "description": "Upper Stance only: Multiple melee cut attacks to 1 enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -33052,6 +33064,7 @@ var skillData = [
                         "name": "Razor Dodge",
                         "description": "Clear Stance only: Evade enemy attacks.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
@@ -33238,6 +33251,8 @@ var skillData = [
                         "name": "Lightning Stab",
                         "description": "Clear Stance only: Melee stab and volt attack to 1 enemy that pierces through enemy lines.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -33398,6 +33413,8 @@ var skillData = [
                         "name": "Arm Strike",
                         "description": "Clear Stance only: Melee cut attack to 1 enemy. May bind the enemy's arms.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -33885,6 +33902,8 @@ var skillData = [
                         "name": "Beheading Cut",
                         "description": "Drawing Stance only: Melee cut attack to 1 enemy. May instantly kill.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -34080,6 +34099,8 @@ var skillData = [
                         "name": "Frigid Slash",
                         "description": "Drawing Stance only: Ranged cut and ice attack to all enemies.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -34240,6 +34261,8 @@ var skillData = [
                         "name": "Charging Slash",
                         "description": "Drawing Stance only: Melee stab attack to 1 enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -34400,6 +34423,7 @@ var skillData = [
                         "name": "Peerless Stance",
                         "description": "Stance only: Usable from 3 main stances. Enables all stance skills for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Arms",
                         "levels": [
                             {
                                 "label": "Level",
@@ -35036,6 +35060,7 @@ var skillData = [
                         "name": "Severing Slash",
                         "description": "Occasionally kills all enemies instantly at the start of a battle.",
                         "mastery": false,
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -35289,6 +35314,7 @@ var skillData = [
                         "name": "Breath",
                         "description": "Restores HP to the user and adjacent allies.",
                         "mastery": false,
+                        "bodypart": "Breath",
                         "levels": [
                             {
                                 "label": "Level",
@@ -35636,6 +35662,8 @@ var skillData = [
                         "name": "Indomitable Cry",
                         "description": "May induce fear in all enemies.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
