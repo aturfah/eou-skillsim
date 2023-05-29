@@ -35314,7 +35314,7 @@ var skillData = [
                         "name": "Breath",
                         "description": "Restores HP to the user and adjacent allies.",
                         "mastery": false,
-                        "bodypart": "Breath",
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
