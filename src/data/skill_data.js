@@ -8101,6 +8101,8 @@ var skillData = [
                     {
                         "_id": "head_snipe",
                         "name": "Head Snipe",
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "description": "Accurate ranged stab attack to 1 enemy. May bind the enemy's head.",
                         "mastery": false,
                         "levels": [
@@ -8294,6 +8296,8 @@ var skillData = [
                     {
                         "_id": "arm_snipe",
                         "name": "Arm Snipe",
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "description": "Accurate ranged stab attack to 1 enemy. May bind the enemy's arms.",
                         "mastery": false,
                         "levels": [
@@ -8487,6 +8491,8 @@ var skillData = [
                     {
                         "_id": "leg_snipe",
                         "name": "Leg Snipe",
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "description": "Accurate ranged stab attack to 1 enemy. May bind the enemy's legs.",
                         "mastery": false,
                         "levels": [
@@ -8680,6 +8686,8 @@ var skillData = [
                     {
                         "_id": "fire_rounds",
                         "name": "Fire Rounds",
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "description": "Ranged stab and fire attack to 1 enemy.",
                         "mastery": false,
                         "levels": [
@@ -8847,6 +8855,8 @@ var skillData = [
                     {
                         "_id": "charged_fire",
                         "name": "Charged Fire",
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "description": "Ranged stab and fire attack to 1 enemy. Lowers user's defense until activation.",
                         "mastery": false,
                         "levels": [
@@ -9021,6 +9031,8 @@ var skillData = [
                     {
                         "_id": "ice_rounds",
                         "name": "Ice Rounds",
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "description": "Ranged stab and ice attack to 1 enemy.",
                         "mastery": false,
                         "levels": [
@@ -9188,6 +9200,8 @@ var skillData = [
                     {
                         "_id": "charged_ice",
                         "name": "Charged Ice",
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "description": "Ranged stab and ice attack to 1 enemy. Lowers user's defense until activation.",
                         "mastery": false,
                         "levels": [
@@ -9362,6 +9376,8 @@ var skillData = [
                     {
                         "_id": "volt_rounds",
                         "name": "Volt Rounds",
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "description": "Ranged stab and volt attack to 1 enemy.",
                         "mastery": false,
                         "levels": [
@@ -9529,6 +9545,8 @@ var skillData = [
                     {
                         "_id": "charged_volt",
                         "name": "Charged Volt",
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "description": "Ranged stab and volt attack to 1 enemy. Lowers user's defense until activation.",
                         "mastery": false,
                         "levels": [
@@ -9703,6 +9721,8 @@ var skillData = [
                     {
                         "_id": "charged_shot",
                         "name": "Charged Shot",
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "description": "Ranged stab attack to 1 enemy. Lowers user's defense until activation.",
                         "mastery": false,
                         "levels": [
@@ -10093,6 +10113,8 @@ var skillData = [
                         "name": "Ricochet",
                         "description": "Multiple ranged stab attacks to all enemies.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -10285,6 +10307,7 @@ var skillData = [
                         "name": "Action Boost",
                         "description": "The user has a chance of acting multiple times on the next turn.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
@@ -10543,6 +10566,8 @@ var skillData = [
                     {
                         "_id": "medic_bullet",
                         "name": "Medic Bullet",
+                        "bodypart": "Arms",
+                        "stat": "TEC",
                         "description": "Removes an ally's ailments and recovers their HP.",
                         "mastery": false,
                         "levels": [
@@ -10870,6 +10895,8 @@ var skillData = [
                     {
                         "_id": "shell_shock",
                         "name": "Shell Shock",
+                        "bodypart": "Legs",
+                        "stat": "TEC, LUC",
                         "description": "Lowers attack, defense, hit rate, and evade rate of rear enemy line. May stun.",
                         "mastery": false,
                         "levels": [
@@ -11450,6 +11477,7 @@ var skillData = [
                         "name": "Vulcan Stance",
                         "description": "The user's normal attacks do more damage and hit all enemies for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
