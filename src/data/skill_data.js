@@ -2892,6 +2892,7 @@ var skillData = [
                         "name": "Flee",
                         "description": "Consumes party's HP to escape from battle to the entrance to the floor.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
@@ -27919,6 +27920,7 @@ var skillData = [
                         "name": "Front Guard",
                         "description": "Lowers all physical damage to the front line for this turn.",
                         "mastery": false,
+                        "bodypart": "Arms",
                         "levels": [
                             {
                                 "label": "Level",
@@ -28079,6 +28081,7 @@ var skillData = [
                         "name": "Rear Guard",
                         "description": "Lowers all physical damage to the rear line for this turn.",
                         "mastery": false,
+                        "bodypart": "Arms",
                         "levels": [
                             {
                                 "label": "Level",
@@ -28239,6 +28242,7 @@ var skillData = [
                         "name": "Defender",
                         "description": "Raises the party's physical defense for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -28417,6 +28421,7 @@ var skillData = [
                         "name": "Fire Wall",
                         "description": "Protects against one fire attack for all allies this turn.",
                         "mastery": false,
+                        "bodypart": "Arms",
                         "levels": [
                             {
                                 "label": "Level",
@@ -28584,6 +28589,7 @@ var skillData = [
                         "name": "Ice Wall",
                         "description": "Protects against one ice attack for all allies this turn.",
                         "mastery": false,
+                        "bodypart": "Arms",
                         "levels": [
                             {
                                 "label": "Level",
@@ -28751,6 +28757,7 @@ var skillData = [
                         "name": "Volt Wall",
                         "description": "Protects against one volt attack for all allies this turn.",
                         "mastery": false,
+                        "bodypart": "Arms",
                         "levels": [
                             {
                                 "label": "Level",
@@ -28918,6 +28925,8 @@ var skillData = [
                         "name": "Shield Smite",
                         "description": "Melee bash attack to 1 enemy. May bind the enemy's arms.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -29127,6 +29136,8 @@ var skillData = [
                         "name": "Shield Rush",
                         "description": "Melee bash attack to all enemies which lowers their physical attack power.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -29323,6 +29334,7 @@ var skillData = [
                         "name": "Bravery's Gift",
                         "description": "Raises the user's maximum HP this turn while taking all the party's damage.",
                         "mastery": false,
+                        "bodypart": "Arms",
                         "levels": [
                             {
                                 "label": "Level",
@@ -29588,6 +29600,7 @@ var skillData = [
                         "name": "Provoke",
                         "description": "Raises chance of being targeted for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -29816,6 +29829,7 @@ var skillData = [
                         "name": "Parry",
                         "description": "Repels all physical attacks to the user's line for this turn.",
                         "mastery": false,
+                        "bodypart": "Arms",
                         "levels": [
                             {
                                 "label": "Level",
@@ -30009,6 +30023,7 @@ var skillData = [
                         "name": "Fortify",
                         "description": "Raises the user's physical defense for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -30637,6 +30652,7 @@ var skillData = [
                         "name": "Flee",
                         "description": "Consumes party's HP to escape from battle to the entrance to the floor.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
@@ -30812,6 +30828,8 @@ var skillData = [
                         "name": "Cure",
                         "description": "Restores an ally's HP.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -30990,6 +31008,8 @@ var skillData = [
                         "_id": "party_cure",
                         "name": "Party Cure",
                         "description": "Restores the party's HP.",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "mastery": false,
                         "levels": [
                             {
