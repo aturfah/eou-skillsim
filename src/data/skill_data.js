@@ -19981,6 +19981,8 @@ var skillData = [
                         "name": "Raging Edge",
                         "description": "Melee cut attack to 1 enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -20156,6 +20158,8 @@ var skillData = [
                         "name": "Tornado",
                         "description": "Melee cut attack that splashes from the targeted enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -20330,6 +20334,8 @@ var skillData = [
                         "name": "Blinding Slap",
                         "description": "Melee cut attack to 1 enemy, sacrificing accuracy for power. Missing blinds all enemies.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -20531,6 +20537,8 @@ var skillData = [
                         "name": "Falcon Slash",
                         "description": "Melee cut attack to multiple random enemies. Cannot hit the same target more than once.",
                         "mastery": false,
+                        "bodypart": "Legs",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -20829,6 +20837,8 @@ var skillData = [
                         "name": "Boomerang Axe",
                         "description": "Ranged bash attack to 1 enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -21004,6 +21014,8 @@ var skillData = [
                         "name": "Head Bash",
                         "description": "Melee bash attack to 1 enemy. May bind the enemy's head.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -21190,6 +21202,8 @@ var skillData = [
                         "name": "Stunning Smash",
                         "description": "Melee bash attack to 1 enemy. May stun.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -21388,6 +21402,8 @@ var skillData = [
                         "name": "Power Crush",
                         "description": "Melee bash attack that pierces across the enemy lines.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -21669,6 +21685,8 @@ var skillData = [
                         "name": "Fire Chaser",
                         "description": "Performs a follow-up attack on an enemy hit by a fire attack this turn.",
                         "mastery": false,
+                        "bodypart": "Legs",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -21870,6 +21888,8 @@ var skillData = [
                         "name": "Ice Chaser",
                         "description": "Performs a follow-up attack on an enemy hit by an ice attack this turn.",
                         "mastery": false,
+                        "bodypart": "Legs",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -22071,6 +22091,8 @@ var skillData = [
                         "name": "Volt Chaser",
                         "description": "Performs a follow-up attack on an enemy hit by a volt attack this turn.",
                         "mastery": false,
+                        "bodypart": "Legs",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -22641,6 +22663,7 @@ var skillData = [
                         "name": "Savage Cry",
                         "description": "Draws enemy attacks for a number of turns while decreasing all enemies' physical defense.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -23076,6 +23099,7 @@ var skillData = [
                         "name": "Triple Charge",
                         "description": "Next turn, raises physical/elemental attack, hit rate, and ailment hit rate.",
                         "mastery": false,
+                        "bodypart": "Arms",
                         "levels": [
                             {
                                 "label": "Level",
@@ -23438,6 +23462,7 @@ var skillData = [
                         "name": "War Cry",
                         "description": "Raises ATK/lowers DEF for allies on your line for a number of turns. Consumes their HP.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -23642,6 +23667,8 @@ var skillData = [
                         "name": "Strike Chaser",
                         "description": "Multiple allies will attack the user's next target.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
