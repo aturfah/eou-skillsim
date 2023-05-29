@@ -15873,6 +15873,8 @@ var skillData = [
                         "name": "Long Thrust",
                         "description": "Ranged stab attack to 1 enemy.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -16059,6 +16061,8 @@ var skillData = [
                         "name": "Draining Thrust",
                         "description": "Consumes the user's HP for a melee stab attack to the enemy's front line.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -16240,6 +16244,8 @@ var skillData = [
                         "name": "Draining Burst",
                         "description": "Consumes the user's HP for a melee stab attack to all enemies.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -16421,6 +16427,8 @@ var skillData = [
                         "name": "Legion Thrust",
                         "description": "Consumes the party's HP for a melee stab attack to the front enemy line.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -16602,6 +16610,8 @@ var skillData = [
                         "name": "Legion Burst",
                         "description": "Consumes the party's HP for a melee stab attack to all enemies.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -16783,6 +16793,8 @@ var skillData = [
                         "name": "Head Pierce",
                         "description": "Melee stab attack to 1 enemy. May bind the enemy's head or instantly kill it.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -16999,6 +17011,8 @@ var skillData = [
                         "name": "Spear Assist",
                         "description": "Melee stab attack to 1 enemy at turn's end. Gains element of last used elemental attack.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -17233,6 +17247,8 @@ var skillData = [
                         "name": "Delayed Charge",
                         "description": "Consumes the user's HP for a ranged stab attack to 1 enemy a number of turns later.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -17567,6 +17583,8 @@ var skillData = [
                         "name": "Cross Charge",
                         "description": "Consumes the user's HP for a melee stab attack to 1 enemy. Stronger with Delayed Charge.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -18083,6 +18101,7 @@ var skillData = [
                         "name": "Bloody Offense",
                         "description": "Raises a line's physical/elemental attack for a number of turns, but consumes their HP for every action.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -18272,6 +18291,7 @@ var skillData = [
                         "name": "Bloodlust",
                         "description": "May perform a normal attack each time you lose health.",
                         "mastery": false,
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -18402,6 +18422,7 @@ var skillData = [
                         "_id": "stigmata",
                         "name": "Stigmata",
                         "description": "May bind an enemy and the user. May also transfer user's ailments to the target.",
+                        "stat": "TEC, LUC",
                         "mastery": false,
                         "levels": [
                             {
@@ -18786,6 +18807,7 @@ var skillData = [
                         "_id": "blood_fortune",
                         "name": "Blood Fortune",
                         "description": "Consumes party's HP to raise their ailment and bind success rate.",
+                        "bodypart": "Head",
                         "mastery": false,
                         "levels": [
                             {
@@ -18974,6 +18996,7 @@ var skillData = [
                     {
                         "_id": "allied_bonds",
                         "name": "Allied Bonds",
+                        "bodypart": "Head",
                         "description": "When the user's skills consume the HP of allies in the user's line, affected allies recover TP at turn's end.",
                         "mastery": false,
                         "levels": [
@@ -19085,6 +19108,7 @@ var skillData = [
                         "name": "Spirit Shield",
                         "description": "Consumes the user's HP to raise one line's elemental defense for a number of turns.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -19369,6 +19393,7 @@ var skillData = [
                     {
                         "_id": "limitless",
                         "name": "Limitless",
+                        "bodypart": "Arms",
                         "description": "Charges up for increased damage on next action, which ignores equipment limits.",
                         "mastery": false,
                         "levels": [
@@ -19530,6 +19555,8 @@ var skillData = [
                         "_id": "black_sabbath",
                         "name": "Black Sabbath",
                         "description": "Drains all enemies' HP/recovers party's HP. Transfers enemies' ailments/binds to allies.",
+                        "bodypart": "Head",
+                        "stat": "STR",
                         "mastery": false,
                         "levels": [
                             {
