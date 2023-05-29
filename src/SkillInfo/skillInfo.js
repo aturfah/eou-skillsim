@@ -59,6 +59,7 @@ function oldBuildSkillText(skillDatum) {
         }
     })
 
+    // console.log(partText)
     return <div> {header} <br/> ---- <br/>
                 <span className='SkillDescr'>{descr}</span>
                 <br/> <br/>
@@ -73,6 +74,16 @@ function buildSkillText(skillDatum) {
 
     if (skillDatum.force_boost === true || skillDatum.force_break === true) {
         return oldBuildSkillText(skillDatum)
+    }
+
+    // Body Part
+    var usesText = null;
+    var partText = null;
+    if (skillDatum.bodypart !== undefined) {
+        partText = <span><i>Body Part: {skillDatum.bodypart}</i></span>;
+    }
+    if (skillDatum.stat !== undefined) {
+        usesText = <span><i>Stat(s) Used: {skillDatum.stat}</i></span>;
     }
 
     let skillDescr = skillDatum.description;
@@ -181,6 +192,12 @@ function buildSkillText(skillDatum) {
             </tr>
         </thead>
         <tbody>
+            <tr>
+                <td>{partText}</td>
+            </tr>
+            <tr>
+                <td>{usesText}</td>
+            </tr>
             <tr>
                 <td>{skillDescr.split("\n").map(str => <p className='SkillDescription'>{str}</p>)}</td>
             </tr>

@@ -109,6 +109,8 @@ var skillData = [
                     {
                         "_id": "fire_formula",
                         "name": "Fire Formula",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "description": "Ranged fire attack to 1 enemy.",
                         "mastery": false,
                         "levels": [
@@ -283,6 +285,8 @@ var skillData = [
                     {
                         "_id": "inferno_formula",
                         "name": "Inferno Formula",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "description": "Ranged fire attack to all enemies.",
                         "mastery": false,
                         "levels": [
@@ -457,6 +461,8 @@ var skillData = [
                     {
                         "_id": "ice_formula",
                         "name": "Ice Formula",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "description": "Ranged ice attack to 1 enemy.",
                         "mastery": false,
                         "levels": [
@@ -631,6 +637,8 @@ var skillData = [
                     {
                         "_id": "cocytus_formula",
                         "name": "Cocytus Formula",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "description": "Ranged ice attack to all enemies.",
                         "mastery": false,
                         "levels": [
@@ -804,6 +812,8 @@ var skillData = [
                     },
                     {
                         "_id": "volt_formula",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "name": "Volt Formula",
                         "description": "Ranged volt attack to 1 enemy.",
                         "mastery": false,
@@ -979,6 +989,8 @@ var skillData = [
                     {
                         "_id": "thor_formula",
                         "name": "Thor Formula",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "description": "Ranged volt attack to all enemies.",
                         "mastery": false,
                         "levels": [
@@ -1153,6 +1165,8 @@ var skillData = [
                     {
                         "_id": "flame_formula",
                         "name": "Flame Formula",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "description": "Ranged fire attack to 1 enemy with a splash effect.",
                         "mastery": false,
                         "levels": [
@@ -1334,6 +1348,8 @@ var skillData = [
                     {
                         "_id": "freeze_formula",
                         "name": "Freeze Formula",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "description": "Ranged ice attack to 1 enemy that pierces across the enemy lines.",
                         "mastery": false,
                         "levels": [
@@ -1508,6 +1524,8 @@ var skillData = [
                     {
                         "_id": "spark_formula",
                         "name": "Spark Formula",
+                        "bodypart": "Head",
+                        "stat": "TEC",
                         "description": "Ranged volt attack to one enemy line.",
                         "mastery": false,
                         "levels": [
@@ -1683,6 +1701,7 @@ var skillData = [
                         "_id": "dilution",
                         "name": "Dilution",
                         "description": "Lowers all enemies' elemental defense for a number of turns.",
+                        "bodypart": "Head",
                         "mastery": false,
                         "levels": [
                             {
@@ -1857,6 +1876,7 @@ var skillData = [
                     {
                         "_id": "analysis",
                         "name": "Analysis",
+                        "bodypart": "Head",
                         "description": "Hitting an enemy's weakness lowers its defense for a number of turns.",
                         "mastery": false,
                         "levels": [
@@ -2032,6 +2052,8 @@ var skillData = [
                         "_id": "pain_formula",
                         "name": "Pain Formula",
                         "description": "Melee bash attack to 1 enemy. Usable from the front line only.",
+                        "bodypart": "Arms",
+                        "stat": "TEC",
                         "mastery": false,
                         "levels": [
                             {
@@ -2206,6 +2228,7 @@ var skillData = [
                         "_id": "firelight",
                         "name": "Firelight",
                         "description": "Ranged fire attack at the turn's end to enemies hit by Pain or Light Formulas.",
+                        "stat": "TEC",
                         "mastery": false,
                         "levels": [
                             {
@@ -2310,6 +2333,7 @@ var skillData = [
                     {
                         "_id": "light_formula",
                         "name": "Light Formula",
+                        "bodypart": "Arms",
                         "description": "Nullifies all physical attacks dealt to the user this turn.",
                         "mastery": false,
                         "levels": [
@@ -2477,6 +2501,7 @@ var skillData = [
                     {
                         "_id": "light_tincture",
                         "name": "Light Tincture",
+                        "bodypart": "Arms",
                         "description": "Nullifies all elemental attacks dealt to the user this turn.",
                         "mastery": false,
                         "levels": [
@@ -3738,6 +3763,8 @@ var skillData = [
                     {
                         "_id": "gag",
                         "name": "Gag",
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "description": "Melee cut attack to 1 enemy. May bind the enemy's head.",
                         "mastery": false,
                         "levels": [
@@ -3931,6 +3958,8 @@ var skillData = [
                     {
                         "_id": "shackles",
                         "name": "Shackles",
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "description": "Melee cut attack to 1 enemy. May bind the enemy's legs.",
                         "mastery": false,
                         "levels": [
@@ -4126,6 +4155,8 @@ var skillData = [
                         "name": "Cuffs",
                         "description": "Melee cut attack to 1 enemy. May bind the enemy's arms.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -4319,6 +4350,8 @@ var skillData = [
                         "name": "Ecstasy",
                         "description": "Melee cut attack to 1 enemy. Damage raises with each bind it has.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -4682,6 +4715,8 @@ var skillData = [
                         "_id": "viper",
                         "name": "Viper",
                         "description": "Melee cut attack to 1 enemy. May poison.",
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "mastery": false,
                         "levels": [
                             {
@@ -4932,6 +4967,8 @@ var skillData = [
                         "name": "Climax",
                         "description": "Melee cut attack to 1 enemy. Drains HP and may instantly kill low-HP enemies.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -5250,6 +5287,8 @@ var skillData = [
                         "name": "Hypno Bite",
                         "description": "Melee cut attack to 1 enemy. May induce sleep.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -5436,6 +5475,8 @@ var skillData = [
                         "name": "Nerve Bite",
                         "description": "Melee cut attack to 1 enemy. May paralyze.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -5622,6 +5663,8 @@ var skillData = [
                         "name": "Mirage Bite",
                         "description": "Melee cut attack to 1 enemy. May panic.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -5808,6 +5851,8 @@ var skillData = [
                         "name": "Soul Liberator",
                         "description": "Melee cut attack to 1 enemy. Damage raises if it removes an ailment.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -6046,6 +6091,8 @@ var skillData = [
                         "name": "Drain Bite",
                         "description": "Melee cut attack to 1 enemy that absorbs some damage dealt as HP.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "levels": [
                             {
                                 "label": "Level",
@@ -6236,6 +6283,8 @@ var skillData = [
                         "name": "Catastrophe",
                         "description": "Melee cut attack to 1 enemy. May petrify. If not, ailment hit rate raises next turn.",
                         "mastery": false,
+                        "bodypart": "Arms",
+                        "stat": "STR, TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
@@ -6777,6 +6826,8 @@ var skillData = [
                     {
                         "_id": "bait",
                         "name": "Bait",
+                        "bodypart": "Arms",
+                        "stat": "STR",
                         "description": "Places traps on allies to either side that counter physical attacks to them and the user.",
                         "mastery": false,
                         "levels": [
@@ -7156,6 +7207,7 @@ var skillData = [
                         "name": "Bind Heart",
                         "description": "Lowers 1 enemy's turn speed.",
                         "mastery": false,
+                        "bodypart": "Head",
                         "levels": [
                             {
                                 "label": "Level",
@@ -7331,6 +7383,7 @@ var skillData = [
                         "name": "Shadow Veil",
                         "description": "Lowers the chance of being targeted for 3 turns.",
                         "mastery": false,
+                        "bodypart": "Legs",
                         "levels": [
                             {
                                 "label": "Level",
@@ -7521,6 +7574,8 @@ var skillData = [
                         "name": "Dark Curse",
                         "description": "May inflict Curse upon all enemies.",
                         "mastery": false,
+                        "bodypart": "Head",
+                        "stat": "TEC, LUC",
                         "levels": [
                             {
                                 "label": "Level",
